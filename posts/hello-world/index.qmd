@@ -1,0 +1,15 @@
+---
+title: "Hello World"
+description: "First post on this new blog"
+author: "weyj4"
+date: "2026-01-21"
+categories: [meta]
+---
+
+## Welcome
+
+This is the first post on my new blog. I'm planning to use this space to share thoughts, ideas, and things I'm learning.
+
+I built this site with [Quarto](https://quarto.org), which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.
+
+More to come soon.

@@ -1,0 +1,92 @@
+---
+title: "Weyland Joyner"
+subtitle: "Senior Software Engineer — Applied AI / Special Projects"
+format:
+  html:
+    toc: false
+---
+
+**Location:** Los Angeles, CA  
+**LinkedIn:** https://www.linkedin.com/in/weylandjoyner/  
+
+---
+
+## Summary
+
+Senior software engineer with 12+ years of experience building applied systems across AI, cloud infrastructure, and client-facing products. Early contributor to conversational AI systems (IBM Watson era), long-time technical lead delivering AWS/GCP architectures for Fortune 500 and public-sector clients, and trusted advisor to executive stakeholders on technology strategy. Known for operating effectively under ambiguity, rapidly prototyping novel systems, and translating cutting-edge technology into real-world use.
+
+---
+
+## Selected Experience
+
+### Applied AI & Special Projects
+**Mercer Street Labs / Moth+Flame**
+*Founder · Consultant · Acting Head of Engineering* · *2023-Present*
+
+- Brought in as a solo consultant to design and build a new AI-first flagship product for VR training used by U.S. military clients (Army, Air Force, Navy, SOCOM)
+- Architected a generative system enabling subject-matter experts (e.g., drill sergeants) to author immersive training experiences via natural language, producing structured specifications consumed by video, audio, and VR pipelines
+- Integrated modern LLM APIs into end-to-end content generation workflows, coordinating multi-modal outputs and downstream processing
+- Conducted a ground-up audit of legacy systems, decommissioned outdated tooling, and rebuilt core engineering workflows
+- At CEO request, spun up and led a distributed skunkworks team (including displaced Ukrainian engineers), effectively acting as head of engineering to execute organizational and technical transformation
+- Worked directly with executive leadership outside the formal org chart to deliver new capabilities under tight timelines and sensitive client constraints
+
+---
+
+### Cloud Architecture & Delivery Leadership
+**Cloudreach**
+*Senior Engineer / Technical Lead* · *2018-2023*
+
+- Led design and delivery of cloud-native systems on AWS and GCP for Fortune 500 and public-sector clients
+- Technical lead for a 7-person team building streaming and data-processing systems for transportation and infrastructure use cases
+- Architected pipelines consolidating weather, incident, and operational data into BigQuery for real-time and analytical workloads
+- Built internal tools and web applications supporting operational decision-making
+- Served as senior technical interface to client leadership, participating in strategy discussions and advising on modernization efforts
+- Maintained hands-on ownership of core codebases while leading architecture and delivery
+
+---
+
+### Conversational AI & Full-Stack Engineering
+**IBM Watson (via Langa)**
+*Consulting Engineer* · *2015-2018*
+
+- Designed and built full-stack Node.js applications leveraging Watson NLP APIs (chat, information extraction) for education use cases
+- Advised Watson Education leadership on adoption of Node.js and React in a historically Java-centric organization, mentoring internal engineers on modern JS practices
+- Led UX and data-visualization design (React + D3.js) for nontechnical users, working directly with teachers and administrators to translate real-world workflows into AI-assisted tools
+- Operated as a skunkworks team delivering multi-month proof-of-concept products presented to IBM leadership for productionization
+
+---
+
+### Technology Strategy & Executive Advisory  
+**Blackstone (BXII)**  
+*Technical Advisor (Additional Responsibility)*
+
+- Personally requested by Blackstone infrastructure leadership to assess portfolio company technology
+- Led stakeholder meetings with private equity leadership and operating companies
+- Produced architecture reviews, roadmaps, and written assessments to inform investment and modernization decisions
+
+---
+
+### Operations & Crisis Leadership  
+**Humanitarian Aid Organization (Ukraine)**  
+*Co-Founder / Operations Lead*
+
+- Co-founded and led an international aid organization during the early Russo-Ukrainian war
+- Built and operated supply chains across 3–4 continents under wartime constraints
+- Led a distributed team (~10 people) coordinating evacuations and humanitarian logistics from active conflict zones
+- Managed security, logistics, and rapid decision-making in high-risk environments
+
+---
+
+## Education
+
+**B.A., English & American Literature** — Middlebury College  
+Departmental Humanities Prize (Thesis)  
+Former journalist
+
+---
+
+## Technical Breadth
+
+- **Languages:** JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)
+- **Platforms:** AWS, GCP
+- **Focus Areas:** Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering

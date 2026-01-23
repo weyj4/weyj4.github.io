@@ -1,0 +1,56 @@
+---
+title: "What I'm Reading"
+format:
+  html:
+    toc: false
+---
+
+Here are some notable books I've read this year. Some I read straight through, others I've been dipping in and out of all year long.
+
+## Jan 2026
+
+* *From Dawn to Decadence* by Jacques Barzun
+* *The Coming of the Book: The Impact of Printing* by Lucien Febvre
+
+## Dec 2025
+
+* *George Eliot* by Jenny Uglow
+* *Deep Learning for Biology* by C. Ravarani and N. Latysheva
+* *Paradise Lost: a Biography* by Alan Jacobs
+* *The Cambridge Introduction to Sanskrit* by Antonia Ruppel
+* *Kashmir Shaivism: The Secret Supreme* by Swami Lakshmanjoo
+
+## Nov 2025
+
+* *Possession* by A.S. Byatt
+* *A Sea of Words: A Lexicon and Companion to the Complete Seafaring Tales of Patrick O'Brian* by Dean King
+* *The Yoga Sutras* by Edwin F. Bryant
+
+## Oct 2025
+
+## Sept 2025
+
+* *The Dream Machine: J.C.R. Licklider and the Revolution That Made Computing Personal* by M. Mitchell Waldrop
+* *Myths and Symbols in Indian Art and Civilization* by Hans Zimmer
+
+## Aug 2025
+
+## July 2025
+
+* *The Pound Era* by Hugh Kenner
+
+## Jun 2025
+
+* *The Alchemy of Air* by Thomas Hager
+* *Life Ascending: The Ten Great Inventions of Evolution* by Nick Lane
+* *Pieces of the Action* by Vannevar Bush
+
+## May 2025
+
+* *Petrarch: Everywhere a Wanderer* by Christopher S. Celenza
+* *Molecular Biology of the Cell* by Alberts et al. (chapter 2)
+
+## April 2025
+
+* *Athenaze, Book I: An Introduction to Ancient Greek* by Balme et al.
+* *The Invention that Changed the World* by Robert Buderi

@@ -1,0 +1,31 @@
+---
+title: "On Writing"
+description: "Why I'm starting this blog"
+author: "weyj4"
+date: "2026-01-20"
+categories: [writing, meta]
+draft: true
+---
+
+## Finding My Voice
+
+Writing is thinking made visible. For too long, I've kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.
+
+The format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics.
+
+## What to Expect
+
+I plan to write about:
+
+- Things I'm learning
+- Technical explorations
+- Ideas worth sharing
+- Occasional observations
+
+The frequency will be irregular. Quality over quantity.
+
+## Why Now
+
+There's something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.
+
+This is that space for me.

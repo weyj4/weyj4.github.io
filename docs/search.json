@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Other Good Blogs",
+    "section": "",
+    "text": "Owl Posting\nNot Boring\nConstruction Physics\nSimon Willison’s Blog\nThe Century of Bio\nMatt Levine\nThe Generalist\nRhymes with Haystack\nCore Memory"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is my personal blog where I share thoughts, ideas, and learnings.\nFeel free to reach out via GitHub if you’d like to connect."
+  },
+  {
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+  },
+  {
+    "objectID": "posts/hello-world/index.html#welcome",
+    "href": "posts/hello-world/index.html#welcome",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Weyland Joyner",
+    "section": "",
+    "text": "Location: Los Angeles, CA\nLinkedIn: https://www.linkedin.com/in/weylandjoyner/"
+  },
+  {
+    "objectID": "resume.html#summary",
+    "href": "resume.html#summary",
+    "title": "Weyland Joyner",
+    "section": "Summary",
+    "text": "Summary\nSenior software engineer with 12+ years of experience building applied systems across AI, cloud infrastructure, and client-facing products. Early contributor to conversational AI systems (IBM Watson era), long-time technical lead delivering AWS/GCP architectures for Fortune 500 and public-sector clients, and trusted advisor to executive stakeholders on technology strategy. Known for operating effectively under ambiguity, rapidly prototyping novel systems, and translating cutting-edge technology into real-world use."
+  },
+  {
+    "objectID": "resume.html#selected-experience",
+    "href": "resume.html#selected-experience",
+    "title": "Weyland Joyner",
+    "section": "Selected Experience",
+    "text": "Selected Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame Founder · Consultant · Acting Head of Engineering · 2023-Present\n\nBrought in as a solo consultant to design and build a new AI-first flagship product for VR training used by U.S. military clients (Army, Air Force, Navy, SOCOM)\nArchitected a generative system enabling subject-matter experts (e.g., drill sergeants) to author immersive training experiences via natural language, producing structured specifications consumed by video, audio, and VR pipelines\nIntegrated modern LLM APIs into end-to-end content generation workflows, coordinating multi-modal outputs and downstream processing\nConducted a ground-up audit of legacy systems, decommissioned outdated tooling, and rebuilt core engineering workflows\nAt CEO request, spun up and led a distributed skunkworks team (including displaced Ukrainian engineers), effectively acting as head of engineering to execute organizational and technical transformation\nWorked directly with executive leadership outside the formal org chart to deliver new capabilities under tight timelines and sensitive client constraints\n\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach Senior Engineer / Technical Lead · 2018-2023\n\nLed design and delivery of cloud-native systems on AWS and GCP for Fortune 500 and public-sector clients\nTechnical lead for a 7-person team building streaming and data-processing systems for transportation and infrastructure use cases\nArchitected pipelines consolidating weather, incident, and operational data into BigQuery for real-time and analytical workloads\nBuilt internal tools and web applications supporting operational decision-making\nServed as senior technical interface to client leadership, participating in strategy discussions and advising on modernization efforts\nMaintained hands-on ownership of core codebases while leading architecture and delivery\n\n\n\n\nConversational AI & Full-Stack Engineering\nIBM Watson (via Langa) Consulting Engineer · 2015-2018\n\nDesigned and built full-stack Node.js applications leveraging Watson NLP APIs (chat, information extraction) for education use cases\nAdvised Watson Education leadership on adoption of Node.js and React in a historically Java-centric organization, mentoring internal engineers on modern JS practices\nLed UX and data-visualization design (React + D3.js) for nontechnical users, working directly with teachers and administrators to translate real-world workflows into AI-assisted tools\nOperated as a skunkworks team delivering multi-month proof-of-concept products presented to IBM leadership for productionization\n\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII)\nTechnical Advisor (Additional Responsibility)\n\nPersonally requested by Blackstone infrastructure leadership to assess portfolio company technology\nLed stakeholder meetings with private equity leadership and operating companies\nProduced architecture reviews, roadmaps, and written assessments to inform investment and modernization decisions\n\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine)\nCo-Founder / Operations Lead\n\nCo-founded and led an international aid organization during the early Russo-Ukrainian war\nBuilt and operated supply chains across 3–4 continents under wartime constraints\nLed a distributed team (~10 people) coordinating evacuations and humanitarian logistics from active conflict zones\nManaged security, logistics, and rapid decision-making in high-risk environments"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Weyland Joyner",
+    "section": "Education",
+    "text": "Education\nB.A., English & American Literature — Middlebury College\nDepartmental Humanities Prize (Thesis)\nFormer journalist"
+  },
+  {
+    "objectID": "resume.html#technical-breadth",
+    "href": "resume.html#technical-breadth",
+    "title": "Weyland Joyner",
+    "section": "Technical Breadth",
+    "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Writing",
+    "section": "",
+    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "reading.html",
+    "href": "reading.html",
+    "title": "What I’m Reading",
+    "section": "",
+    "text": "Here are some notable books I’ve read this year. Some I read straight through, others I’ve been dipping in and out of all year long."
+  },
+  {
+    "objectID": "reading.html#jan-2026",
+    "href": "reading.html#jan-2026",
+    "title": "What I’m Reading",
+    "section": "Jan 2026",
+    "text": "Jan 2026\n\nFrom Dawn to Decadence by Jacques Barzun\nThe Coming of the Book: The Impact of Printing by Lucien Febvre"
+  },
+  {
+    "objectID": "reading.html#dec-2025",
+    "href": "reading.html#dec-2025",
+    "title": "What I’m Reading",
+    "section": "Dec 2025",
+    "text": "Dec 2025\n\nGeorge Eliot by Jenny Uglow\nDeep Learning for Biology by C. Ravarani and N. Latysheva\nParadise Lost: a Biography by Alan Jacobs\nThe Cambridge Introduction to Sanskrit by Antonia Ruppel\nKashmir Shaivism: The Secret Supreme by Swami Lakshmanjoo"
+  },
+  {
+    "objectID": "reading.html#nov-2025",
+    "href": "reading.html#nov-2025",
+    "title": "What I’m Reading",
+    "section": "Nov 2025",
+    "text": "Nov 2025\n\nPossession by A.S. Byatt\nA Sea of Words: A Lexicon and Companion to the Complete Seafaring Tales of Patrick O’Brian by Dean King\nThe Yoga Sutras by Edwin F. Bryant"
+  },
+  {
+    "objectID": "reading.html#oct-2025",
+    "href": "reading.html#oct-2025",
+    "title": "What I’m Reading",
+    "section": "Oct 2025",
+    "text": "Oct 2025"
+  },
+  {
+    "objectID": "reading.html#sept-2025",
+    "href": "reading.html#sept-2025",
+    "title": "What I’m Reading",
+    "section": "Sept 2025",
+    "text": "Sept 2025\n\nThe Dream Machine: J.C.R. Licklider and the Revolution That Made Computing Personal by M. Mitchell Waldrop\nMyths and Symbols in Indian Art and Civilization by Hans Zimmer"
+  },
+  {
+    "objectID": "reading.html#aug-2025",
+    "href": "reading.html#aug-2025",
+    "title": "What I’m Reading",
+    "section": "Aug 2025",
+    "text": "Aug 2025"
+  },
+  {
+    "objectID": "reading.html#july-2025",
+    "href": "reading.html#july-2025",
+    "title": "What I’m Reading",
+    "section": "July 2025",
+    "text": "July 2025\n\nThe Pound Era by Hugh Kenner"
+  },
+  {
+    "objectID": "reading.html#jun-2025",
+    "href": "reading.html#jun-2025",
+    "title": "What I’m Reading",
+    "section": "Jun 2025",
+    "text": "Jun 2025\n\nThe Alchemy of Air by Thomas Hager\nLife Ascending: The Ten Great Inventions of Evolution by Nick Lane\nPieces of the Action by Vannevar Bush"
+  },
+  {
+    "objectID": "reading.html#may-2025",
+    "href": "reading.html#may-2025",
+    "title": "What I’m Reading",
+    "section": "May 2025",
+    "text": "May 2025\n\nPetrarch: Everywhere a Wanderer by Christopher S. Celenza\nMolecular Biology of the Cell by Alberts et al. (chapter 2)"
+  },
+  {
+    "objectID": "reading.html#april-2025",
+    "href": "reading.html#april-2025",
+    "title": "What I’m Reading",
+    "section": "April 2025",
+    "text": "April 2025\n\nAthenaze, Book I: An Introduction to Ancient Greek by Balme et al.\nThe Invention that Changed the World by Robert Buderi"
+  }
+]

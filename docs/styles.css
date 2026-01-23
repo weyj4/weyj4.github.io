@@ -1,0 +1,129 @@
+/* Minimalist blog styles */
+
+/* Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Simplify navbar */
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Content spacing */
+.quarto-title-banner {
+  background: transparent;
+  border-bottom: 1px solid #dee2e6;
+  padding: 2rem 0 1rem 0;
+}
+
+/* Listing layout */
+.quarto-listing-default .listing-item {
+  border: none;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.5rem 0;
+}
+
+.quarto-listing-default .listing-item:hover {
+  background: transparent;
+}
+
+/* Code blocks */
+pre {
+  border-radius: 3px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+/* Remove excessive padding */
+.page-columns {
+  padding-top: 1rem;
+}
+
+/* Footer */
+.nav-footer {
+  border-top: 1px solid #dee2e6;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Resume-specific styles */
+.quarto-title .quarto-title-block .quarto-title-meta {
+  margin-top: 1rem;
+}
+
+/* Clean section breaks in resume */
+main hr {
+  border: none;
+  border-top: 1px solid #dee2e6;
+  margin: 2rem 0;
+}
+
+/* Resume headings spacing */
+main h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+main h3 + p strong {
+  font-weight: 600;
+}
+
+main h3 + p em {
+  color: #6c757d;
+  font-style: normal;
+}
+
+/* Reading list styles */
+main h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+main h2:first-of-type {
+  margin-top: 1rem;
+}
+
+main ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+  line-height: 1.7;
+}
+
+main li em {
+  font-style: italic;
+}

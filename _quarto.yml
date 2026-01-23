@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  description: "Personal writing and thoughts"
+  site-url: https://weyj4.github.io
+  title: "weyj4"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Resume/CV"
+        href: resume.qmd
+      - text: "What I'm Reading"
+        href: reading.qmd
+      - text: "Other Good Blogs"
+        href: blogs.qmd
+    right:
+      - icon: github
+        href: https://github.com/weyj4
+  page-footer:
+    center: "© 2026 weyj4"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+
+
+

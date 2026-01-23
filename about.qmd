@@ -1,0 +1,13 @@
+---
+title: "About"
+about:
+  template: solana
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/weyj4
+---
+
+This is my personal blog where I share thoughts, ideas, and learnings.
+
+Feel free to reach out via GitHub if you'd like to connect.

@@ -1,0 +1,17 @@
+---
+title: "Other Good Blogs"
+format:
+  html:
+    toc: false
+---
+
+* [Not Boring](https://www.notboring.co/)
+* [Construction Physics](https://www.construction-physics.com/)
+* [Simon Willison's Blog](https://simonwillison.net/)
+* [Owl Posting](https://www.owlposting.com/)
+* [The Century of Bio](https://centuryofbio.com/)
+* [Matt Levine](https://www.bloomberg.com/authors/ARbTQlRLRjE/matthew-s-levine)
+* [The Generalist](https://www.generalist.com/)
+* [Rhymes with Haystack](https://albertvilella.substack.com/)
+* [Core Memory](https://www.corememory.com/)
+* [Decoding Bio](https://www.decodingbio.com/newsletter)
