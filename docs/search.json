@@ -4,28 +4,14 @@
     "href": "blogs.html",
     "title": "Other Good Blogs",
     "section": "",
-    "text": "Owl Posting\nNot Boring\nConstruction Physics\nSimon Willison’s Blog\nThe Century of Bio\nMatt Levine\nThe Generalist\nRhymes with Haystack\nCore Memory"
+    "text": "Not Boring\nConstruction Physics\nSimon Willison’s Blog\nOwl Posting\nThe Century of Bio\nMatt Levine\nThe Generalist\nRhymes with Haystack\nCore Memory\nDecoding Bio"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Writing",
     "section": "",
-    "text": "This is my personal blog where I share thoughts, ideas, and learnings.\nFeel free to reach out via GitHub if you’d like to connect."
-  },
-  {
-    "objectID": "posts/hello-world/index.html",
-    "href": "posts/hello-world/index.html",
-    "title": "Hello World",
-    "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
-  },
-  {
-    "objectID": "posts/hello-world/index.html#welcome",
-    "href": "posts/hello-world/index.html#welcome",
-    "title": "Hello World",
-    "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resume.html",
@@ -63,11 +49,18 @@
     "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Writing",
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello World",
     "section": "",
-    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+  },
+  {
+    "objectID": "posts/hello-world/index.html#welcome",
+    "href": "posts/hello-world/index.html#welcome",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
   },
   {
     "objectID": "reading.html",
