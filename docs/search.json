@@ -14,39 +14,67 @@
     "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
+    "objectID": "resume_old.html",
+    "href": "resume_old.html",
     "title": "Weyland Joyner",
     "section": "",
     "text": "Location: Los Angeles, CA\nLinkedIn: https://www.linkedin.com/in/weylandjoyner/"
   },
   {
-    "objectID": "resume.html#summary",
-    "href": "resume.html#summary",
+    "objectID": "resume_old.html#summary",
+    "href": "resume_old.html#summary",
     "title": "Weyland Joyner",
     "section": "Summary",
     "text": "Summary\nSenior software engineer with 12+ years of experience building applied systems across AI, cloud infrastructure, and client-facing products. Early contributor to conversational AI systems (IBM Watson era), long-time technical lead delivering AWS/GCP architectures for Fortune 500 and public-sector clients, and trusted advisor to executive stakeholders on technology strategy. Known for operating effectively under ambiguity, rapidly prototyping novel systems, and translating cutting-edge technology into real-world use."
   },
   {
-    "objectID": "resume.html#selected-experience",
-    "href": "resume.html#selected-experience",
+    "objectID": "resume_old.html#selected-experience",
+    "href": "resume_old.html#selected-experience",
     "title": "Weyland Joyner",
     "section": "Selected Experience",
     "text": "Selected Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame Founder · Consultant · Acting Head of Engineering · 2023-Present\n\nBrought in as a solo consultant to design and build a new AI-first flagship product for VR training used by U.S. military clients (Army, Air Force, Navy, SOCOM)\nArchitected a generative system enabling subject-matter experts (e.g., drill sergeants) to author immersive training experiences via natural language, producing structured specifications consumed by video, audio, and VR pipelines\nIntegrated modern LLM APIs into end-to-end content generation workflows, coordinating multi-modal outputs and downstream processing\nConducted a ground-up audit of legacy systems, decommissioned outdated tooling, and rebuilt core engineering workflows\nAt CEO request, spun up and led a distributed skunkworks team (including displaced Ukrainian engineers), effectively acting as head of engineering to execute organizational and technical transformation\nWorked directly with executive leadership outside the formal org chart to deliver new capabilities under tight timelines and sensitive client constraints\n\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach Senior Engineer / Technical Lead · 2018-2023\n\nLed design and delivery of cloud-native systems on AWS and GCP for Fortune 500 and public-sector clients\nTechnical lead for a 7-person team building streaming and data-processing systems for transportation and infrastructure use cases\nArchitected pipelines consolidating weather, incident, and operational data into BigQuery for real-time and analytical workloads\nBuilt internal tools and web applications supporting operational decision-making\nServed as senior technical interface to client leadership, participating in strategy discussions and advising on modernization efforts\nMaintained hands-on ownership of core codebases while leading architecture and delivery\n\n\n\n\nConversational AI & Full-Stack Engineering\nIBM Watson (via Langa) Consulting Engineer · 2015-2018\n\nDesigned and built full-stack Node.js applications leveraging Watson NLP APIs (chat, information extraction) for education use cases\nAdvised Watson Education leadership on adoption of Node.js and React in a historically Java-centric organization, mentoring internal engineers on modern JS practices\nLed UX and data-visualization design (React + D3.js) for nontechnical users, working directly with teachers and administrators to translate real-world workflows into AI-assisted tools\nOperated as a skunkworks team delivering multi-month proof-of-concept products presented to IBM leadership for productionization\n\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII)\nTechnical Advisor (Additional Responsibility)\n\nPersonally requested by Blackstone infrastructure leadership to assess portfolio company technology\nLed stakeholder meetings with private equity leadership and operating companies\nProduced architecture reviews, roadmaps, and written assessments to inform investment and modernization decisions\n\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine)\nCo-Founder / Operations Lead\n\nCo-founded and led an international aid organization during the early Russo-Ukrainian war\nBuilt and operated supply chains across 3–4 continents under wartime constraints\nLed a distributed team (~10 people) coordinating evacuations and humanitarian logistics from active conflict zones\nManaged security, logistics, and rapid decision-making in high-risk environments"
   },
   {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
+    "objectID": "resume_old.html#education",
+    "href": "resume_old.html#education",
     "title": "Weyland Joyner",
     "section": "Education",
     "text": "Education\nB.A., English & American Literature — Middlebury College\nDepartmental Humanities Prize (Thesis)\nFormer journalist"
+  },
+  {
+    "objectID": "resume_old.html#technical-breadth",
+    "href": "resume_old.html#technical-breadth",
+    "title": "Weyland Joyner",
+    "section": "Technical Breadth",
+    "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Weyland Joyner",
+    "section": "",
+    "text": "Senior Software Engineer — Applied AI / Special Projects Los Angeles, CA | linkedin.com/in/weylandjoyner"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Weyland Joyner",
+    "section": "Experience",
+    "text": "Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame · 2023–Present Founder · Consultant · Acting Head of Engineering\n\nDesigned and shipped AI authoring platform enabling non-technical SMEs to generate VR training content via natural language—adopted across Army, Air Force, Navy, SOCOM\nIntegrated modern LLM APIs into end-to-end multimodal content generation workflows (video, audio, VR specifications)\nLed distributed skunkworks team (including displaced Ukrainian engineers) at CEO request, effectively acting as head of engineering during organizational transformation\nAudited legacy systems, decommissioned outdated tooling, rebuilt core engineering workflows\nDelivered new capabilities under tight timelines working directly with executive leadership outside formal org chart\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach · 2018–2023 Senior Engineer / Technical Lead\n\nLed 7-person team delivering cloud-native systems on AWS/GCP for Fortune 500 and public-sector clients\nArchitected real-time data pipelines consolidating weather, incident, and operational data (BigQuery, streaming infrastructure) for transportation use cases\nSenior technical interface to C-suite; advised on modernization strategy while maintaining hands-on ownership of core systems\n\n\n\nEarly-Stage AI Applications\nIBM Watson Education (via Langa) · 2015–2018 Software Engineer\n\nBuilt production conversational AI applications using Watson NLP APIs (chat, information extraction) for K-12 education\nAdvised Watson leadership on Node.js/React adoption in Java-centric organization; mentored internal engineers on modern JavaScript practices\nLed UX and data visualization (React + D3.js) working directly with teachers and administrators\nDelivered multi-month proof-of-concepts as skunkworks team, presented to IBM executive leadership for productionization\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII) · 2019–2021 Technical Advisor\n\nAssessed portfolio company technology stacks and led architecture reviews for Blackstone infrastructure leadership\nProduced roadmaps and written assessments to inform investment and modernization decisions\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine) · 2022 Co-Founder / Operations Lead\n\nCo-founded and led international aid organization during early Russo-Ukrainian war, coordinating evacuations and humanitarian logistics from active conflict zones\nBuilt and operated supply chains across 3–4 continents under wartime constraints"
   },
   {
     "objectID": "resume.html#technical-breadth",
     "href": "resume.html#technical-breadth",
     "title": "Weyland Joyner",
     "section": "Technical Breadth",
-    "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
+    "text": "Technical Breadth\nLanguages: JavaScript/TypeScript, Python; functional programming (Haskell, Lisp) Platforms: AWS, GCP Focus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Weyland Joyner",
+    "section": "Education",
+    "text": "Education\nB.A., English & American Literature — Middlebury College Departmental Humanities Prize (Thesis) · Former journalist"
   },
   {
     "objectID": "posts/hello-world/index.html",
