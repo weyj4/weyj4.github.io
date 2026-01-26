@@ -14,6 +14,48 @@
     "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nOn Writing\n\n\n\nwriting\n\nmeta\n\n\n\nWhy I’m starting this blog\n\n\n\n\n\nJan 20, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+  },
+  {
+    "objectID": "posts/hello-world/index.html#welcome",
+    "href": "posts/hello-world/index.html#welcome",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Weyland Joyner",
+    "section": "",
+    "text": "Senior Software Engineer — Applied AI / Special Projects Los Angeles, CA"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Weyland Joyner",
+    "section": "Experience",
+    "text": "Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame · 2023–Present Founder · Consultant · Acting Head of Engineering\n\nDesigned and shipped AI authoring platform enabling non-technical SMEs to generate VR training content via natural language—adopted across Army, Air Force, Navy, SOCOM\nIntegrated modern LLM APIs into end-to-end multimodal content generation workflows (video, audio, VR specifications)\nLed distributed skunkworks team (including displaced Ukrainian engineers) at CEO request, effectively acting as head of engineering during organizational transformation\nAudited legacy systems, decommissioned outdated tooling, rebuilt core engineering workflows\nDelivered new capabilities under tight timelines working directly with executive leadership outside formal org chart\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach · 2018–2023 Senior Engineer / Technical Lead\n\nLed 7-person team delivering cloud-native systems on AWS/GCP for Fortune 500 and public-sector clients\nArchitected real-time data pipelines consolidating weather, incident, and operational data (BigQuery, streaming infrastructure) for transportation use cases\nSenior technical interface to C-suite; advised on modernization strategy while maintaining hands-on ownership of core systems\n\n\n\nEarly-Stage AI Applications\nIBM Watson Education (via Langa) · 2015–2018 Software Engineer\n\nBuilt production conversational AI applications using Watson NLP APIs (chat, information extraction) for K-12 education\nAdvised Watson leadership on Node.js/React adoption in Java-centric organization; mentored internal engineers on modern JavaScript practices\nLed UX and data visualization (React + D3.js) working directly with teachers and administrators\nDelivered multi-month proof-of-concepts as skunkworks team, presented to IBM executive leadership for productionization\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII) · 2019–2021 Technical Advisor\n\nAssessed portfolio company technology stacks and led architecture reviews for Blackstone infrastructure leadership\nProduced roadmaps and written assessments to inform investment and modernization decisions\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine) · 2022 Co-Founder / Operations Lead\n\nCo-founded and led international aid organization during early Russo-Ukrainian war, coordinating evacuations and humanitarian logistics from active conflict zones\nBuilt and operated supply chains across 3–4 continents under wartime constraints"
+  },
+  {
+    "objectID": "resume.html#technical-breadth",
+    "href": "resume.html#technical-breadth",
+    "title": "Weyland Joyner",
+    "section": "Technical Breadth",
+    "text": "Technical Breadth\nLanguages: JavaScript/TypeScript, Python; functional programming (Haskell, Lisp) Platforms: AWS, GCP Focus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Weyland Joyner",
+    "section": "Education",
+    "text": "Education\nB.A., English & American Literature — Middlebury College Departmental Humanities Prize (Thesis) · Former journalist"
+  },
+  {
     "objectID": "resume_old.html",
     "href": "resume_old.html",
     "title": "Weyland Joyner",
@@ -49,46 +91,46 @@
     "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
   },
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Weyland Joyner",
+    "objectID": "languages.html",
+    "href": "languages.html",
+    "title": "Language Learning Resources",
     "section": "",
-    "text": "Senior Software Engineer — Applied AI / Special Projects Los Angeles, CA"
+    "text": "Lingua Latina\nLatinitium\nLatina Animi Causa"
   },
   {
-    "objectID": "resume.html#experience",
-    "href": "resume.html#experience",
-    "title": "Weyland Joyner",
-    "section": "Experience",
-    "text": "Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame · 2023–Present Founder · Consultant · Acting Head of Engineering\n\nDesigned and shipped AI authoring platform enabling non-technical SMEs to generate VR training content via natural language—adopted across Army, Air Force, Navy, SOCOM\nIntegrated modern LLM APIs into end-to-end multimodal content generation workflows (video, audio, VR specifications)\nLed distributed skunkworks team (including displaced Ukrainian engineers) at CEO request, effectively acting as head of engineering during organizational transformation\nAudited legacy systems, decommissioned outdated tooling, rebuilt core engineering workflows\nDelivered new capabilities under tight timelines working directly with executive leadership outside formal org chart\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach · 2018–2023 Senior Engineer / Technical Lead\n\nLed 7-person team delivering cloud-native systems on AWS/GCP for Fortune 500 and public-sector clients\nArchitected real-time data pipelines consolidating weather, incident, and operational data (BigQuery, streaming infrastructure) for transportation use cases\nSenior technical interface to C-suite; advised on modernization strategy while maintaining hands-on ownership of core systems\n\n\n\nEarly-Stage AI Applications\nIBM Watson Education (via Langa) · 2015–2018 Software Engineer\n\nBuilt production conversational AI applications using Watson NLP APIs (chat, information extraction) for K-12 education\nAdvised Watson leadership on Node.js/React adoption in Java-centric organization; mentored internal engineers on modern JavaScript practices\nLed UX and data visualization (React + D3.js) working directly with teachers and administrators\nDelivered multi-month proof-of-concepts as skunkworks team, presented to IBM executive leadership for productionization\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII) · 2019–2021 Technical Advisor\n\nAssessed portfolio company technology stacks and led architecture reviews for Blackstone infrastructure leadership\nProduced roadmaps and written assessments to inform investment and modernization decisions\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine) · 2022 Co-Founder / Operations Lead\n\nCo-founded and led international aid organization during early Russo-Ukrainian war, coordinating evacuations and humanitarian logistics from active conflict zones\nBuilt and operated supply chains across 3–4 continents under wartime constraints"
-  },
-  {
-    "objectID": "resume.html#technical-breadth",
-    "href": "resume.html#technical-breadth",
-    "title": "Weyland Joyner",
-    "section": "Technical Breadth",
-    "text": "Technical Breadth\nLanguages: JavaScript/TypeScript, Python; functional programming (Haskell, Lisp) Platforms: AWS, GCP Focus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture"
-  },
-  {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
-    "title": "Weyland Joyner",
-    "section": "Education",
-    "text": "Education\nB.A., English & American Literature — Middlebury College Departmental Humanities Prize (Thesis) · Former journalist"
-  },
-  {
-    "objectID": "posts/hello-world/index.html",
-    "href": "posts/hello-world/index.html",
-    "title": "Hello World",
+    "objectID": "languages.html#latin",
+    "href": "languages.html#latin",
+    "title": "Language Learning Resources",
     "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+    "text": "Lingua Latina\nLatinitium\nLatina Animi Causa"
   },
   {
-    "objectID": "posts/hello-world/index.html#welcome",
-    "href": "posts/hello-world/index.html#welcome",
-    "title": "Hello World",
-    "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+    "objectID": "languages.html#greek",
+    "href": "languages.html#greek",
+    "title": "Language Learning Resources",
+    "section": "Greek",
+    "text": "Greek\n\nAthenaze\nLogos (review)"
+  },
+  {
+    "objectID": "languages.html#sanskrit",
+    "href": "languages.html#sanskrit",
+    "title": "Language Learning Resources",
+    "section": "Sanskrit",
+    "text": "Sanskrit\n\nAmarahasa\nLearnSanskrit\nCambridge Introduction to Sanskrit\nPanini"
+  },
+  {
+    "objectID": "languages.html#icelandic",
+    "href": "languages.html#icelandic",
+    "title": "Language Learning Resources",
+    "section": "Icelandic",
+    "text": "Icelandic\n\nA Course in Modern Icelandic (Jon Fridjonsson)"
+  },
+  {
+    "objectID": "languages.html#arabic-levantine",
+    "href": "languages.html#arabic-levantine",
+    "title": "Language Learning Resources",
+    "section": "Arabic (Levantine)",
+    "text": "Arabic (Levantine)\n\nElihay Book\nLingualism"
   },
   {
     "objectID": "reading.html",
@@ -166,5 +208,33 @@
     "title": "What I’m Reading",
     "section": "April 2025",
     "text": "April 2025\n\nAthenaze, Book I: An Introduction to Ancient Greek by Balme et al.\nThe Invention that Changed the World by Robert Buderi"
+  },
+  {
+    "objectID": "posts/on-writing/index.html",
+    "href": "posts/on-writing/index.html",
+    "title": "On Writing",
+    "section": "",
+    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#finding-my-voice",
+    "href": "posts/on-writing/index.html#finding-my-voice",
+    "title": "On Writing",
+    "section": "",
+    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#what-to-expect",
+    "href": "posts/on-writing/index.html#what-to-expect",
+    "title": "On Writing",
+    "section": "What to Expect",
+    "text": "What to Expect\nI plan to write about:\n\nThings I’m learning\nTechnical explorations\nIdeas worth sharing\nOccasional observations\n\nThe frequency will be irregular. Quality over quantity."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#why-now",
+    "href": "posts/on-writing/index.html#why-now",
+    "title": "On Writing",
+    "section": "Why Now",
+    "text": "Why Now\nThere’s something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.\nThis is that space for me."
   }
 ]

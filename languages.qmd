@@ -1,0 +1,33 @@
+---
+title: "Language Learning Resources"
+format:
+  html:
+    toc: false
+---
+
+## Latin
+
+* [Lingua Latina](https://hackettpublishing.com/lingua-latina-per-se-illustrata-series)
+* [Latinitium](https://latinitium.com/)
+* [Latina Animi Causa](https://www.habesnelac.com/)
+
+## Greek
+
+* [Athenaze](https://athenaze.com/)
+* [Logos](https://sites.google.com/educarex.es/logos/logos) ([review](https://thepatrologist.com/2023/05/12/%CE%BB%CE%BF%CE%B3%CE%BF%CF%83-lgpsi-a-review/))
+
+## Sanskrit
+
+* [Amarahasa](https://en.amarahasa.com/)
+* [LearnSanskrit](https://www.learnsanskrit.org/)
+* Cambridge Introduction to Sanskrit
+* [Panini](https://www.learnsanskrit.org/vyakarana/)
+
+## Icelandic
+
+* [A Course in Modern Icelandic](https://archive.org/details/courseinmodernic0000jonf) (Jon Fridjonsson)
+
+## Arabic (Levantine)
+
+* [Elihay Book](https://www.gefenpublishing.com/product.asp?productid=991)
+* [Lingualism](https://lingualism.com/collections/all?sort_by=manual&filter.p.m.custom.category=Levantine+Arabic)
