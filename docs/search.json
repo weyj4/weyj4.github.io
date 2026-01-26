@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Writing",
     "section": "",
-    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nOn Writing\n\n\n\nwriting\n\nmeta\n\n\n\nWhy I’m starting this blog\n\n\n\n\n\nJan 20, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
+    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hello-world/index.html",
@@ -109,7 +109,7 @@
     "href": "languages.html#greek",
     "title": "Language Learning Resources",
     "section": "Greek",
-    "text": "Greek\n\nAthenaze\nLogos (review)"
+    "text": "Greek\n\nAthenaze\nLogos (review)\nThrasymachus\nA Greek Boy at Home (Rouse)"
   },
   {
     "objectID": "languages.html#sanskrit",
@@ -208,33 +208,5 @@
     "title": "What I’m Reading",
     "section": "April 2025",
     "text": "April 2025\n\nAthenaze, Book I: An Introduction to Ancient Greek by Balme et al.\nThe Invention that Changed the World by Robert Buderi"
-  },
-  {
-    "objectID": "posts/on-writing/index.html",
-    "href": "posts/on-writing/index.html",
-    "title": "On Writing",
-    "section": "",
-    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#finding-my-voice",
-    "href": "posts/on-writing/index.html#finding-my-voice",
-    "title": "On Writing",
-    "section": "",
-    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#what-to-expect",
-    "href": "posts/on-writing/index.html#what-to-expect",
-    "title": "On Writing",
-    "section": "What to Expect",
-    "text": "What to Expect\nI plan to write about:\n\nThings I’m learning\nTechnical explorations\nIdeas worth sharing\nOccasional observations\n\nThe frequency will be irregular. Quality over quantity."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#why-now",
-    "href": "posts/on-writing/index.html#why-now",
-    "title": "On Writing",
-    "section": "Why Now",
-    "text": "Why Now\nThere’s something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.\nThis is that space for me."
   }
 ]
