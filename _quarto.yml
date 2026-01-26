@@ -5,7 +5,7 @@ project:
 website:
   description: "Personal writing and thoughts"
   site-url: https://weyj4.github.io
-  title: "weyj4"
+  title: "Weyland Joyner"
   navbar:
     left:
       - text: "Home"
@@ -17,10 +17,12 @@ website:
       - text: "Other Good Blogs"
         href: blogs.qmd
     right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/weylandjoyner
       - icon: github
         href: https://github.com/weyj4
   page-footer:
-    center: "© 2026 weyj4"
+    center: "© 2026 Weyland Joyner"
 
 format:
   html:
