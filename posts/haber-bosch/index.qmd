@@ -1,0 +1,15 @@
+---
+title: "Productizing a Chemistry Experiment: Carl Bosch's Nobel Prize Speech"
+description: "On The Alchemy of Air and the Haber-Bosch process"
+author: "weyj4"
+date: "2026-02-04"
+categories: [books, history]
+---
+
+[![The Alchemy of Air](https://covers.openlibrary.org/b/isbn/0307351793-L.jpg)](https://www.amazon.com/Alchemy-Air-Author-Thomas-Aug-2009/dp/B0140EX8AU)
+
+I read *The Alchemy of Air* earlier this year and highly recommend it. It's about the Haber-Bosch process for synthesizing ammonia. There's a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.
+
+As a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber's scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.
+
+Both Bosch and Haber were interesting and...flawed people; there's more context and detail on Bosch's strivings in his [Nobel Prize speech](https://www.nobelprize.org/uploads/2018/06/bosch-lecture.pdf) if you want to delve a bit beyond what the book gets into.

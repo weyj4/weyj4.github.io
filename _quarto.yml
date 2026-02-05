@@ -12,7 +12,7 @@ website:
         href: index.qmd
       - text: "Resume/CV"
         href: resume.qmd
-      - text: "What I'm Reading"
+      - text: "Bookshelf"
         href: reading.qmd
       - text: "Other Good Blogs"
         href: blogs.qmd

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Writing",
     "section": "",
-    "text": "Hello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
+    "text": "Kleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\nMartin Kleppmann’s talk on local-first software and what it means for SaaS\n\n\n\n\n\nFeb 4, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nProductizing a Chemistry Experiment: Carl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\nOn The Alchemy of Air and the Haber-Bosch process\n\n\n\n\n\nFeb 4, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hello-world/index.html",
@@ -32,7 +32,7 @@
     "href": "resume.html",
     "title": "Weyland Joyner",
     "section": "",
-    "text": "Senior Software Engineer — Applied AI / Special Projects Los Angeles, CA"
+    "text": "Senior Software Engineer — Applied AI / Special Projects"
   },
   {
     "objectID": "resume.html#experience",
@@ -208,5 +208,19 @@
     "title": "What I’m Reading",
     "section": "April 2025",
     "text": "April 2025\n\nAthenaze, Book I: An Introduction to Ancient Greek by Balme et al.\nThe Invention that Changed the World by Robert Buderi"
+  },
+  {
+    "objectID": "posts/kleppmann-local-first/index.html",
+    "href": "posts/kleppmann-local-first/index.html",
+    "title": "Kleppmann on Local-First",
+    "section": "",
+    "text": "This is Martin Kleppmann, author of Designing Data Intensive Applications, talking about Local-First Software.\nThere was a paper by Ink&Switch back in 2019 on local-first software, but in this talk Kleppmann extrapolates in some really interesting ways.\nLocal-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:\n\na distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable (1987)\n\nAnd goes on to say that local-first software is software built so that, if the developer of the software went out of business, users could still run and use the software.\nImagine if Oracle went out of business and you could still use Oracle db.\nThis breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.\nIt’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch."
+  },
+  {
+    "objectID": "posts/haber-bosch/index.html",
+    "href": "posts/haber-bosch/index.html",
+    "title": "Productizing a Chemistry Experiment: Carl Bosch’s Nobel Prize Speech",
+    "section": "",
+    "text": "The Alchemy of Air\n\n\nI read The Alchemy of Air earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.\nAs a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.\nBoth Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his Nobel Prize speech if you want to delve a bit beyond what the book gets into."
   }
 ]

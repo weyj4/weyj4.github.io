@@ -10,7 +10,65 @@
 <atom:link href="https://weyj4.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Personal writing and thoughts</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 21 Jan 2026 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 04 Feb 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Kleppmann on Local-First</title>
+  <dc:creator>weyj4 </dc:creator>
+  <link>https://weyj4.github.io/posts/kleppmann-local-first/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NMq0vncHJvU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>This is Martin Kleppmann, author of <em>Designing Data Intensive Applications</em>, talking about Local-First Software.</p>
+<p>There was a paper by Ink&amp;Switch back in 2019 on <a href="https://www.inkandswitch.com/essay/local-first/">local-first software</a>, but in this talk Kleppmann extrapolates in some really interesting ways.</p>
+<p>Local-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:</p>
+<blockquote class="blockquote">
+<p><em>a distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable</em> (1987)</p>
+</blockquote>
+<p>And goes on to say that local-first software is software built so that, if the developer of the software <em>went out of business</em>, users could still run and use the software.</p>
+<p>Imagine if Oracle went out of business and you could still use Oracle db.</p>
+<p>This breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.</p>
+<p>It’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch.</p>
+
+
+
+ ]]></description>
+  <category>software</category>
+  <category>distributed-systems</category>
+  <guid>https://weyj4.github.io/posts/kleppmann-local-first/</guid>
+  <pubDate>Wed, 04 Feb 2026 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Productizing a Chemistry Experiment: Carl Bosch’s Nobel Prize Speech</title>
+  <dc:creator>weyj4 </dc:creator>
+  <link>https://weyj4.github.io/posts/haber-bosch/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.amazon.com/Alchemy-Air-Author-Thomas-Aug-2009/dp/B0140EX8AU"><img src="https://covers.openlibrary.org/b/isbn/0307351793-L.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>The Alchemy of Air</figcaption>
+</figure>
+</div>
+<p>I read <em>The Alchemy of Air</em> earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.</p>
+<p>As a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.</p>
+<p>Both Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his <a href="https://www.nobelprize.org/uploads/2018/06/bosch-lecture.pdf">Nobel Prize speech</a> if you want to delve a bit beyond what the book gets into.</p>
+
+
+
+ ]]></description>
+  <category>books</category>
+  <category>history</category>
+  <guid>https://weyj4.github.io/posts/haber-bosch/</guid>
+  <pubDate>Wed, 04 Feb 2026 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Hello World</title>
   <dc:creator>weyj4 </dc:creator>
@@ -33,7 +91,7 @@
  ]]></description>
   <category>meta</category>
   <guid>https://weyj4.github.io/posts/hello-world/</guid>
-  <pubDate>Wed, 21 Jan 2026 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Jan 2026 08:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/kleppmann-local-first/index.html",
+      "/posts/haber-bosch/index.html",
       "/posts/hello-world/index.html"
     ]
   }

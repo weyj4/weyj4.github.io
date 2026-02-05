@@ -1,0 +1,25 @@
+---
+title: "Kleppmann on Local-First"
+description: "Martin Kleppmann's talk on local-first software and what it means for SaaS"
+author: "weyj4"
+date: "2026-02-04"
+categories: [software, distributed-systems]
+---
+
+{{< video https://www.youtube.com/watch?v=NMq0vncHJvU >}}
+
+This is Martin Kleppmann, author of *Designing Data Intensive Applications*, talking about Local-First Software.
+
+There was a paper by Ink&Switch back in 2019 on [local-first software](https://www.inkandswitch.com/essay/local-first/), but in this talk Kleppmann extrapolates in some really interesting ways.
+
+Local-first software isn't just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:
+
+> *a distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable* (1987)
+
+And goes on to say that local-first software is software built so that, if the developer of the software *went out of business*, users could still run and use the software.
+
+Imagine if Oracle went out of business and you could still use Oracle db.
+
+This breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software's design and function.
+
+It's hard for me as a software engineer/architect to imagine exactly what this "local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch.
