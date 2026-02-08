@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Other Good Blogs – Weyland Joyner</title>
+<title>claude – Weyland Joyner</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -73,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -99,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Bookshelf</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blogs.html" aria-current="page"> 
+    <a class="nav-link" href="./blogs.html"> 
 <span class="menu-text">Other Good Blogs</span></a>
   </li>  
   <li class="nav-item">
@@ -133,43 +168,75 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#weyland-joyners-blog-quarto" id="toc-weyland-joyners-blog-quarto" class="nav-link active" data-scroll-target="#weyland-joyners-blog-quarto">Weyland Joyner’s Blog (Quarto)</a>
+  <ul class="collapse">
+  <li><a href="#site-overview" id="toc-site-overview" class="nav-link" data-scroll-target="#site-overview">Site overview</a></li>
+  <li><a href="#creating-blog-posts" id="toc-creating-blog-posts" class="nav-link" data-scroll-target="#creating-blog-posts">Creating blog posts</a></li>
+  <li><a href="#existing-categories" id="toc-existing-categories" class="nav-link" data-scroll-target="#existing-categories">Existing categories</a></li>
+  <li><a href="#listing-config" id="toc-listing-config" class="nav-link" data-scroll-target="#listing-config">Listing config</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Other Good Blogs</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="weyland-joyners-blog-quarto" class="level1">
+<h1>Weyland Joyner’s Blog (Quarto)</h1>
+<section id="site-overview" class="level2">
+<h2 class="anchored" data-anchor-id="site-overview">Site overview</h2>
 <ul>
-<li><a href="https://www.notboring.co/">Not Boring</a></li>
-<li><a href="https://www.construction-physics.com/">Construction Physics</a></li>
-<li><a href="https://simonwillison.net/">Simon Willison’s Blog</a></li>
-<li><a href="https://www.owlposting.com/">Owl Posting</a></li>
-<li><a href="https://centuryofbio.com/">The Century of Bio</a></li>
-<li><a href="https://www.bloomberg.com/authors/ARbTQlRLRjE/matthew-s-levine">Matt Levine</a></li>
-<li><a href="https://www.generalist.com/">The Generalist</a></li>
-<li><a href="https://albertvilella.substack.com/">Rhymes with Haystack</a></li>
-<li><a href="https://www.corememory.com/">Core Memory</a></li>
-<li><a href="https://www.decodingbio.com/newsletter">Decoding Bio</a></li>
+<li>Quarto website, output to <code>docs/</code>, hosted on GitHub Pages</li>
+<li>Config: <code>_quarto.yml</code> (theme: cosmo)</li>
+<li>Preview: <code>quarto preview</code></li>
+<li>Render: <code>quarto render</code></li>
 </ul>
+</section>
+<section id="creating-blog-posts" class="level2">
+<h2 class="anchored" data-anchor-id="creating-blog-posts">Creating blog posts</h2>
+<p>Posts live in <code>posts/&lt;slug&gt;/index.qmd</code>. To add a new post:</p>
+<ol type="1">
+<li>Create <code>posts/&lt;kebab-case-slug&gt;/index.qmd</code></li>
+<li>Use this frontmatter format:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Post Title"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Weyland Joyner"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"YYYY-MM-DD"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">category1</span><span class="kw">,</span><span class="at"> category2</span><span class="kw">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>The user will often paste content from Apple Notes. When they do:
+<ul>
+<li><strong>Fix links</strong>: Apple Notes uses <code>(text)[url]</code> — convert to <code>[text](url)</code></li>
+<li><strong>Em dashes</strong>: Use <code>---</code> (three hyphens) for em dashes</li>
+<li><strong>Bare URLs</strong>: Wrap in angle brackets: <code>&lt;https://example.com&gt;</code></li>
+<li><strong>Emphasis</strong>: Use <code>*italic*</code> for emphasis where the note’s intent is clear</li>
+<li><strong>Blockquotes</strong>: Use <code>&gt;</code> for quoted text</li>
+<li><strong>Backdating</strong>: The user may ask to backdate a post; just set the <code>date</code> field accordingly</li>
+<li><strong>Don’t invent content</strong>: Preserve the user’s writing as-is; only fix formatting/links</li>
+</ul></li>
+</ol>
+</section>
+<section id="existing-categories" class="level2">
+<h2 class="anchored" data-anchor-id="existing-categories">Existing categories</h2>
+<p>software, agents, ai, books, history, data, consulting, distributed-systems, writing, meta</p>
+</section>
+<section id="listing-config" class="level2">
+<h2 class="anchored" data-anchor-id="listing-config">Listing config</h2>
+<p>The homepage listing (<code>index.qmd</code>) uses <code>fields: [date, title, author, categories, description]</code> — images are excluded from the listing on purpose.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

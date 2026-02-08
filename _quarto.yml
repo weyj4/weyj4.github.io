@@ -10,14 +10,14 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Resume/CV"
-        href: resume.qmd
       - text: "Bookshelf"
         href: reading.qmd
       - text: "Other Good Blogs"
         href: blogs.qmd
       - text: "Language Learning"
         href: languages.qmd
+      - text: "Resume/CV"
+        href: resume.qmd
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/weylandjoyner

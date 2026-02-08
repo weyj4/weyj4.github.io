@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Writing",
     "section": "",
-    "text": "Experimenting with Beads\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nDigital Twin Universe(s)\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nThoughts on Context Engineering\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nRalph Wiggum, Gas Town, etc\n\n\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 5, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nCarl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\na16z on Forward-Deployed Engineers\n\n\n\nsoftware\n\nconsulting\n\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[DuckDB] The Lost Decade?\n\n\n\nsoftware\n\ndata\n\n\n\n\n\n\n\n\n\nFeb 2, 2026\n\n\nWeyland Joyner\n\n\n\n\n\nNo matching items"
+    "text": "More on Context - Steve Yegge’s Beads\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nDigital Twin Universe(s)\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nThoughts on Context Engineering\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nRalph Wiggum, Gas Town, etc\n\n\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 5, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nCarl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\na16z on Forward-Deployed Engineers\n\n\n\nsoftware\n\nconsulting\n\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[DuckDB] The Lost Decade?\n\n\n\nsoftware\n\ndata\n\n\n\n\n\n\n\n\n\nFeb 2, 2026\n\n\nWeyland Joyner\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hello-world/index.html",
@@ -277,12 +277,12 @@
     "href": "posts/a16z-forward-deployed-engineers/index.html",
     "title": "a16z on Forward-Deployed Engineers",
     "section": "",
-    "text": "There’s been a good deal of buzz about FDEs lately. That’s a job that I’ve been doing under some … for a while now.\nI spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.\nThat’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.\nI’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design."
+    "text": "There’s been a good deal of buzz about FDEs lately. That’s a job that I’ve been doing under some alias since the mid-2010s.\nI spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.\nThat’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.\nI’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design."
   },
   {
     "objectID": "posts/experimenting-with-beads/index.html",
     "href": "posts/experimenting-with-beads/index.html",
-    "title": "Experimenting with Beads",
+    "title": "More on Context - Steve Yegge’s Beads",
     "section": "",
     "text": "Steve Yegge has a great post about Beads, his agent-first issue tracker. He goes into reasons a plain markdown tracking system doesn’t work at scale, and his findings shed some light on how agents approach their work with limited context.\nI’ve also noticed that agents will try to finish a task no matter what—so if they’re in the 5th of 10 tasks of a process and realize they’re running out of context, they’ll kind of whiz through the last 5 tasks in a hurry. It’s like their velocity increases at the expense of thoroughness. I guess the idea is that’s better than leaving the task undone, but actually I think anybody who’s building with agents these days recognizes that it’s fine to leave a task undone (in an orderly way); I can just spin up another agent to pick it up. I’d much rather have a half-done project neatly handed back to me than a finished project that’s riddled with low-quality, dashed-off code.\nThere’s a lot of talk right now about multi-agent workflows and orchestration, etc. But I think there’s still a lot of work to be done just to get sequential work done by repeated iterations of passing an agent some spec or open issues. Once we’re in a place where I can confidently hand off a project in some state of completion to an agent, expect it to do some relatively determinate amount of work, and hand it back off to me with clear tracking of what’s been done, I think it’ll get a lot easier to reason about running multiple agents concurrently."
   },
@@ -292,5 +292,40 @@
     "title": "Thoughts on Context Engineering",
     "section": "",
     "text": "“Think about context windows as a Commodore 64 with a small amount of memory”\n\nIn several of his videos, Geoff Huntley makes the case that working with an agent basically means malloc’ing an array (the context window). Assume that compaction (which is lossy) will lead to context rot, so find ways to direct agents in a loop without relying on long-term context. In other words, you should be able to kick off a new thread (clean context window) anytime you want, instead of relying on the previous thread’s history to direct the agent. Always keep the array in mind; the first element is the system prompt, then you have AGENTS.md, and then tool calls are going to keep iterating and appending to the array. AGENTS.md is really effective, so you should definitely use it, but it should be small—like, Huntley recommends around 70 lines of text.\nSo in keeping with my recent posts about Beads, Ralph Wiggum, etc…it seems like the key thing here is, our agents are ephemeral, we want to be able to lose them and respawn them at any point in the workflow: that means there has to be some system of record to let a newly spawned agent thread know where to pick up. Beads is Steve Yegge’s version of that; it’s JSONL tracked in Git. Ralph Wiggum uses regular JSON with a simple “passes” boolean, which has been working for me so far but you can read Steve’s post to understand reasons that may not scale on large or multi-agent projects.\nNot to get off-topic, but I watched a talk by Letta today. Letta and mem0 are companies that want to provide LLM memory, and the way the guy from Letta framed it was sort of anthropomorphic—the agent is not a workflow, it’s a person. It persists for weeks, months etc and evolves its own personality, etc, etc. I think a lot of what they’re doing comes out of the MemGPT paper. So, this is interesting, but I think as system builders using tools like Claude Code and Ralph, we want to distance ourselves from this point of view. When we say “agent” we mean “worker with a task.”\nI don’t know, maybe we need to extend our ontology, maybe what companies like Letta are trying to provide aren’t “agents” but something else like companions or coworkers.\nBecause the thing is, if I have a PRD and a list of tasks, and I want agents to go through those tasks, I don’t even necessarily want something anthropomorphized, I’m not looking for a developed personality; I want something that calls tools in a loop.\nAnd even if I were to expand the scope of agents outside of coding agents, to like, legal assistants or media researchers or whatever—am I looking for something with a personality of its own? Or do I want a background process that can bulldoze tasks?"
+  },
+  {
+    "objectID": "CLAUDE.html",
+    "href": "CLAUDE.html",
+    "title": "Weyland Joyner’s Blog (Quarto)",
+    "section": "",
+    "text": "Quarto website, output to docs/, hosted on GitHub Pages\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render\n\n\n\n\nPosts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes. When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links\n\n\n\n\n\nsoftware, agents, ai, books, history, data, consulting, distributed-systems, writing, meta\n\n\n\nThe homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose."
+  },
+  {
+    "objectID": "CLAUDE.html#site-overview",
+    "href": "CLAUDE.html#site-overview",
+    "title": "Weyland Joyner’s Blog (Quarto)",
+    "section": "",
+    "text": "Quarto website, output to docs/, hosted on GitHub Pages\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render"
+  },
+  {
+    "objectID": "CLAUDE.html#creating-blog-posts",
+    "href": "CLAUDE.html#creating-blog-posts",
+    "title": "Weyland Joyner’s Blog (Quarto)",
+    "section": "",
+    "text": "Posts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes. When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links"
+  },
+  {
+    "objectID": "CLAUDE.html#existing-categories",
+    "href": "CLAUDE.html#existing-categories",
+    "title": "Weyland Joyner’s Blog (Quarto)",
+    "section": "",
+    "text": "software, agents, ai, books, history, data, consulting, distributed-systems, writing, meta"
+  },
+  {
+    "objectID": "CLAUDE.html#listing-config",
+    "href": "CLAUDE.html#listing-config",
+    "title": "Weyland Joyner’s Blog (Quarto)",
+    "section": "",
+    "text": "The homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose."
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "Experimenting with Beads"
+title: "More on Context - Steve Yegge's Beads"
 author: "Weyland Joyner"
 date: "2026-02-07"
 categories: [software, agents]

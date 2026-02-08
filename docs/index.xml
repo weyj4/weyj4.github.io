@@ -12,7 +12,7 @@
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Sat, 07 Feb 2026 08:00:00 GMT</lastBuildDate>
 <item>
-  <title>Experimenting with Beads</title>
+  <title>More on Context - Steve Yegge’s Beads</title>
   <dc:creator>Weyland Joyner</dc:creator>
   <link>https://weyj4.github.io/posts/experimenting-with-beads/</link>
   <description><![CDATA[ 
@@ -179,7 +179,7 @@
 
 
 
-<p>There’s been a <a href="https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers">good</a> <a href="https://a16z.com/services-led-growth/">deal</a> of <a href="https://www.theinformation.com/articles/openai-hiring-hundreds-ai-consultants-boost-enterprise-sales?utm_campaign=article_email&amp;utm_content=article-16525&amp;utm_medium=email&amp;utm_source=sg&amp;rc=kawk8v">buzz</a> about FDEs lately. That’s a job that I’ve been doing under some … for a while now.</p>
+<p>There’s been a <a href="https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers">good</a> <a href="https://a16z.com/services-led-growth/">deal</a> of <a href="https://www.theinformation.com/articles/openai-hiring-hundreds-ai-consultants-boost-enterprise-sales?utm_campaign=article_email&amp;utm_content=article-16525&amp;utm_medium=email&amp;utm_source=sg&amp;rc=kawk8v">buzz</a> about FDEs lately. That’s a job that I’ve been doing under some alias since the mid-2010s.</p>
 <p>I spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.</p>
 <p>That’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.</p>
 <p>I’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design.</p>
