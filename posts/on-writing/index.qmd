@@ -1,7 +1,7 @@
 ---
 title: "On Writing"
 description: "Why I'm starting this blog"
-author: "weyj4"
+author: "Weyland Joyner"
 date: "2026-01-20"
 categories: [writing, meta]
 draft: true

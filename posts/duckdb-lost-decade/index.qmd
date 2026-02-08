@@ -1,0 +1,10 @@
+---
+title: "[DuckDB] The Lost Decade?"
+author: "Weyland Joyner"
+date: "2026-02-02"
+categories: [software, data]
+---
+
+[This fascinating post](https://duckdb.org/2025/05/19/the-lost-decade-of-small-data) confirms some hunches I started to have in the late 2010s when everybody was overengineering their ETL pipelines. 
+
+Worth a read, the tl;dr at the beginning of the post more or less gets it. I haven't used DuckDB in a professional project yet, but the team seems great, and you should read everything on their technical blog.

@@ -1,7 +1,6 @@
 ---
 title: "Kleppmann on Local-First"
-description: "Martin Kleppmann's talk on local-first software and what it means for SaaS"
-author: "weyj4"
+author: "Weyland Joyner"
 date: "2026-02-04"
 categories: [software, distributed-systems]
 ---

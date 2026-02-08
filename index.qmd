@@ -5,9 +5,11 @@ listing:
   feed: true
   sort: "date desc"
   type: default
+  max-description-length: 500
   categories: true
   sort-ui: false
   filter-ui: false
+  fields: [date, title, author, categories, description]
 page-layout: full
 title-block-banner: false
 ---

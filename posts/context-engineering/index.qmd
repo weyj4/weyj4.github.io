@@ -1,0 +1,20 @@
+---
+title: "Thoughts on Context Engineering"
+author: "Weyland Joyner"
+date: "2026-02-07"
+categories: [software, agents]
+---
+
+> "Think about context windows as a Commodore 64 with a small amount of memory"
+
+In [several](https://www.youtube.com/watch?v=8gotGDhQKeQ) of [his](https://www.youtube.com/watch?v=8ctL2g5UH1E) [videos](https://www.youtube.com/watch?v=4Nna09dG_c0&t), Geoff Huntley makes the case that working with an agent basically means malloc'ing an array (the context window). Assume that [compaction](https://platform.claude.com/docs/en/build-with-claude/compaction) (which is lossy) will lead to context rot, so find ways to direct agents in a loop without relying on long-term context. In other words, you should be able to kick off a new thread (clean context window) anytime you want, instead of relying on the previous thread's history to direct the agent. Always keep the array in mind; the first element is the system prompt, then you have AGENTS.md, and then tool calls are going to keep iterating and appending to the array. [AGENTS.md](https://agents.md/) is really effective, so you should definitely use it, but it should be small---like, Huntley recommends around 70 lines of text.
+
+So in keeping with my recent posts about Beads, Ralph Wiggum, etc...it seems like the key thing here is, our agents are ephemeral, we want to be able to lose them and respawn them at any point in the workflow: that means there has to be some system of record to let a newly spawned agent thread know where to pick up. [Beads](https://github.com/steveyegge/beads) is Steve Yegge's version of that; it's JSONL tracked in Git. [Ralph Wiggum](https://github.com/snarktank/ralph/tree/main) uses regular JSON with a simple "passes" boolean, which has been working for me so far but you can read [Steve's post](https://steve-yegge.medium.com/introducing-beads-a-coding-agent-memory-system-637d7d92514a) to understand reasons that may not scale on large or multi-agent projects.
+
+Not to get off-topic, but I watched a [talk](https://www.youtube.com/watch?v=1WTidibVdIA) by Letta today. [Letta](https://www.letta.com/) and [mem0](https://mem0.ai/) are companies that want to provide LLM memory, and the way the guy from Letta framed it was sort of anthropomorphic---the agent is not a workflow, it's a person. It persists for weeks, months etc and evolves its own personality, etc, etc. I think a lot of what they're doing comes out of the [MemGPT paper](https://arxiv.org/pdf/2310.08560). So, this is interesting, but I think as system builders using tools like Claude Code and Ralph, we want to distance ourselves from this point of view. When we say "agent" we mean "worker with a task."
+
+I don't know, maybe we need to extend our ontology, maybe what companies like Letta are trying to provide aren't "agents" but something else like companions or coworkers.
+
+Because the thing is, if I have a PRD and a list of tasks, and I want agents to go through those tasks, I don't even necessarily *want* something anthropomorphized, I'm not looking for a developed personality; I want something that [*calls tools in a loop*](https://simonwillison.net/2025/Sep/18/agents/).
+
+And even if I were to expand the scope of agents outside of coding agents, to like, legal assistants or media researchers or whatever---am I looking for something with a personality of its own? Or do I want a background process that can bulldoze tasks?

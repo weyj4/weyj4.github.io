@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Weyland Joyner">
-<meta name="dcterms.date" content="2026-02-04">
+<meta name="dcterms.date" content="2026-02-05">
 
-<title>Kleppmann on Local-First – Weyland Joyner</title>
+<title>Ralph Wiggum, Gas Town, etc – Weyland Joyner</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,10 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Kleppmann on Local-First</h1>
+      <h1 class="title">Ralph Wiggum, Gas Town, etc</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">software</div>
-                <div class="quarto-category">distributed-systems</div>
+                <div class="quarto-category">ai</div>
               </div>
                   </div>
   </div>
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 4, 2026</p>
+        <p class="date">February 5, 2026</p>
       </div>
     </div>
     
@@ -177,17 +177,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NMq0vncHJvU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>This is Martin Kleppmann, author of <em>Designing Data Intensive Applications</em>, talking about Local-First Software.</p>
-<p>There was a paper by Ink&amp;Switch back in 2019 on <a href="https://www.inkandswitch.com/essay/local-first/">local-first software</a>, but in this talk Kleppmann extrapolates in some really interesting ways.</p>
-<p>Local-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:</p>
-<blockquote class="blockquote">
-<p><em>a distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable</em> (1987)</p>
-</blockquote>
-<p>And goes on to say that local-first software is software built so that, if the developer of the software <em>went out of business</em>, users could still run and use the software.</p>
-<p>Imagine if Oracle went out of business and you could still use Oracle db.</p>
-<p>This breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.</p>
-<p>It’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch.</p>
+<p>Steve Yegge identifies <a href="https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04">8 stages of AI-assisted coding adoption</a>.</p>
+<p>I’m somewhere between Stage 5 and 6 - I’ve largely abandoned the IDE in my own projects in favor of managing amp or claude code CLI tools (Stage 5). I like living on the command line anyway, that’s why I’ve always been a vim user.</p>
+<p>However, I haven’t really graduated to running multiple concurrent agents (Stage 6). I don’t really mind waiting for a single agent to sequentially knock out tasks for personal work, but it’s easy to see the usefulness of orchestrating a team of AI coders for e.g.&nbsp;enterprise software projects with huge monorepos.</p>
+<p>At first I was just running claude or amp as an interactive session and guiding it step by step through building my projects, but lately I like using Geoff Huntley’s Ralph Wiggum coding loop, particularly <a href="https://github.com/snarktank/ralph?tab=readme-ov-file">this great implementation</a> for claude/amp by <a href="https://x.com/ryancarson/status/2008548371712135632">Ryan Carson</a>.</p>
+<p>And that’s all it is really, a bash loop. As <a href="https://addyosmani.com/blog/self-improving-agents/">Addy Osmani</a> points out, what this design gives you is memory persistence, so you don’t have to swamp the agent with the full context of past and future tasks in each iteration; external files - <code>git</code>, <code>progress.txt</code>, <code>prd.json</code> - maintain the state of dev progress and each loop iteration can pull a subset of context and requirements for carrying out a task.</p>
+<p>Again, I’m using a single agent here (Yegge Stage 5), and it sets <code>passes: true</code> to each sequential task in the PRD file <code>prd.json</code> as it completes it. This takes time; generally once I have my PRD ready I run the loop (<code>ralph.sh</code>) and walk away from my laptop for a bit. I suppose you could add dependency logic to the PRD’s tasks such that multiple claude/amp instances could be picking off tasks concurrently,</p>
+<p>But at any rate this is where Yegge’s Gas Town comes in. This is a tool built on Steve’s earlier project <a href="https://github.com/steveyegge/beads">beads</a>, and it abstracts agent work into a well-defined (and colorful) taxonomy. I haven’t gone deep into this yet, expect more to come here.</p>
 
 
 

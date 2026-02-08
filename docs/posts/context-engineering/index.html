@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Weyland Joyner">
-<meta name="dcterms.date" content="2026-02-04">
+<meta name="dcterms.date" content="2026-02-07">
 
-<title>Kleppmann on Local-First – Weyland Joyner</title>
+<title>Thoughts on Context Engineering – Weyland Joyner</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,10 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Kleppmann on Local-First</h1>
+      <h1 class="title">Thoughts on Context Engineering</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">software</div>
-                <div class="quarto-category">distributed-systems</div>
+                <div class="quarto-category">agents</div>
               </div>
                   </div>
   </div>
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 4, 2026</p>
+        <p class="date">February 7, 2026</p>
       </div>
     </div>
     
@@ -177,17 +177,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NMq0vncHJvU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>This is Martin Kleppmann, author of <em>Designing Data Intensive Applications</em>, talking about Local-First Software.</p>
-<p>There was a paper by Ink&amp;Switch back in 2019 on <a href="https://www.inkandswitch.com/essay/local-first/">local-first software</a>, but in this talk Kleppmann extrapolates in some really interesting ways.</p>
-<p>Local-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:</p>
 <blockquote class="blockquote">
-<p><em>a distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable</em> (1987)</p>
+<p>“Think about context windows as a Commodore 64 with a small amount of memory”</p>
 </blockquote>
-<p>And goes on to say that local-first software is software built so that, if the developer of the software <em>went out of business</em>, users could still run and use the software.</p>
-<p>Imagine if Oracle went out of business and you could still use Oracle db.</p>
-<p>This breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.</p>
-<p>It’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch.</p>
+<p>In <a href="https://www.youtube.com/watch?v=8gotGDhQKeQ">several</a> of <a href="https://www.youtube.com/watch?v=8ctL2g5UH1E">his</a> <a href="https://www.youtube.com/watch?v=4Nna09dG_c0&amp;t">videos</a>, Geoff Huntley makes the case that working with an agent basically means malloc’ing an array (the context window). Assume that <a href="https://platform.claude.com/docs/en/build-with-claude/compaction">compaction</a> (which is lossy) will lead to context rot, so find ways to direct agents in a loop without relying on long-term context. In other words, you should be able to kick off a new thread (clean context window) anytime you want, instead of relying on the previous thread’s history to direct the agent. Always keep the array in mind; the first element is the system prompt, then you have AGENTS.md, and then tool calls are going to keep iterating and appending to the array. <a href="https://agents.md/">AGENTS.md</a> is really effective, so you should definitely use it, but it should be small—like, Huntley recommends around 70 lines of text.</p>
+<p>So in keeping with my recent posts about Beads, Ralph Wiggum, etc…it seems like the key thing here is, our agents are ephemeral, we want to be able to lose them and respawn them at any point in the workflow: that means there has to be some system of record to let a newly spawned agent thread know where to pick up. <a href="https://github.com/steveyegge/beads">Beads</a> is Steve Yegge’s version of that; it’s JSONL tracked in Git. <a href="https://github.com/snarktank/ralph/tree/main">Ralph Wiggum</a> uses regular JSON with a simple “passes” boolean, which has been working for me so far but you can read <a href="https://steve-yegge.medium.com/introducing-beads-a-coding-agent-memory-system-637d7d92514a">Steve’s post</a> to understand reasons that may not scale on large or multi-agent projects.</p>
+<p>Not to get off-topic, but I watched a <a href="https://www.youtube.com/watch?v=1WTidibVdIA">talk</a> by Letta today. <a href="https://www.letta.com/">Letta</a> and <a href="https://mem0.ai/">mem0</a> are companies that want to provide LLM memory, and the way the guy from Letta framed it was sort of anthropomorphic—the agent is not a workflow, it’s a person. It persists for weeks, months etc and evolves its own personality, etc, etc. I think a lot of what they’re doing comes out of the <a href="https://arxiv.org/pdf/2310.08560">MemGPT paper</a>. So, this is interesting, but I think as system builders using tools like Claude Code and Ralph, we want to distance ourselves from this point of view. When we say “agent” we mean “worker with a task.”</p>
+<p>I don’t know, maybe we need to extend our ontology, maybe what companies like Letta are trying to provide aren’t “agents” but something else like companions or coworkers.</p>
+<p>Because the thing is, if I have a PRD and a list of tasks, and I want agents to go through those tasks, I don’t even necessarily <em>want</em> something anthropomorphized, I’m not looking for a developed personality; I want something that <a href="https://simonwillison.net/2025/Sep/18/agents/"><em>calls tools in a loop</em></a>.</p>
+<p>And even if I were to expand the scope of agents outside of coding agents, to like, legal assistants or media researchers or whatever—am I looking for something with a personality of its own? Or do I want a background process that can bulldoze tasks?</p>
 
 
 

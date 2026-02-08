@@ -1,0 +1,20 @@
+---
+title: "Ralph Wiggum, Gas Town, etc"
+author: "Weyland Joyner"
+date: "2026-02-05"
+categories: [software, ai]
+---
+
+Steve Yegge identifies [8 stages of AI-assisted coding adoption](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04).
+
+I'm somewhere between Stage 5 and 6 - I've largely abandoned the IDE in my own projects in favor of managing amp or claude code CLI tools (Stage 5). I like living on the command line anyway, that's why I've always been a vim user.
+
+However, I haven't really graduated to running multiple concurrent agents (Stage 6). I don't really mind waiting for a single agent to sequentially knock out tasks for personal work, but it's easy to see the usefulness of orchestrating a team of AI coders for e.g. enterprise software projects with huge monorepos.
+
+At first I was just running claude or amp as an interactive session and guiding it step by step through building my projects, but lately I like using Geoff Huntley's Ralph Wiggum coding loop, particularly [this great implementation](https://github.com/snarktank/ralph?tab=readme-ov-file) for claude/amp by [Ryan Carson](https://x.com/ryancarson/status/2008548371712135632).
+
+And that's all it is really, a bash loop. As [Addy Osmani](https://addyosmani.com/blog/self-improving-agents/) points out, what this design gives you is memory persistence, so you don't have to swamp the agent with the full context of past and future tasks in each iteration; external files - `git`, `progress.txt`, `prd.json` - maintain the state of dev progress and each loop iteration can pull a subset of context and requirements for carrying out a task.
+
+Again, I'm using a single agent here (Yegge Stage 5), and it sets `passes: true` to each sequential task in the PRD file `prd.json` as it completes it. This takes time; generally once I have my PRD ready I run the loop (`ralph.sh`) and walk away from my laptop for a bit. I suppose you could add dependency logic to the PRD's tasks such that multiple claude/amp instances could be picking off tasks concurrently,
+
+But at any rate this is where Yegge's Gas Town comes in. This is a tool built on Steve's earlier project [beads](https://github.com/steveyegge/beads), and it abstracts agent work into a well-defined (and colorful) taxonomy. I haven't gone deep into this yet, expect more to come here.

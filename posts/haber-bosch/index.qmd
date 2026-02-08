@@ -1,12 +1,13 @@
 ---
-title: "Productizing a Chemistry Experiment: Carl Bosch's Nobel Prize Speech"
-description: "On The Alchemy of Air and the Haber-Bosch process"
-author: "weyj4"
+title: "Carl Bosch's Nobel Prize Speech"
+author: "Weyland Joyner"
 date: "2026-02-04"
 categories: [books, history]
 ---
 
 [![The Alchemy of Air](https://covers.openlibrary.org/b/isbn/0307351793-L.jpg)](https://www.amazon.com/Alchemy-Air-Author-Thomas-Aug-2009/dp/B0140EX8AU)
+
+How did you go about productizing a chemistry experiment in the early 20th century?
 
 I read *The Alchemy of Air* earlier this year and highly recommend it. It's about the Haber-Bosch process for synthesizing ammonia. There's a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.
 

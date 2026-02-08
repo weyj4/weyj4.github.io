@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Writing",
     "section": "",
-    "text": "Kleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\nMartin Kleppmann’s talk on local-first software and what it means for SaaS\n\n\n\n\n\nFeb 4, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nProductizing a Chemistry Experiment: Carl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\nOn The Alchemy of Air and the Haber-Bosch process\n\n\n\n\n\nFeb 4, 2026\n\n\nweyj4\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\nmeta\n\n\n\nFirst post on this new blog\n\n\n\n\n\nJan 21, 2026\n\n\nweyj4\n\n\n\n\n\nNo matching items"
+    "text": "Experimenting with Beads\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nDigital Twin Universe(s)\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nThoughts on Context Engineering\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nRalph Wiggum, Gas Town, etc\n\n\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 5, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nCarl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\na16z on Forward-Deployed Engineers\n\n\n\nsoftware\n\nconsulting\n\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[DuckDB] The Lost Decade?\n\n\n\nsoftware\n\ndata\n\n\n\n\n\n\n\n\n\nFeb 2, 2026\n\n\nWeyland Joyner\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hello-world/index.html",
@@ -219,8 +219,78 @@
   {
     "objectID": "posts/haber-bosch/index.html",
     "href": "posts/haber-bosch/index.html",
-    "title": "Productizing a Chemistry Experiment: Carl Bosch’s Nobel Prize Speech",
+    "title": "Carl Bosch’s Nobel Prize Speech",
     "section": "",
-    "text": "The Alchemy of Air\n\n\nI read The Alchemy of Air earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.\nAs a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.\nBoth Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his Nobel Prize speech if you want to delve a bit beyond what the book gets into."
+    "text": "The Alchemy of Air\n\n\nHow did you go about productizing a chemistry experiment in the early 20th century?\nI read The Alchemy of Air earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.\nAs a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.\nBoth Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his Nobel Prize speech if you want to delve a bit beyond what the book gets into."
+  },
+  {
+    "objectID": "posts/ralph-wiggum-gas-town/index.html",
+    "href": "posts/ralph-wiggum-gas-town/index.html",
+    "title": "Ralph Wiggum, Gas Town, etc",
+    "section": "",
+    "text": "Steve Yegge identifies 8 stages of AI-assisted coding adoption.\nI’m somewhere between Stage 5 and 6 - I’ve largely abandoned the IDE in my own projects in favor of managing amp or claude code CLI tools (Stage 5). I like living on the command line anyway, that’s why I’ve always been a vim user.\nHowever, I haven’t really graduated to running multiple concurrent agents (Stage 6). I don’t really mind waiting for a single agent to sequentially knock out tasks for personal work, but it’s easy to see the usefulness of orchestrating a team of AI coders for e.g. enterprise software projects with huge monorepos.\nAt first I was just running claude or amp as an interactive session and guiding it step by step through building my projects, but lately I like using Geoff Huntley’s Ralph Wiggum coding loop, particularly this great implementation for claude/amp by Ryan Carson.\nAnd that’s all it is really, a bash loop. As Addy Osmani points out, what this design gives you is memory persistence, so you don’t have to swamp the agent with the full context of past and future tasks in each iteration; external files - git, progress.txt, prd.json - maintain the state of dev progress and each loop iteration can pull a subset of context and requirements for carrying out a task.\nAgain, I’m using a single agent here (Yegge Stage 5), and it sets passes: true to each sequential task in the PRD file prd.json as it completes it. This takes time; generally once I have my PRD ready I run the loop (ralph.sh) and walk away from my laptop for a bit. I suppose you could add dependency logic to the PRD’s tasks such that multiple claude/amp instances could be picking off tasks concurrently,\nBut at any rate this is where Yegge’s Gas Town comes in. This is a tool built on Steve’s earlier project beads, and it abstracts agent work into a well-defined (and colorful) taxonomy. I haven’t gone deep into this yet, expect more to come here."
+  },
+  {
+    "objectID": "posts/on-writing/index.html",
+    "href": "posts/on-writing/index.html",
+    "title": "On Writing",
+    "section": "",
+    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#finding-my-voice",
+    "href": "posts/on-writing/index.html#finding-my-voice",
+    "title": "On Writing",
+    "section": "",
+    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#what-to-expect",
+    "href": "posts/on-writing/index.html#what-to-expect",
+    "title": "On Writing",
+    "section": "What to Expect",
+    "text": "What to Expect\nI plan to write about:\n\nThings I’m learning\nTechnical explorations\nIdeas worth sharing\nOccasional observations\n\nThe frequency will be irregular. Quality over quantity."
+  },
+  {
+    "objectID": "posts/on-writing/index.html#why-now",
+    "href": "posts/on-writing/index.html#why-now",
+    "title": "On Writing",
+    "section": "Why Now",
+    "text": "Why Now\nThere’s something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.\nThis is that space for me."
+  },
+  {
+    "objectID": "posts/digital-twin-universes/index.html",
+    "href": "posts/digital-twin-universes/index.html",
+    "title": "Digital Twin Universe(s)",
+    "section": "",
+    "text": "StrongDM introduces the idea of a Digital Twin Universe to validate end-to-end “scenarios” for software built (they prefer the term “grown”) in “dark factories” by agents.\nSo if you want to run a software Dark Factory, you need specs as an input—StrongDM calls this the “Seed”—and those can be generated by agents (again I’m using the /prd and /ralph Skills); the other thing you need is an ability to define and run Scenarios—these start as user stories, but the idea is you try to cover anything a user could conceivably do with your software to surface bugs.\nI have a new repo where I’m using the Ralph Wiggum /prd and /ralph Skills in Claude Code to generate detailed PRD and task files that can be fed to Ralph or Gastown or some other agent work orchestrator to replicate various well-documented APIs. Basically you point Claude at public API documentation and say “generate a PRD for a shallow clone.” By “shallow” I mean that we won’t replicate the data infrastructure; we’ll stub things out or return dummy data from endpoints.\nThe whole StrongDM website is full of fascinating ideas and techniques, it’s worth looking through. Simon Willison also has a nice writeup: https://simonwillison.net/2026/Feb/7/software-factory/"
+  },
+  {
+    "objectID": "posts/duckdb-lost-decade/index.html",
+    "href": "posts/duckdb-lost-decade/index.html",
+    "title": "[DuckDB] The Lost Decade?",
+    "section": "",
+    "text": "This fascinating post confirms some hunches I started to have in the late 2010s when everybody was overengineering their ETL pipelines.\nWorth a read, the tl;dr at the beginning of the post more or less gets it. I haven’t used DuckDB in a professional project yet, but the team seems great, and you should read everything on their technical blog."
+  },
+  {
+    "objectID": "posts/a16z-forward-deployed-engineers/index.html",
+    "href": "posts/a16z-forward-deployed-engineers/index.html",
+    "title": "a16z on Forward-Deployed Engineers",
+    "section": "",
+    "text": "There’s been a good deal of buzz about FDEs lately. That’s a job that I’ve been doing under some … for a while now.\nI spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.\nThat’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.\nI’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design."
+  },
+  {
+    "objectID": "posts/experimenting-with-beads/index.html",
+    "href": "posts/experimenting-with-beads/index.html",
+    "title": "Experimenting with Beads",
+    "section": "",
+    "text": "Steve Yegge has a great post about Beads, his agent-first issue tracker. He goes into reasons a plain markdown tracking system doesn’t work at scale, and his findings shed some light on how agents approach their work with limited context.\nI’ve also noticed that agents will try to finish a task no matter what—so if they’re in the 5th of 10 tasks of a process and realize they’re running out of context, they’ll kind of whiz through the last 5 tasks in a hurry. It’s like their velocity increases at the expense of thoroughness. I guess the idea is that’s better than leaving the task undone, but actually I think anybody who’s building with agents these days recognizes that it’s fine to leave a task undone (in an orderly way); I can just spin up another agent to pick it up. I’d much rather have a half-done project neatly handed back to me than a finished project that’s riddled with low-quality, dashed-off code.\nThere’s a lot of talk right now about multi-agent workflows and orchestration, etc. But I think there’s still a lot of work to be done just to get sequential work done by repeated iterations of passing an agent some spec or open issues. Once we’re in a place where I can confidently hand off a project in some state of completion to an agent, expect it to do some relatively determinate amount of work, and hand it back off to me with clear tracking of what’s been done, I think it’ll get a lot easier to reason about running multiple agents concurrently."
+  },
+  {
+    "objectID": "posts/context-engineering/index.html",
+    "href": "posts/context-engineering/index.html",
+    "title": "Thoughts on Context Engineering",
+    "section": "",
+    "text": "“Think about context windows as a Commodore 64 with a small amount of memory”\n\nIn several of his videos, Geoff Huntley makes the case that working with an agent basically means malloc’ing an array (the context window). Assume that compaction (which is lossy) will lead to context rot, so find ways to direct agents in a loop without relying on long-term context. In other words, you should be able to kick off a new thread (clean context window) anytime you want, instead of relying on the previous thread’s history to direct the agent. Always keep the array in mind; the first element is the system prompt, then you have AGENTS.md, and then tool calls are going to keep iterating and appending to the array. AGENTS.md is really effective, so you should definitely use it, but it should be small—like, Huntley recommends around 70 lines of text.\nSo in keeping with my recent posts about Beads, Ralph Wiggum, etc…it seems like the key thing here is, our agents are ephemeral, we want to be able to lose them and respawn them at any point in the workflow: that means there has to be some system of record to let a newly spawned agent thread know where to pick up. Beads is Steve Yegge’s version of that; it’s JSONL tracked in Git. Ralph Wiggum uses regular JSON with a simple “passes” boolean, which has been working for me so far but you can read Steve’s post to understand reasons that may not scale on large or multi-agent projects.\nNot to get off-topic, but I watched a talk by Letta today. Letta and mem0 are companies that want to provide LLM memory, and the way the guy from Letta framed it was sort of anthropomorphic—the agent is not a workflow, it’s a person. It persists for weeks, months etc and evolves its own personality, etc, etc. I think a lot of what they’re doing comes out of the MemGPT paper. So, this is interesting, but I think as system builders using tools like Claude Code and Ralph, we want to distance ourselves from this point of view. When we say “agent” we mean “worker with a task.”\nI don’t know, maybe we need to extend our ontology, maybe what companies like Letta are trying to provide aren’t “agents” but something else like companions or coworkers.\nBecause the thing is, if I have a PRD and a list of tasks, and I want agents to go through those tasks, I don’t even necessarily want something anthropomorphized, I’m not looking for a developed personality; I want something that calls tools in a loop.\nAnd even if I were to expand the scope of agents outside of coding agents, to like, legal assistants or media researchers or whatever—am I looking for something with a personality of its own? Or do I want a background process that can bulldoze tasks?"
   }
 ]

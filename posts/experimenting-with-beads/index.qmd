@@ -1,0 +1,12 @@
+---
+title: "Experimenting with Beads"
+author: "Weyland Joyner"
+date: "2026-02-07"
+categories: [software, agents]
+---
+
+Steve Yegge has a [great post](https://steve-yegge.medium.com/introducing-beads-a-coding-agent-memory-system-637d7d92514a) about [Beads](https://github.com/steveyegge/beads), his agent-first issue tracker. He goes into reasons a plain markdown tracking system doesn't work at scale, and his findings shed some light on how agents approach their work with limited context.
+
+I've also noticed that agents will try to finish a task no matter what---so if they're in the 5th of 10 tasks of a process and realize they're running out of context, they'll kind of whiz through the last 5 tasks in a hurry. It's like their velocity increases at the expense of thoroughness. I guess the idea is that's better than leaving the task undone, but actually I think anybody who's building with agents these days recognizes that it's fine to leave a task undone (in an orderly way); I can just spin up another agent to pick it up. I'd much rather have a half-done project neatly handed back to me than a finished project that's riddled with low-quality, dashed-off code.
+
+There's a lot of talk right now about multi-agent workflows and orchestration, etc. But I think there's still a lot of work to be done just to get sequential work done by repeated iterations of passing an agent some spec or open issues. Once we're in a place where I can confidently hand off a project in some state of completion to an agent, expect it to do some relatively determinate amount of work, and hand it back off to me with clear tracking of what's been done, I think it'll get a lot easier to reason about running multiple agents concurrently.

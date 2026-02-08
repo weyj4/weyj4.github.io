@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Weyland Joyner">
-<meta name="dcterms.date" content="2026-02-04">
+<meta name="dcterms.date" content="2026-02-02">
 
-<title>Kleppmann on Local-First – Weyland Joyner</title>
+<title>[DuckDB] The Lost Decade? – Weyland Joyner</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,10 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Kleppmann on Local-First</h1>
+      <h1 class="title">[DuckDB] The Lost Decade?</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">software</div>
-                <div class="quarto-category">distributed-systems</div>
+                <div class="quarto-category">data</div>
               </div>
                   </div>
   </div>
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 4, 2026</p>
+        <p class="date">February 2, 2026</p>
       </div>
     </div>
     
@@ -177,17 +177,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NMq0vncHJvU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>This is Martin Kleppmann, author of <em>Designing Data Intensive Applications</em>, talking about Local-First Software.</p>
-<p>There was a paper by Ink&amp;Switch back in 2019 on <a href="https://www.inkandswitch.com/essay/local-first/">local-first software</a>, but in this talk Kleppmann extrapolates in some really interesting ways.</p>
-<p>Local-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:</p>
-<blockquote class="blockquote">
-<p><em>a distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable</em> (1987)</p>
-</blockquote>
-<p>And goes on to say that local-first software is software built so that, if the developer of the software <em>went out of business</em>, users could still run and use the software.</p>
-<p>Imagine if Oracle went out of business and you could still use Oracle db.</p>
-<p>This breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.</p>
-<p>It’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch.</p>
+<p><a href="https://duckdb.org/2025/05/19/the-lost-decade-of-small-data">This fascinating post</a> confirms some hunches I started to have in the late 2010s when everybody was overengineering their ETL pipelines.</p>
+<p>Worth a read, the tl;dr at the beginning of the post more or less gets it. I haven’t used DuckDB in a professional project yet, but the team seems great, and you should read everything on their technical blog.</p>
 
 
 
