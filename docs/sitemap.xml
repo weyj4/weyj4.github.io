@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://weyj4.github.io/blogs.html</loc>
-    <lastmod>2026-01-22T23:36:32.830Z</lastmod>
+    <lastmod>2026-02-08T22:27:05.954Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/index.html</loc>
-    <lastmod>2026-02-07T23:56:01.556Z</lastmod>
+    <lastmod>2026-02-08T22:27:14.860Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/hello-world/index.html</loc>
@@ -22,11 +22,11 @@
   </url>
   <url>
     <loc>https://weyj4.github.io/languages.html</loc>
-    <lastmod>2026-01-26T19:51:47.353Z</lastmod>
+    <lastmod>2026-02-08T22:46:47.093Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/reading.html</loc>
-    <lastmod>2026-01-22T23:22:38.158Z</lastmod>
+    <lastmod>2026-02-08T22:26:47.206Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/kleppmann-local-first/index.html</loc>
@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/digital-twin-universes/index.html</loc>
-    <lastmod>2026-02-07T23:49:11.756Z</lastmod>
+    <lastmod>2026-02-08T22:20:14.721Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/duckdb-lost-decade/index.html</loc>
@@ -67,5 +67,13 @@
   <url>
     <loc>https://weyj4.github.io/CLAUDE.html</loc>
     <lastmod>2026-02-08T02:53:29.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/kernighan-pike-unix-agents/index.html</loc>
+    <lastmod>2026-02-08T22:21:34.777Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/problems-with-github-for-agents/index.html</loc>
+    <lastmod>2026-02-08T22:45:01.480Z</lastmod>
   </url>
 </urlset>

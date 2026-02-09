@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/problems-with-github-for-agents/index.html",
+      "/posts/kernighan-pike-unix-agents/index.html",
       "/posts/experimenting-with-beads/index.html",
       "/posts/digital-twin-universes/index.html",
       "/posts/context-engineering/index.html",
@@ -9,7 +11,8 @@
       "/posts/kleppmann-local-first/index.html",
       "/posts/haber-bosch/index.html",
       "/posts/a16z-forward-deployed-engineers/index.html",
-      "/posts/duckdb-lost-decade/index.html"
+      "/posts/duckdb-lost-decade/index.html",
+      "/posts/on-writing/index.html"
     ]
   }
 ]

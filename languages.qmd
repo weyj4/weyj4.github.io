@@ -1,5 +1,4 @@
 ---
-title: "Language Learning Resources"
 format:
   html:
     toc: false
@@ -7,7 +6,7 @@ format:
 
 ## Latin
 
-* [Lingua Latina](https://hackettpublishing.com/lingua-latina-per-se-illustrata-series)
+* [Lingua Latina Per Se Illustrata](https://hackettpublishing.com/lingua-latina-per-se-illustrata-series)
 * [Latinitium](https://latinitium.com/)
 * [Latina Animi Causa](https://www.habesnelac.com/)
 

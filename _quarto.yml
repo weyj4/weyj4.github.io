@@ -8,11 +8,11 @@ website:
   title: "Weyland Joyner"
   navbar:
     left:
-      - text: "Home"
+      - text: "Writing"
         href: index.qmd
       - text: "Bookshelf"
         href: reading.qmd
-      - text: "Other Good Blogs"
+      - text: "Links"
         href: blogs.qmd
       - text: "Language Learning"
         href: languages.qmd

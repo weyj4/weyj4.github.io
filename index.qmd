@@ -1,5 +1,4 @@
 ---
-title: "Writing"
 listing:
   contents: posts
   feed: true

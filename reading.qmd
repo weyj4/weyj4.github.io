@@ -1,11 +1,8 @@
 ---
-title: "What I'm Reading"
 format:
   html:
     toc: false
 ---
-
-Here are some notable books I've read this year. Some I read straight through, others I've been dipping in and out of all year long.
 
 ## Jan 2026
 

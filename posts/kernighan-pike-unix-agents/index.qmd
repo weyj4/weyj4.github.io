@@ -1,0 +1,22 @@
+---
+title: "Kernighan & Pike & Unix & Agents"
+author: "Weyland Joyner"
+date: "2026-02-08"
+categories: [software, agents]
+---
+
+[![The Unix Programming Environment](https://covers.openlibrary.org/b/isbn/013937681X-L.jpg)](https://www.amazon.com/Unix-Programming-Environment-Prentice-Hall-Software/dp/013937681X)
+
+["Every Unix Command Becomes a Startup"](https://mattrickard.com/every-unix-command-becomes-a-startup)
+
+Sometime in the mid-2010s I found this book on the bottom shelf of a used bookstore in Oakland, CA. *The Unix Programming Environment* by Brian Kernighan and Rob Pike, published in 1978.
+
+When I got home I started working through it, running code samples on my 2014 MacBook, and what blew me away was that most of the samples ran as-is. In cases where they didn't, it was generally semantics---a command or flag had been renamed.
+
+This was when I started to understand the durability and resilience of the Unix programming model. Lately I've been thinking back to this book because the core loop you need for agent orchestration is really just a bash loop. So, I've been brushing up on my bash scripting.
+
+Also, I'm back to using Vim (Neovim to be fair) as my primary editor. Most of the time I'm driving an agent CLI like Claude Code, so the only time I really want to be in an editor is to review generated code or make occasional edits. A minimal vim setup---not a reproduced IDE but just a text editor---is perfect for this. I don't even need AI extensions, autocomplete etc because at that point I'm back on the command line telling Claude what to do.
+
+In the Web 2.0 era there was this idea that every Unix command became a startup (see link above). I'm not quite sure what the slogan is for our new agentic era but I'm convinced that sticking close to Unix and driving things on the command line is a really good idea.
+
+Finally---this gets into something I'll expand on in another post soon. A number of technologists I pay attention to, notably [Armin Ronacher](https://lucumr.pocoo.org/2025/7/3/tools/) and Tim Dettmers, seem to be converging on the idea that agents should really be writing code to do things. Not just working as coding assistants and building user-facing software, though that is an exciting use case. Rather, these agents are very good at using tools like Bash and Python. Instead of building a bunch of overengineered infrastructure and protocols for calling external APIs and tools, trust that the agent can probably come up with a script to do just about anything digitally. I'll come back to this in a later post.

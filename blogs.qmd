@@ -1,5 +1,4 @@
 ---
-title: "Other Good Blogs"
 format:
   html:
     toc: false
