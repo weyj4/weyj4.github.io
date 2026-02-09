@@ -1,5 +1,5 @@
 ---
-title: "Problems with Github for Agents"
+title: "Unleashing the Agents on Github"
 author: "Weyland Joyner"
 date: "2026-02-08"
 categories: [software, agents]
