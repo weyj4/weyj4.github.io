@@ -16,8 +16,6 @@ website:
         href: blogs.qmd
       - text: "Language Learning"
         href: languages.qmd
-      - text: "Resume/CV"
-        href: resume.qmd
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/weylandjoyner
