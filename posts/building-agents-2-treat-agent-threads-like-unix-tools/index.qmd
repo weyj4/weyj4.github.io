@@ -1,0 +1,12 @@
+---
+title: "[Building Agents, 2] Treat Agent Threads like Unix Tools"
+author: "Weyland Joyner"
+date: "2026-02-10T16:00:00"
+categories: [agents, software, ai]
+---
+
+In other words have them do one thing, well, and succinctly.
+
+Take a look at [this post](https://ampcode.com/notes/200k-tokens-is-plenty) from Lewis Metcalf at Amp. The way he's working is that a thread only has a few user messages, and context stays well under the 200k limit and even the "dumb mode" threshold somewhere beneath that, say around 150k or so.
+
+OK, but Unix tools are composable. This points up a really important feature I think any agent harness should have, which is something like Amp's `thread:handoff`. We need to be able to summarize and 'pipe' a thread's "output" to a new thread that will do something else with it.

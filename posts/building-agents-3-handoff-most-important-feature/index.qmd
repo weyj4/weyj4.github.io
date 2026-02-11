@@ -1,0 +1,15 @@
+---
+title: "[Building Agents, 3] I Guess Handoff is the Most Important Feature"
+author: "Weyland Joyner"
+date: "2026-02-10T17:00:00"
+categories: [agents, software, ai]
+---
+
+The point of an agent is that it should have a tight, simple core loop for tool calling and returning a response to the user. At this level the tool call, or sequence of tool calls, is the unit of work. Once you get above this level of abstraction, you're looking at the thread itself as the unit of work, and here's where you get into some design decisions within the agent harness. What should we do to keep our threads short and focused?
+
+- Compaction of context, which I think Claude Code does by default, should be considered harmful as it's very lossy; at that point you're basically saying "continue the conversation, but not as high quality as it was before";
+- Forking the conversation doesn't seem like it helps; that's just creating one or more progressive versions of the existing context. I guess the theory is that I could create multiple forks from a foundational context to implement multiple features but...this doesn't feel right to me;
+- A combination of multiple high-quality AGENTS.md instructions throughout the codebase, plus some sort of issue tracker like [Beads](https://github.com/steveyegge/beads) or just Ralph Wiggum's JSON tracker may allow you to spin up fresh loops every time you think of a new feature, but you are still losing some critical information about the *dialogue* that has driven implementation so far;
+- Similarly, maintaining a TODOs list seems like it would be a good practice, but since Opus 4.5 [the Amp team points out](https://ampcode.com/news/todos-are-done) that this is unnecessary; the model can track its own work within the thread.
+
+I think what we want is a really well-designed handoff feature, where an external LLM summarizes the conversation and then passes that summary into your new thread. This is what I think Amp does on `thread:handoff` and I'm figuring out how to implement it myself.

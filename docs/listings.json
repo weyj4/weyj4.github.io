@@ -2,6 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/building-agents-3-handoff-most-important-feature/index.html",
+      "/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
+      "/posts/building-agents-1-getting-started/index.html",
       "/posts/problems-with-github-for-agents/index.html",
       "/posts/kernighan-pike-unix-agents/index.html",
       "/posts/experimenting-with-beads/index.html",
@@ -11,8 +14,7 @@
       "/posts/kleppmann-local-first/index.html",
       "/posts/haber-bosch/index.html",
       "/posts/a16z-forward-deployed-engineers/index.html",
-      "/posts/duckdb-lost-decade/index.html",
-      "/posts/on-writing/index.html"
+      "/posts/duckdb-lost-decade/index.html"
     ]
   }
 ]

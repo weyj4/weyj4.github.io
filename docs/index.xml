@@ -10,9 +10,117 @@
 <atom:link href="https://weyj4.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Personal writing and thoughts</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sun, 08 Feb 2026 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Feb 2026 01:00:00 GMT</lastBuildDate>
 <item>
-  <title>Problems with Github for Agents</title>
+  <title>[Building Agents, 3] I Guess Handoff is the Most Important Feature</title>
+  <dc:creator>Weyland Joyner</dc:creator>
+  <link>https://weyj4.github.io/posts/building-agents-3-handoff-most-important-feature/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The point of an agent is that it should have a tight, simple core loop for tool calling and returning a response to the user. At this level the tool call, or sequence of tool calls, is the unit of work. Once you get above this level of abstraction, you’re looking at the thread itself as the unit of work, and here’s where you get into some design decisions within the agent harness. What should we do to keep our threads short and focused?</p>
+<ul>
+<li>Compaction of context, which I think Claude Code does by default, should be considered harmful as it’s very lossy; at that point you’re basically saying “continue the conversation, but not as high quality as it was before”;</li>
+<li>Forking the conversation doesn’t seem like it helps; that’s just creating one or more progressive versions of the existing context. I guess the theory is that I could create multiple forks from a foundational context to implement multiple features but…this doesn’t feel right to me;</li>
+<li>A combination of multiple high-quality AGENTS.md instructions throughout the codebase, plus some sort of issue tracker like <a href="https://github.com/steveyegge/beads">Beads</a> or just Ralph Wiggum’s JSON tracker may allow you to spin up fresh loops every time you think of a new feature, but you are still losing some critical information about the <em>dialogue</em> that has driven implementation so far;</li>
+<li>Similarly, maintaining a TODOs list seems like it would be a good practice, but since Opus 4.5 <a href="https://ampcode.com/news/todos-are-done">the Amp team points out</a> that this is unnecessary; the model can track its own work within the thread.</li>
+</ul>
+<p>I think what we want is a really well-designed handoff feature, where an external LLM summarizes the conversation and then passes that summary into your new thread. This is what I think Amp does on <code>thread:handoff</code> and I’m figuring out how to implement it myself.</p>
+
+
+
+ ]]></description>
+  <category>agents</category>
+  <category>software</category>
+  <category>ai</category>
+  <guid>https://weyj4.github.io/posts/building-agents-3-handoff-most-important-feature/</guid>
+  <pubDate>Wed, 11 Feb 2026 01:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>[Building Agents, 2] Treat Agent Threads like Unix Tools</title>
+  <dc:creator>Weyland Joyner</dc:creator>
+  <link>https://weyj4.github.io/posts/building-agents-2-treat-agent-threads-like-unix-tools/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>In other words have them do one thing, well, and succinctly.</p>
+<p>Take a look at <a href="https://ampcode.com/notes/200k-tokens-is-plenty">this post</a> from Lewis Metcalf at Amp. The way he’s working is that a thread only has a few user messages, and context stays well under the 200k limit and even the “dumb mode” threshold somewhere beneath that, say around 150k or so.</p>
+<p>OK, but Unix tools are composable. This points up a really important feature I think any agent harness should have, which is something like Amp’s <code>thread:handoff</code>. We need to be able to summarize and ‘pipe’ a thread’s “output” to a new thread that will do something else with it.</p>
+
+
+
+ ]]></description>
+  <category>agents</category>
+  <category>software</category>
+  <category>ai</category>
+  <guid>https://weyj4.github.io/posts/building-agents-2-treat-agent-threads-like-unix-tools/</guid>
+  <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>[Building Agents, 1] Getting Started</title>
+  <dc:creator>Weyland Joyner</dc:creator>
+  <link>https://weyj4.github.io/posts/building-agents-1-getting-started/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I ended up porting <a href="https://ampcode.com/notes/how-to-build-an-agent">Thorsten Ball’s post on building a basic coding agent</a> to Typescript<sup>1</sup>. At first I was using <a href="https://github.com/vadimdemedes/ink">Ink</a> for a React component-based terminal UI, but that got restrictive. Fortunately I found <a href="https://mariozechner.at/">Mario Zechner’s</a> <a href="https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent">Pi agent project</a>.</p>
+<p>Pi is really cool, you should check out the whole repo. But the coding agent includes a lot of stuff I don’t want like, RPC calls for if you want to embed it in your app; it also has some nice-to-haves like (BOM) for cross-platform support that I should probably add to my project<sup>2</sup> for good measure but haven’t yet.</p>
+<p>The good news is he exports a separate <a href="https://github.com/badlogic/pi-mono/tree/main/packages/tui">tui</a> package that covers most of what I need. The programming style is more imperative than Ink’s React components, but there’s also greater control over e.g.&nbsp;inputs.</p>
+<p>At any rate, here’s what I’ve learned so far from implementing a full agent harness:</p>
+<section id="bash-is-not-all-you-needwant" class="level3">
+<h3 class="anchored" data-anchor-id="bash-is-not-all-you-needwant">Bash Is Not All You Need/Want</h3>
+<p>At first it seemed like it would be clever of me to create One Tool, a Bash Tool, to accomplish whatever I needed. This ends up being a bad design decision because bash execution is opaque to the LLM; it returns a response code and that’s all. You <em>want to implement task-specific tools for any “ops”<sup>3</sup> you are enabling</em>. Hmm what does this sound like? Oh right it sounds like <a href="https://weylandjoyner.com/posts/kernighan-pike-unix-agents/">Unix</a>.</p>
+</section>
+<section id="be-efficient-with-the-context-window" class="level3">
+<h3 class="anchored" data-anchor-id="be-efficient-with-the-context-window">Be Efficient With The Context Window</h3>
+<p>Geoff Huntley says we should imagine the context window is “like a Commodore 64 with a very small amount of memory.” We should always keep this in mind; truncate outputs in case the tool tries to read huge file. Also implement <code>edit_file</code> separately from <code>write_file</code>; at first I was just doing an overwrite but that’s really wasteful.</p>
+</section>
+<section id="figure-out-the-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="figure-out-the-prompt">Figure Out The Prompt</h3>
+<p>I think there’s 2 areas that have to be pretty great for me to actually <em>want</em> to use this tool: the CLI UX (more below) and the quality of the prompt. I know that Amp feels better to me than Claude Code or Codex most of the time, and while some of that probably has to do with how the harness and context window are engineered, I think a lot of it probably comes down to what’s in the prompt. So far I’m kind of taking stabs in the dark.</p>
+</section>
+<section id="testingevals" class="level3">
+<h3 class="anchored" data-anchor-id="testingevals">Testing/Evals</h3>
+<p>I’m popping into the CLI and testing it myself on every change, and I don’t see that changing — as Simon <a href="https://simonwillison.net/2025/Dec/18/code-proven-to-work/">says</a> manual testing is a necessary part of the process. I’d still like to see about automating a CLI runner though. For this tool to be my daily driver the UX needs to be really smooth, otherwise I’ll defer to using Amp anyway.</p>
+</section>
+<section id="stuff-im-skipping" class="level3">
+<h3 class="anchored" data-anchor-id="stuff-im-skipping">Stuff I’m Skipping</h3>
+<p>I mentioned BOM/CRLF above, here’s some other stuff that would be fairly easy to add but I don’t need it at the moment:</p>
+<ul>
+<li>Fuzzy matching</li>
+<li>Diff generation</li>
+<li>Cost Monitoring: amp actually shows you token counts and associated charges, I should figure this out</li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>And <a href="https://ghuntley.com/agent/">Geoff Huntley’s work</a>↩︎</p></li>
+<li id="fn2"><p>pay $2 to have amp add↩︎</p></li>
+<li id="fn3"><p>I’ve taken to calling the primitives we enable via tool/function calls “ops” because it sort of feels like the right term to me↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>agents</category>
+  <category>software</category>
+  <category>ai</category>
+  <guid>https://weyj4.github.io/posts/building-agents-1-getting-started/</guid>
+  <pubDate>Tue, 10 Feb 2026 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Unleashing the Agents on Github</title>
   <dc:creator>Weyland Joyner</dc:creator>
   <link>https://weyj4.github.io/posts/problems-with-github-for-agents/</link>
   <description><![CDATA[ 
@@ -273,46 +381,6 @@
   <category>data</category>
   <guid>https://weyj4.github.io/posts/duckdb-lost-decade/</guid>
   <pubDate>Mon, 02 Feb 2026 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>On Writing</title>
-  <dc:creator>Weyland Joyner</dc:creator>
-  <link>https://weyj4.github.io/posts/on-writing/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="finding-my-voice" class="level2">
-<h2 class="anchored" data-anchor-id="finding-my-voice">Finding My Voice</h2>
-<p>Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.</p>
-<p>The format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics.</p>
-</section>
-<section id="what-to-expect" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-expect">What to Expect</h2>
-<p>I plan to write about:</p>
-<ul>
-<li>Things I’m learning</li>
-<li>Technical explorations</li>
-<li>Ideas worth sharing</li>
-<li>Occasional observations</li>
-</ul>
-<p>The frequency will be irregular. Quality over quantity.</p>
-</section>
-<section id="why-now" class="level2">
-<h2 class="anchored" data-anchor-id="why-now">Why Now</h2>
-<p>There’s something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.</p>
-<p>This is that space for me.</p>
-
-
-</section>
-
- ]]></description>
-  <category>writing</category>
-  <category>meta</category>
-  <guid>https://weyj4.github.io/posts/on-writing/</guid>
-  <pubDate>Tue, 20 Jan 2026 08:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

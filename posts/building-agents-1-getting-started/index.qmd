@@ -1,0 +1,42 @@
+---
+title: "[Building Agents, 1] Getting Started"
+author: "Weyland Joyner"
+date: "2026-02-10T15:00:00"
+categories: [agents, software, ai]
+---
+
+I ended up porting [Thorsten Ball's post on building a basic coding agent](https://ampcode.com/notes/how-to-build-an-agent) to Typescript[^1]. At first I was using [Ink](https://github.com/vadimdemedes/ink) for a React component-based terminal UI, but that got restrictive. Fortunately I found [Mario Zechner's](https://mariozechner.at/) [Pi agent project](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent).
+
+Pi is really cool, you should check out the whole repo. But the coding agent includes a lot of stuff I don't want like, RPC calls for if you want to embed it in your app; it also has some nice-to-haves like (BOM) for cross-platform support that I should probably add to my project[^2] for good measure but haven't yet.
+
+The good news is he exports a separate [tui](https://github.com/badlogic/pi-mono/tree/main/packages/tui) package that covers most of what I need. The programming style is more imperative than Ink's React components, but there's also greater control over e.g. inputs.
+
+At any rate, here's what I've learned so far from implementing a full agent harness:
+
+### Bash Is Not All You Need/Want
+
+At first it seemed like it would be clever of me to create One Tool, a Bash Tool, to accomplish whatever I needed. This ends up being a bad design decision because bash execution is opaque to the LLM; it returns a response code and that's all. You *want to implement task-specific tools for any "ops"[^3] you are enabling*. Hmm what does this sound like? Oh right it sounds like [Unix](https://weylandjoyner.com/posts/kernighan-pike-unix-agents/).
+
+### Be Efficient With The Context Window
+
+Geoff Huntley says we should imagine the context window is "like a Commodore 64 with a very small amount of memory." We should always keep this in mind; truncate outputs in case the tool tries to read huge file. Also implement `edit_file` separately from `write_file`; at first I was just doing an overwrite but that's really wasteful.
+
+### Figure Out The Prompt
+
+I think there's 2 areas that have to be pretty great for me to actually *want* to use this tool: the CLI UX (more below) and the quality of the prompt. I know that Amp feels better to me than Claude Code or Codex most of the time, and while some of that probably has to do with how the harness and context window are engineered, I think a lot of it probably comes down to what's in the prompt. So far I'm kind of taking stabs in the dark.
+
+### Testing/Evals
+
+I'm popping into the CLI and testing it myself on every change, and I don't see that changing --- as Simon [says](https://simonwillison.net/2025/Dec/18/code-proven-to-work/) manual testing is a necessary part of the process. I'd still like to see about automating a CLI runner though. For this tool to be my daily driver the UX needs to be really smooth, otherwise I'll defer to using Amp anyway.
+
+### Stuff I'm Skipping
+
+I mentioned BOM/CRLF above, here's some other stuff that would be fairly easy to add but I don't need it at the moment:
+
+- Fuzzy matching
+- Diff generation
+- Cost Monitoring: amp actually shows you token counts and associated charges, I should figure this out
+
+[^1]: And [Geoff Huntley's work](https://ghuntley.com/agent/)
+[^2]: pay $2 to have amp add
+[^3]: I've taken to calling the primitives we enable via tool/function calls "ops" because it sort of feels like the right term to me
