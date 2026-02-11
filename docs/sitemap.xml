@@ -1,75 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://weyj4.github.io/blogs.html</loc>
-    <lastmod>2026-02-08T22:27:05.954Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/index.html</loc>
-    <lastmod>2026-02-09T02:46:07.179Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/posts/hello-world/index.html</loc>
-    <lastmod>2026-02-05T19:55:23.732Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/resume.html</loc>
-    <lastmod>2026-02-03T22:38:16.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/resume_old.html</loc>
-    <lastmod>2026-01-22T19:31:25.765Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/languages.html</loc>
-    <lastmod>2026-02-09T02:46:07.180Z</lastmod>
+    <loc>https://weyj4.github.io/CLAUDE.html</loc>
+    <lastmod>2026-02-09T22:40:39.588Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/reading.html</loc>
     <lastmod>2026-02-09T02:46:07.180Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/kleppmann-local-first/index.html</loc>
-    <lastmod>2026-02-05T19:55:23.364Z</lastmod>
+    <loc>https://weyj4.github.io/languages.html</loc>
+    <lastmod>2026-02-09T02:46:07.180Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/haber-bosch/index.html</loc>
-    <lastmod>2026-02-08T00:10:33.048Z</lastmod>
+    <loc>https://weyj4.github.io/posts/building-agents-3-handoff-most-important-feature/index.html</loc>
+    <lastmod>2026-02-11T00:48:00.263Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/ralph-wiggum-gas-town/index.html</loc>
     <lastmod>2026-02-05T19:55:22.473Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/on-writing/index.html</loc>
-    <lastmod>2026-02-05T19:50:04.445Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/posts/digital-twin-universes/index.html</loc>
-    <lastmod>2026-02-09T02:46:07.180Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/posts/duckdb-lost-decade/index.html</loc>
-    <lastmod>2026-02-08T00:11:21.066Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/posts/a16z-forward-deployed-engineers/index.html</loc>
-    <lastmod>2026-02-08T02:55:34.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://weyj4.github.io/posts/experimenting-with-beads/index.html</loc>
-    <lastmod>2026-02-08T04:24:19.049Z</lastmod>
-  </url>
-  <url>
     <loc>https://weyj4.github.io/posts/context-engineering/index.html</loc>
     <lastmod>2026-02-08T02:27:52.671Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/CLAUDE.html</loc>
-    <lastmod>2026-02-09T22:40:39.588Z</lastmod>
+    <loc>https://weyj4.github.io/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html</loc>
+    <lastmod>2026-02-11T00:46:54.056Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/kernighan-pike-unix-agents/index.html</loc>
+    <loc>https://weyj4.github.io/posts/kleppmann-local-first/index.html</loc>
+    <lastmod>2026-02-05T19:55:23.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/digital-twin-universes/index.html</loc>
     <lastmod>2026-02-09T02:46:07.180Z</lastmod>
   </url>
   <url>
@@ -77,19 +41,43 @@
     <lastmod>2026-02-09T03:17:08.441Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/building-agents-handoff-most-important-feature/index.html</loc>
-    <lastmod>2026-02-11T00:43:46.242Z</lastmod>
+    <loc>https://weyj4.github.io/resume_old.html</loc>
+    <lastmod>2026-01-22T19:31:25.765Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html</loc>
-    <lastmod>2026-02-11T00:46:54.056Z</lastmod>
+    <loc>https://weyj4.github.io/resume.html</loc>
+    <lastmod>2026-02-03T22:38:16.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/experimenting-with-beads/index.html</loc>
+    <lastmod>2026-02-08T04:24:19.049Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/duckdb-lost-decade/index.html</loc>
+    <lastmod>2026-02-08T00:11:21.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/haber-bosch/index.html</loc>
+    <lastmod>2026-02-08T00:10:33.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/posts/a16z-forward-deployed-engineers/index.html</loc>
+    <lastmod>2026-02-08T02:55:34.211Z</lastmod>
   </url>
   <url>
     <loc>https://weyj4.github.io/posts/building-agents-1-getting-started/index.html</loc>
     <lastmod>2026-02-11T00:47:38.791Z</lastmod>
   </url>
   <url>
-    <loc>https://weyj4.github.io/posts/building-agents-3-handoff-most-important-feature/index.html</loc>
-    <lastmod>2026-02-11T00:48:00.263Z</lastmod>
+    <loc>https://weyj4.github.io/posts/kernighan-pike-unix-agents/index.html</loc>
+    <lastmod>2026-02-09T02:46:07.180Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/index.html</loc>
+    <lastmod>2026-02-09T02:46:07.179Z</lastmod>
+  </url>
+  <url>
+    <loc>https://weyj4.github.io/blogs.html</loc>
+    <lastmod>2026-02-09T02:46:07.175Z</lastmod>
   </url>
 </urlset>

@@ -1,136 +1,52 @@
 [
   {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Weyland Joyner",
+    "objectID": "CLAUDE.html",
+    "href": "CLAUDE.html",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "Not Boring\nConstruction Physics\nSimon Willison’s Blog\nOwl Posting\nThe Century of Bio\nMatt Levine\nThe Generalist\nRhymes with Haystack\nCore Memory\nDecoding Bio"
+    "text": "Quarto website, output to docs/, hosted on GitHub Pages (custom domain may be configured)\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render\nNavbar tabs (in order): Writing, Bookshelf, Links, Language Learning, Resume/CV\n\n\n\n\nPosts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nmkdir the directory posts/&lt;kebab-case-slug&gt;/\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes (sometimes with a screenshot). When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes in Quarto\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nFootnotes: Use [^1] inline and [^1]: Footnote text at the bottom (note the colon)\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links\n\n\n\n\n\n\nAdding posts: Most frequent task. User pastes Apple Notes content, sometimes with a screenshot for reference. Fix the link syntax and formatting, create the post file.\nRenaming posts: Just change the title field in frontmatter.\nCommitting/pushing: User will ask to commit and push. Use descriptive commit messages. The docs/ directory contains rendered HTML that changes with every quarto render/quarto preview, so file counts in commits will be larger than expected.\nNav changes: Edit _quarto.yml navbar section.\n\n\n\n\nsoftware, agents, ai, books, history, data, consulting, distributed-systems, writing, meta\n\n\n\nThe homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose. The title field was removed from index.qmd frontmatter so no heading shows above the post list.\n\n\n\nThere is a prototype plain HTML/CSS version of this blog at ~/projects/weylandjoyner.com using the Flexoki color palette (calv.info-inspired). It has its own build system (node build.js with marked). The user may occasionally ask to add posts to both sites."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Weyland Joyner",
+    "objectID": "CLAUDE.html#site-overview",
+    "href": "CLAUDE.html#site-overview",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "[Building Agents, 3] I Guess Handoff is the Most Important Feature\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[Building Agents, 2] Treat Agent Threads like Unix Tools\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[Building Agents, 1] Getting Started\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nUnleashing the Agents on Github\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 8, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKernighan & Pike & Unix & Agents\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 8, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nMore on Context - Steve Yegge’s Beads\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nDigital Twin Universe(s)\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nThoughts on Context Engineering\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nRalph Wiggum, Gas Town, etc\n\n\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 5, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nCarl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\na16z on Forward-Deployed Engineers\n\n\n\nsoftware\n\nconsulting\n\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[DuckDB] The Lost Decade?\n\n\n\nsoftware\n\ndata\n\n\n\n\n\n\n\n\n\nFeb 2, 2026\n\n\nWeyland Joyner\n\n\n\n\n\nNo matching items"
+    "text": "Quarto website, output to docs/, hosted on GitHub Pages (custom domain may be configured)\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render\nNavbar tabs (in order): Writing, Bookshelf, Links, Language Learning, Resume/CV"
   },
   {
-    "objectID": "posts/hello-world/index.html",
-    "href": "posts/hello-world/index.html",
-    "title": "Hello World",
+    "objectID": "CLAUDE.html#creating-blog-posts",
+    "href": "CLAUDE.html#creating-blog-posts",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+    "text": "Posts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nmkdir the directory posts/&lt;kebab-case-slug&gt;/\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes (sometimes with a screenshot). When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes in Quarto\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nFootnotes: Use [^1] inline and [^1]: Footnote text at the bottom (note the colon)\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links"
   },
   {
-    "objectID": "posts/hello-world/index.html#welcome",
-    "href": "posts/hello-world/index.html#welcome",
-    "title": "Hello World",
+    "objectID": "CLAUDE.html#common-tasks",
+    "href": "CLAUDE.html#common-tasks",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "This is the first post on my new blog. I’m planning to use this space to share thoughts, ideas, and things I’m learning.\nI built this site with Quarto, which makes it easy to write content in Markdown and publish to the web. The aesthetic is intentionally minimal - I prefer focusing on content over flashy design.\nMore to come soon."
+    "text": "Adding posts: Most frequent task. User pastes Apple Notes content, sometimes with a screenshot for reference. Fix the link syntax and formatting, create the post file.\nRenaming posts: Just change the title field in frontmatter.\nCommitting/pushing: User will ask to commit and push. Use descriptive commit messages. The docs/ directory contains rendered HTML that changes with every quarto render/quarto preview, so file counts in commits will be larger than expected.\nNav changes: Edit _quarto.yml navbar section."
   },
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Weyland Joyner",
+    "objectID": "CLAUDE.html#existing-categories",
+    "href": "CLAUDE.html#existing-categories",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "Senior Software Engineer — Applied AI / Special Projects"
+    "text": "software, agents, ai, books, history, data, consulting, distributed-systems, writing, meta"
   },
   {
-    "objectID": "resume.html#experience",
-    "href": "resume.html#experience",
-    "title": "Weyland Joyner",
-    "section": "Experience",
-    "text": "Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame · 2023–Present Founder · Consultant · Acting Head of Engineering\n\nDesigned and shipped AI authoring platform enabling non-technical SMEs to generate VR training content via natural language—adopted across Army, Air Force, Navy, SOCOM\nIntegrated modern LLM APIs into end-to-end multimodal content generation workflows (video, audio, VR specifications)\nLed distributed skunkworks team (including displaced Ukrainian engineers) at CEO request, effectively acting as head of engineering during organizational transformation\nAudited legacy systems, decommissioned outdated tooling, rebuilt core engineering workflows\nDelivered new capabilities under tight timelines working directly with executive leadership outside formal org chart\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach · 2018–2023 Senior Engineer / Technical Lead\n\nLed 7-person team delivering cloud-native systems on AWS/GCP for Fortune 500 and public-sector clients\nArchitected real-time data pipelines consolidating weather, incident, and operational data (BigQuery, streaming infrastructure) for transportation use cases\nSenior technical interface to C-suite; advised on modernization strategy while maintaining hands-on ownership of core systems\n\n\n\nEarly-Stage AI Applications\nIBM Watson Education (via Langa) · 2015–2018 Software Engineer\n\nBuilt production conversational AI applications using Watson NLP APIs (chat, information extraction) for K-12 education\nAdvised Watson leadership on Node.js/React adoption in Java-centric organization; mentored internal engineers on modern JavaScript practices\nLed UX and data visualization (React + D3.js) working directly with teachers and administrators\nDelivered multi-month proof-of-concepts as skunkworks team, presented to IBM executive leadership for productionization\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII) · 2019–2021 Technical Advisor\n\nAssessed portfolio company technology stacks and led architecture reviews for Blackstone infrastructure leadership\nProduced roadmaps and written assessments to inform investment and modernization decisions\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine) · 2022 Co-Founder / Operations Lead\n\nCo-founded and led international aid organization during early Russo-Ukrainian war, coordinating evacuations and humanitarian logistics from active conflict zones\nBuilt and operated supply chains across 3–4 continents under wartime constraints"
-  },
-  {
-    "objectID": "resume.html#technical-breadth",
-    "href": "resume.html#technical-breadth",
-    "title": "Weyland Joyner",
-    "section": "Technical Breadth",
-    "text": "Technical Breadth\nLanguages: JavaScript/TypeScript, Python; functional programming (Haskell, Lisp) Platforms: AWS, GCP Focus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture"
-  },
-  {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
-    "title": "Weyland Joyner",
-    "section": "Education",
-    "text": "Education\nB.A., English & American Literature — Middlebury College Departmental Humanities Prize (Thesis) · Former journalist"
-  },
-  {
-    "objectID": "resume_old.html",
-    "href": "resume_old.html",
-    "title": "Weyland Joyner",
+    "objectID": "CLAUDE.html#listing-config",
+    "href": "CLAUDE.html#listing-config",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "Location: Los Angeles, CA\nLinkedIn: https://www.linkedin.com/in/weylandjoyner/"
+    "text": "The homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose. The title field was removed from index.qmd frontmatter so no heading shows above the post list."
   },
   {
-    "objectID": "resume_old.html#summary",
-    "href": "resume_old.html#summary",
-    "title": "Weyland Joyner",
-    "section": "Summary",
-    "text": "Summary\nSenior software engineer with 12+ years of experience building applied systems across AI, cloud infrastructure, and client-facing products. Early contributor to conversational AI systems (IBM Watson era), long-time technical lead delivering AWS/GCP architectures for Fortune 500 and public-sector clients, and trusted advisor to executive stakeholders on technology strategy. Known for operating effectively under ambiguity, rapidly prototyping novel systems, and translating cutting-edge technology into real-world use."
-  },
-  {
-    "objectID": "resume_old.html#selected-experience",
-    "href": "resume_old.html#selected-experience",
-    "title": "Weyland Joyner",
-    "section": "Selected Experience",
-    "text": "Selected Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame Founder · Consultant · Acting Head of Engineering · 2023-Present\n\nBrought in as a solo consultant to design and build a new AI-first flagship product for VR training used by U.S. military clients (Army, Air Force, Navy, SOCOM)\nArchitected a generative system enabling subject-matter experts (e.g., drill sergeants) to author immersive training experiences via natural language, producing structured specifications consumed by video, audio, and VR pipelines\nIntegrated modern LLM APIs into end-to-end content generation workflows, coordinating multi-modal outputs and downstream processing\nConducted a ground-up audit of legacy systems, decommissioned outdated tooling, and rebuilt core engineering workflows\nAt CEO request, spun up and led a distributed skunkworks team (including displaced Ukrainian engineers), effectively acting as head of engineering to execute organizational and technical transformation\nWorked directly with executive leadership outside the formal org chart to deliver new capabilities under tight timelines and sensitive client constraints\n\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach Senior Engineer / Technical Lead · 2018-2023\n\nLed design and delivery of cloud-native systems on AWS and GCP for Fortune 500 and public-sector clients\nTechnical lead for a 7-person team building streaming and data-processing systems for transportation and infrastructure use cases\nArchitected pipelines consolidating weather, incident, and operational data into BigQuery for real-time and analytical workloads\nBuilt internal tools and web applications supporting operational decision-making\nServed as senior technical interface to client leadership, participating in strategy discussions and advising on modernization efforts\nMaintained hands-on ownership of core codebases while leading architecture and delivery\n\n\n\n\nConversational AI & Full-Stack Engineering\nIBM Watson (via Langa) Consulting Engineer · 2015-2018\n\nDesigned and built full-stack Node.js applications leveraging Watson NLP APIs (chat, information extraction) for education use cases\nAdvised Watson Education leadership on adoption of Node.js and React in a historically Java-centric organization, mentoring internal engineers on modern JS practices\nLed UX and data-visualization design (React + D3.js) for nontechnical users, working directly with teachers and administrators to translate real-world workflows into AI-assisted tools\nOperated as a skunkworks team delivering multi-month proof-of-concept products presented to IBM leadership for productionization\n\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII)\nTechnical Advisor (Additional Responsibility)\n\nPersonally requested by Blackstone infrastructure leadership to assess portfolio company technology\nLed stakeholder meetings with private equity leadership and operating companies\nProduced architecture reviews, roadmaps, and written assessments to inform investment and modernization decisions\n\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine)\nCo-Founder / Operations Lead\n\nCo-founded and led an international aid organization during the early Russo-Ukrainian war\nBuilt and operated supply chains across 3–4 continents under wartime constraints\nLed a distributed team (~10 people) coordinating evacuations and humanitarian logistics from active conflict zones\nManaged security, logistics, and rapid decision-making in high-risk environments"
-  },
-  {
-    "objectID": "resume_old.html#education",
-    "href": "resume_old.html#education",
-    "title": "Weyland Joyner",
-    "section": "Education",
-    "text": "Education\nB.A., English & American Literature — Middlebury College\nDepartmental Humanities Prize (Thesis)\nFormer journalist"
-  },
-  {
-    "objectID": "resume_old.html#technical-breadth",
-    "href": "resume_old.html#technical-breadth",
-    "title": "Weyland Joyner",
-    "section": "Technical Breadth",
-    "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
-  },
-  {
-    "objectID": "languages.html",
-    "href": "languages.html",
-    "title": "Weyland Joyner",
+    "objectID": "CLAUDE.html#prototype-site",
+    "href": "CLAUDE.html#prototype-site",
+    "title": "Weyland Joyner’s Blog (Quarto)",
     "section": "",
-    "text": "Lingua Latina Per Se Illustrata\nLatinitium\nLatina Animi Causa"
-  },
-  {
-    "objectID": "languages.html#latin",
-    "href": "languages.html#latin",
-    "title": "Weyland Joyner",
-    "section": "",
-    "text": "Lingua Latina Per Se Illustrata\nLatinitium\nLatina Animi Causa"
-  },
-  {
-    "objectID": "languages.html#greek",
-    "href": "languages.html#greek",
-    "title": "Weyland Joyner",
-    "section": "Greek",
-    "text": "Greek\n\nAthenaze\nLogos (review)\nThrasymachus\nA Greek Boy at Home (Rouse)"
-  },
-  {
-    "objectID": "languages.html#sanskrit",
-    "href": "languages.html#sanskrit",
-    "title": "Weyland Joyner",
-    "section": "Sanskrit",
-    "text": "Sanskrit\n\nAmarahasa\nLearnSanskrit\nCambridge Introduction to Sanskrit\nPanini"
-  },
-  {
-    "objectID": "languages.html#icelandic",
-    "href": "languages.html#icelandic",
-    "title": "Weyland Joyner",
-    "section": "Icelandic",
-    "text": "Icelandic\n\nA Course in Modern Icelandic (Jon Fridjonsson)"
-  },
-  {
-    "objectID": "languages.html#arabic-levantine",
-    "href": "languages.html#arabic-levantine",
-    "title": "Weyland Joyner",
-    "section": "Arabic (Levantine)",
-    "text": "Arabic (Levantine)\n\nElihay Book\nLingualism"
+    "text": "There is a prototype plain HTML/CSS version of this blog at ~/projects/weylandjoyner.com using the Flexoki color palette (calv.info-inspired). It has its own build system (node build.js with marked). The user may occasionally ask to add posts to both sites."
   },
   {
     "objectID": "reading.html",
@@ -210,18 +126,53 @@
     "text": "April 2025\n\nAthenaze, Book I: An Introduction to Ancient Greek by Balme et al.\nThe Invention that Changed the World by Robert Buderi"
   },
   {
-    "objectID": "posts/kleppmann-local-first/index.html",
-    "href": "posts/kleppmann-local-first/index.html",
-    "title": "Kleppmann on Local-First",
+    "objectID": "languages.html",
+    "href": "languages.html",
+    "title": "Weyland Joyner",
     "section": "",
-    "text": "This is Martin Kleppmann, author of Designing Data Intensive Applications, talking about Local-First Software.\nThere was a paper by Ink&Switch back in 2019 on local-first software, but in this talk Kleppmann extrapolates in some really interesting ways.\nLocal-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:\n\na distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable (1987)\n\nAnd goes on to say that local-first software is software built so that, if the developer of the software went out of business, users could still run and use the software.\nImagine if Oracle went out of business and you could still use Oracle db.\nThis breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.\nIt’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch."
+    "text": "Lingua Latina Per Se Illustrata\nLatinitium\nLatina Animi Causa"
   },
   {
-    "objectID": "posts/haber-bosch/index.html",
-    "href": "posts/haber-bosch/index.html",
-    "title": "Carl Bosch’s Nobel Prize Speech",
+    "objectID": "languages.html#latin",
+    "href": "languages.html#latin",
+    "title": "Weyland Joyner",
     "section": "",
-    "text": "The Alchemy of Air\n\n\nHow did you go about productizing a chemistry experiment in the early 20th century?\nI read The Alchemy of Air earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.\nAs a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.\nBoth Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his Nobel Prize speech if you want to delve a bit beyond what the book gets into."
+    "text": "Lingua Latina Per Se Illustrata\nLatinitium\nLatina Animi Causa"
+  },
+  {
+    "objectID": "languages.html#greek",
+    "href": "languages.html#greek",
+    "title": "Weyland Joyner",
+    "section": "Greek",
+    "text": "Greek\n\nAthenaze\nLogos (review)\nThrasymachus\nA Greek Boy at Home (Rouse)"
+  },
+  {
+    "objectID": "languages.html#sanskrit",
+    "href": "languages.html#sanskrit",
+    "title": "Weyland Joyner",
+    "section": "Sanskrit",
+    "text": "Sanskrit\n\nAmarahasa\nLearnSanskrit\nCambridge Introduction to Sanskrit\nPanini"
+  },
+  {
+    "objectID": "languages.html#icelandic",
+    "href": "languages.html#icelandic",
+    "title": "Weyland Joyner",
+    "section": "Icelandic",
+    "text": "Icelandic\n\nA Course in Modern Icelandic (Jon Fridjonsson)"
+  },
+  {
+    "objectID": "languages.html#arabic-levantine",
+    "href": "languages.html#arabic-levantine",
+    "title": "Weyland Joyner",
+    "section": "Arabic (Levantine)",
+    "text": "Arabic (Levantine)\n\nElihay Book\nLingualism"
+  },
+  {
+    "objectID": "posts/building-agents-3-handoff-most-important-feature/index.html",
+    "href": "posts/building-agents-3-handoff-most-important-feature/index.html",
+    "title": "[Building Agents, 3] I Guess Handoff is the Most Important Feature",
+    "section": "",
+    "text": "The point of an agent is that it should have a tight, simple core loop for tool calling and returning a response to the user. At this level the tool call, or sequence of tool calls, is the unit of work. Once you get above this level of abstraction, you’re looking at the thread itself as the unit of work, and here’s where you get into some design decisions within the agent harness. What should we do to keep our threads short and focused?\n\nCompaction of context, which I think Claude Code does by default, should be considered harmful as it’s very lossy; at that point you’re basically saying “continue the conversation, but not as high quality as it was before”;\nForking the conversation doesn’t seem like it helps; that’s just creating one or more progressive versions of the existing context. I guess the theory is that I could create multiple forks from a foundational context to implement multiple features but…this doesn’t feel right to me;\nA combination of multiple high-quality AGENTS.md instructions throughout the codebase, plus some sort of issue tracker like Beads or just Ralph Wiggum’s JSON tracker may allow you to spin up fresh loops every time you think of a new feature, but you are still losing some critical information about the dialogue that has driven implementation so far;\nSimilarly, maintaining a TODOs list seems like it would be a good practice, but since Opus 4.5 the Amp team points out that this is unnecessary; the model can track its own work within the thread.\n\nI think what we want is a really well-designed handoff feature, where an external LLM summarizes the conversation and then passes that summary into your new thread. This is what I think Amp does on thread:handoff and I’m figuring out how to implement it myself."
   },
   {
     "objectID": "posts/ralph-wiggum-gas-town/index.html",
@@ -231,62 +182,6 @@
     "text": "Steve Yegge identifies 8 stages of AI-assisted coding adoption.\nI’m somewhere between Stage 5 and 6 - I’ve largely abandoned the IDE in my own projects in favor of managing amp or claude code CLI tools (Stage 5). I like living on the command line anyway, that’s why I’ve always been a vim user.\nHowever, I haven’t really graduated to running multiple concurrent agents (Stage 6). I don’t really mind waiting for a single agent to sequentially knock out tasks for personal work, but it’s easy to see the usefulness of orchestrating a team of AI coders for e.g. enterprise software projects with huge monorepos.\nAt first I was just running claude or amp as an interactive session and guiding it step by step through building my projects, but lately I like using Geoff Huntley’s Ralph Wiggum coding loop, particularly this great implementation for claude/amp by Ryan Carson.\nAnd that’s all it is really, a bash loop. As Addy Osmani points out, what this design gives you is memory persistence, so you don’t have to swamp the agent with the full context of past and future tasks in each iteration; external files - git, progress.txt, prd.json - maintain the state of dev progress and each loop iteration can pull a subset of context and requirements for carrying out a task.\nAgain, I’m using a single agent here (Yegge Stage 5), and it sets passes: true to each sequential task in the PRD file prd.json as it completes it. This takes time; generally once I have my PRD ready I run the loop (ralph.sh) and walk away from my laptop for a bit. I suppose you could add dependency logic to the PRD’s tasks such that multiple claude/amp instances could be picking off tasks concurrently,\nBut at any rate this is where Yegge’s Gas Town comes in. This is a tool built on Steve’s earlier project beads, and it abstracts agent work into a well-defined (and colorful) taxonomy. I haven’t gone deep into this yet, expect more to come here."
   },
   {
-    "objectID": "posts/on-writing/index.html",
-    "href": "posts/on-writing/index.html",
-    "title": "On Writing",
-    "section": "",
-    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#finding-my-voice",
-    "href": "posts/on-writing/index.html#finding-my-voice",
-    "title": "On Writing",
-    "section": "",
-    "text": "Writing is thinking made visible. For too long, I’ve kept my thoughts in private notes and fragmented documents. This blog is an experiment in thinking publicly.\nThe format is simple on purpose. No elaborate designs, no complex JavaScript frameworks, just words and ideas. Like the old web, when content mattered more than aesthetics."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#what-to-expect",
-    "href": "posts/on-writing/index.html#what-to-expect",
-    "title": "On Writing",
-    "section": "What to Expect",
-    "text": "What to Expect\nI plan to write about:\n\nThings I’m learning\nTechnical explorations\nIdeas worth sharing\nOccasional observations\n\nThe frequency will be irregular. Quality over quantity."
-  },
-  {
-    "objectID": "posts/on-writing/index.html#why-now",
-    "href": "posts/on-writing/index.html#why-now",
-    "title": "On Writing",
-    "section": "Why Now",
-    "text": "Why Now\nThere’s something about having a public space that changes how you think. When you know others might read your work, you think more carefully, write more clearly, and consider perspectives you might otherwise miss.\nThis is that space for me."
-  },
-  {
-    "objectID": "posts/digital-twin-universes/index.html",
-    "href": "posts/digital-twin-universes/index.html",
-    "title": "Digital Twin Universe(s)",
-    "section": "",
-    "text": "StrongDM introduces the idea of a Digital Twin Universe to validate end-to-end “scenarios” for software built (they prefer the term “grown”) in “dark factories”1 by agents.\nSo if you want to run a software Dark Factory, you need specs as an input—StrongDM calls this the “Seed”—and those can be generated by agents (again I’m using the /prd and /ralph Skills); the other thing you need is an ability to define and run Scenarios—these start as user stories, but the idea is you try to cover anything a user could conceivably do with your software to surface bugs.\nI have a new repo where I’m using the Ralph Wiggum /prd and /ralph Skills in Claude Code to generate detailed PRD and task files that can be fed to Ralph or Gastown or some other agent work orchestrator to replicate various well-documented APIs. Basically you point Claude at public API documentation and say “generate a PRD for a shallow clone.” By “shallow” I mean that we won’t replicate the data infrastructure; we’ll stub things out or return dummy data from endpoints.\nThe whole StrongDM website is full of fascinating ideas and techniques, it’s worth looking through. Simon Willison also has a nice writeup: https://simonwillison.net/2026/Feb/7/software-factory/"
-  },
-  {
-    "objectID": "posts/duckdb-lost-decade/index.html",
-    "href": "posts/duckdb-lost-decade/index.html",
-    "title": "[DuckDB] The Lost Decade?",
-    "section": "",
-    "text": "This fascinating post confirms some hunches I started to have in the late 2010s when everybody was overengineering their ETL pipelines.\nWorth a read, the tl;dr at the beginning of the post more or less gets it. I haven’t used DuckDB in a professional project yet, but the team seems great, and you should read everything on their technical blog."
-  },
-  {
-    "objectID": "posts/a16z-forward-deployed-engineers/index.html",
-    "href": "posts/a16z-forward-deployed-engineers/index.html",
-    "title": "a16z on Forward-Deployed Engineers",
-    "section": "",
-    "text": "There’s been a good deal of buzz about FDEs lately. That’s a job that I’ve been doing under some alias since the mid-2010s.\nI spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.\nThat’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.\nI’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design."
-  },
-  {
-    "objectID": "posts/experimenting-with-beads/index.html",
-    "href": "posts/experimenting-with-beads/index.html",
-    "title": "More on Context - Steve Yegge’s Beads",
-    "section": "",
-    "text": "Steve Yegge has a great post about Beads, his agent-first issue tracker. He goes into reasons a plain markdown tracking system doesn’t work at scale, and his findings shed some light on how agents approach their work with limited context.\nI’ve also noticed that agents will try to finish a task no matter what—so if they’re in the 5th of 10 tasks of a process and realize they’re running out of context, they’ll kind of whiz through the last 5 tasks in a hurry. It’s like their velocity increases at the expense of thoroughness. I guess the idea is that’s better than leaving the task undone, but actually I think anybody who’s building with agents these days recognizes that it’s fine to leave a task undone (in an orderly way); I can just spin up another agent to pick it up. I’d much rather have a half-done project neatly handed back to me than a finished project that’s riddled with low-quality, dashed-off code.\nThere’s a lot of talk right now about multi-agent workflows and orchestration, etc. But I think there’s still a lot of work to be done just to get sequential work done by repeated iterations of passing an agent some spec or open issues. Once we’re in a place where I can confidently hand off a project in some state of completion to an agent, expect it to do some relatively determinate amount of work, and hand it back off to me with clear tracking of what’s been done, I think it’ll get a lot easier to reason about running multiple agents concurrently."
-  },
-  {
     "objectID": "posts/context-engineering/index.html",
     "href": "posts/context-engineering/index.html",
     "title": "Thoughts on Context Engineering",
@@ -294,46 +189,25 @@
     "text": "“Think about context windows as a Commodore 64 with a small amount of memory”\n\nIn several of his videos, Geoff Huntley makes the case that working with an agent basically means malloc’ing an array (the context window). Assume that compaction (which is lossy) will lead to context rot, so find ways to direct agents in a loop without relying on long-term context. In other words, you should be able to kick off a new thread (clean context window) anytime you want, instead of relying on the previous thread’s history to direct the agent. Always keep the array in mind; the first element is the system prompt, then you have AGENTS.md, and then tool calls are going to keep iterating and appending to the array. AGENTS.md is really effective, so you should definitely use it, but it should be small—like, Huntley recommends around 70 lines of text.\nSo in keeping with my recent posts about Beads, Ralph Wiggum, etc…it seems like the key thing here is, our agents are ephemeral, we want to be able to lose them and respawn them at any point in the workflow: that means there has to be some system of record to let a newly spawned agent thread know where to pick up. Beads is Steve Yegge’s version of that; it’s JSONL tracked in Git. Ralph Wiggum uses regular JSON with a simple “passes” boolean, which has been working for me so far but you can read Steve’s post to understand reasons that may not scale on large or multi-agent projects.\nNot to get off-topic, but I watched a talk by Letta today. Letta and mem0 are companies that want to provide LLM memory, and the way the guy from Letta framed it was sort of anthropomorphic—the agent is not a workflow, it’s a person. It persists for weeks, months etc and evolves its own personality, etc, etc. I think a lot of what they’re doing comes out of the MemGPT paper. So, this is interesting, but I think as system builders using tools like Claude Code and Ralph, we want to distance ourselves from this point of view. When we say “agent” we mean “worker with a task.”\nI don’t know, maybe we need to extend our ontology, maybe what companies like Letta are trying to provide aren’t “agents” but something else like companions or coworkers.\nBecause the thing is, if I have a PRD and a list of tasks, and I want agents to go through those tasks, I don’t even necessarily want something anthropomorphized, I’m not looking for a developed personality; I want something that calls tools in a loop.\nAnd even if I were to expand the scope of agents outside of coding agents, to like, legal assistants or media researchers or whatever—am I looking for something with a personality of its own? Or do I want a background process that can bulldoze tasks?"
   },
   {
-    "objectID": "CLAUDE.html",
-    "href": "CLAUDE.html",
-    "title": "Weyland Joyner’s Blog (Quarto)",
+    "objectID": "posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
+    "href": "posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
+    "title": "[Building Agents, 2] Treat Agent Threads like Unix Tools",
     "section": "",
-    "text": "Quarto website, output to docs/, hosted on GitHub Pages (custom domain may be configured)\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render\nNavbar tabs (in order): Writing, Bookshelf, Links, Language Learning, Resume/CV\n\n\n\n\nPosts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nmkdir the directory posts/&lt;kebab-case-slug&gt;/\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes (sometimes with a screenshot). When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes in Quarto\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nFootnotes: Use [^1] inline and [^1]: Footnote text at the bottom (note the colon)\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links\n\n\n\n\n\n\nAdding posts: Most frequent task. User pastes Apple Notes content, sometimes with a screenshot for reference. Fix the link syntax and formatting, create the post file.\nRenaming posts: Just change the title field in frontmatter.\nCommitting/pushing: User will ask to commit and push. Use descriptive commit messages. The docs/ directory contains rendered HTML that changes with every quarto render/quarto preview, so file counts in commits will be larger than expected.\nNav changes: Edit _quarto.yml navbar section.\n\n\n\n\nsoftware, agents, ai, books, history, data, consulting, distributed-systems, writing, meta\n\n\n\nThe homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose. The title field was removed from index.qmd frontmatter so no heading shows above the post list.\n\n\n\nThere is a prototype plain HTML/CSS version of this blog at ~/projects/weylandjoyner.com using the Flexoki color palette (calv.info-inspired). It has its own build system (node build.js with marked). The user may occasionally ask to add posts to both sites."
+    "text": "In other words have them do one thing, well, and succinctly.\nTake a look at this post from Lewis Metcalf at Amp. The way he’s working is that a thread only has a few user messages, and context stays well under the 200k limit and even the “dumb mode” threshold somewhere beneath that, say around 150k or so.\nOK, but Unix tools are composable. This points up a really important feature I think any agent harness should have, which is something like Amp’s thread:handoff. We need to be able to summarize and ‘pipe’ a thread’s “output” to a new thread that will do something else with it."
   },
   {
-    "objectID": "CLAUDE.html#site-overview",
-    "href": "CLAUDE.html#site-overview",
-    "title": "Weyland Joyner’s Blog (Quarto)",
+    "objectID": "posts/kleppmann-local-first/index.html",
+    "href": "posts/kleppmann-local-first/index.html",
+    "title": "Kleppmann on Local-First",
     "section": "",
-    "text": "Quarto website, output to docs/, hosted on GitHub Pages (custom domain may be configured)\nConfig: _quarto.yml (theme: cosmo)\nPreview: quarto preview\nRender: quarto render\nNavbar tabs (in order): Writing, Bookshelf, Links, Language Learning, Resume/CV"
+    "text": "This is Martin Kleppmann, author of Designing Data Intensive Applications, talking about Local-First Software.\nThere was a paper by Ink&Switch back in 2019 on local-first software, but in this talk Kleppmann extrapolates in some really interesting ways.\nLocal-first software isn’t just peer-to-peer software, or software that uses CRDTs. Much more bombastically, Kleppmann quotes Leslie Lamport:\n\na distributed system is one in which the failure of a computer you didn’t even know existed can render your own computer unusable (1987)\n\nAnd goes on to say that local-first software is software built so that, if the developer of the software went out of business, users could still run and use the software.\nImagine if Oracle went out of business and you could still use Oracle db.\nThis breaks the SaaS paradigm entirely, because traditional SaaS has its moat around data and hosting, not just the innate quality of the software’s design and function.\nIt’s hard for me as a software engineer/architect to imagine exactly what this “local-first software looks like, and what exactly the economics of this are, but this talk (and the preceding paper) are worth a watch."
   },
   {
-    "objectID": "CLAUDE.html#creating-blog-posts",
-    "href": "CLAUDE.html#creating-blog-posts",
-    "title": "Weyland Joyner’s Blog (Quarto)",
+    "objectID": "posts/digital-twin-universes/index.html",
+    "href": "posts/digital-twin-universes/index.html",
+    "title": "Digital Twin Universe(s)",
     "section": "",
-    "text": "Posts live in posts/&lt;slug&gt;/index.qmd. To add a new post:\n\nmkdir the directory posts/&lt;kebab-case-slug&gt;/\nCreate posts/&lt;kebab-case-slug&gt;/index.qmd\nUse this frontmatter format:\n\n---\ntitle: \"Post Title\"\nauthor: \"Weyland Joyner\"\ndate: \"YYYY-MM-DD\"\ncategories: [category1, category2]\n---\n\nThe user will often paste content from Apple Notes (sometimes with a screenshot). When they do:\n\nFix links: Apple Notes uses (text)[url] — convert to [text](url)\nEm dashes: Use --- (three hyphens) for em dashes in Quarto\nBare URLs: Wrap in angle brackets: &lt;https://example.com&gt;\nEmphasis: Use *italic* for emphasis where the note’s intent is clear\nBlockquotes: Use &gt; for quoted text\nFootnotes: Use [^1] inline and [^1]: Footnote text at the bottom (note the colon)\nBackdating: The user may ask to backdate a post; just set the date field accordingly\nDon’t invent content: Preserve the user’s writing as-is; only fix formatting/links"
-  },
-  {
-    "objectID": "CLAUDE.html#existing-categories",
-    "href": "CLAUDE.html#existing-categories",
-    "title": "Weyland Joyner’s Blog (Quarto)",
-    "section": "",
-    "text": "software, agents, ai, books, history, data, consulting, distributed-systems, writing, meta"
-  },
-  {
-    "objectID": "CLAUDE.html#listing-config",
-    "href": "CLAUDE.html#listing-config",
-    "title": "Weyland Joyner’s Blog (Quarto)",
-    "section": "",
-    "text": "The homepage listing (index.qmd) uses fields: [date, title, author, categories, description] — images are excluded from the listing on purpose. The title field was removed from index.qmd frontmatter so no heading shows above the post list."
-  },
-  {
-    "objectID": "posts/kernighan-pike-unix-agents/index.html",
-    "href": "posts/kernighan-pike-unix-agents/index.html",
-    "title": "Kernighan & Pike & Unix & Agents",
-    "section": "",
-    "text": "The Unix Programming Environment\n\n\n“Every Unix Command Becomes a Startup”\nSometime in the mid-2010s I found this book on the bottom shelf of a used bookstore in Oakland, CA. The Unix Programming Environment by Brian Kernighan and Rob Pike, published in 1978.\nWhen I got home I started working through it, running code samples on my 2014 MacBook, and what blew me away was that most of the samples ran as-is. In cases where they didn’t, it was generally semantics—a command or flag had been renamed.\nThis was when I started to understand the durability and resilience of the Unix programming model. Lately I’ve been thinking back to this book because the core loop you need for agent orchestration is really just a bash loop. So, I’ve been brushing up on my bash scripting.\nAlso, I’m back to using Vim (Neovim to be fair) as my primary editor. Most of the time I’m driving an agent CLI like Claude Code, so the only time I really want to be in an editor is to review generated code or make occasional edits. A minimal vim setup—not a reproduced IDE but just a text editor—is perfect for this. I don’t even need AI extensions, autocomplete etc because at that point I’m back on the command line telling Claude what to do.\nIn the Web 2.0 era there was this idea that every Unix command became a startup (see link above). I’m not quite sure what the slogan is for our new agentic era but I’m convinced that sticking close to Unix and driving things on the command line is a really good idea.\nFinally—this gets into something I’ll expand on in another post soon. A number of technologists I pay attention to, notably Armin Ronacher and Tim Dettmers, seem to be converging on the idea that agents should really be writing code to do things. Not just working as coding assistants and building user-facing software, though that is an exciting use case. Rather, these agents are very good at using tools like Bash and Python. Instead of building a bunch of overengineered infrastructure and protocols for calling external APIs and tools, trust that the agent can probably come up with a script to do just about anything digitally. I’ll come back to this in a later post."
+    "text": "StrongDM introduces the idea of a Digital Twin Universe to validate end-to-end “scenarios” for software built (they prefer the term “grown”) in “dark factories”1 by agents.\nSo if you want to run a software Dark Factory, you need specs as an input—StrongDM calls this the “Seed”—and those can be generated by agents (again I’m using the /prd and /ralph Skills); the other thing you need is an ability to define and run Scenarios—these start as user stories, but the idea is you try to cover anything a user could conceivably do with your software to surface bugs.\nI have a new repo where I’m using the Ralph Wiggum /prd and /ralph Skills in Claude Code to generate detailed PRD and task files that can be fed to Ralph or Gastown or some other agent work orchestrator to replicate various well-documented APIs. Basically you point Claude at public API documentation and say “generate a PRD for a shallow clone.” By “shallow” I mean that we won’t replicate the data infrastructure; we’ll stub things out or return dummy data from endpoints.\nThe whole StrongDM website is full of fascinating ideas and techniques, it’s worth looking through. Simon Willison also has a nice writeup: https://simonwillison.net/2026/Feb/7/software-factory/"
   },
   {
     "objectID": "posts/digital-twin-universes/index.html#footnotes",
@@ -350,32 +224,95 @@
     "text": "“I wish I could see the prompts that led to changes”\nOne problem with unleashing the agents on Github is that you’re going to get a lot of trash PRs that swamp open-source maintainers. To that end Mitchell Hashimoto (of Hashicorp) has Vouch, a system for maintaining a list of authorized contributors. His point is that in the past, the effort of understanding a codebase and submitting changes was high enough that we didn’t need this, but with agents pushing code this is no longer the case. His idea is to make trust explicit.\nBut another problem with not just Github but git itself in an era of agentic development is that the whole model of commit messages is probably insufficient to track what’s happening. Armin Ronacher points out that it would be nice to see the prompts leading to changes. We’re now programming non-deterministic assistants to do work for us, and having a prompt trail can help us improve our own prompting workflows, as well as track where agents go off the rails.\nPersonally I’m tracking everything in a JSON task list autogenerated from a markdown PRD file, and this works ok for a more-or-less sequential, iterative development loop with one agent at a time. I’ve also written about Beads, which is Steve Yegge’s more battle-tested tracking system. Tying solutions like these to commits, as well as keeping record of user requests and agent responses, which can in turn be scanned by future agents to infer more about a codebase, user intent, bugs etc seems like more than git itself can handle. I’m curious to see what the software development converges on because we’re all working on larger and more complex projects by the day."
   },
   {
-    "objectID": "CLAUDE.html#common-tasks",
-    "href": "CLAUDE.html#common-tasks",
-    "title": "Weyland Joyner’s Blog (Quarto)",
+    "objectID": "resume_old.html",
+    "href": "resume_old.html",
+    "title": "Weyland Joyner",
     "section": "",
-    "text": "Adding posts: Most frequent task. User pastes Apple Notes content, sometimes with a screenshot for reference. Fix the link syntax and formatting, create the post file.\nRenaming posts: Just change the title field in frontmatter.\nCommitting/pushing: User will ask to commit and push. Use descriptive commit messages. The docs/ directory contains rendered HTML that changes with every quarto render/quarto preview, so file counts in commits will be larger than expected.\nNav changes: Edit _quarto.yml navbar section."
+    "text": "Location: Los Angeles, CA\nLinkedIn: https://www.linkedin.com/in/weylandjoyner/"
   },
   {
-    "objectID": "CLAUDE.html#prototype-site",
-    "href": "CLAUDE.html#prototype-site",
-    "title": "Weyland Joyner’s Blog (Quarto)",
-    "section": "",
-    "text": "There is a prototype plain HTML/CSS version of this blog at ~/projects/weylandjoyner.com using the Flexoki color palette (calv.info-inspired). It has its own build system (node build.js with marked). The user may occasionally ask to add posts to both sites."
+    "objectID": "resume_old.html#summary",
+    "href": "resume_old.html#summary",
+    "title": "Weyland Joyner",
+    "section": "Summary",
+    "text": "Summary\nSenior software engineer with 12+ years of experience building applied systems across AI, cloud infrastructure, and client-facing products. Early contributor to conversational AI systems (IBM Watson era), long-time technical lead delivering AWS/GCP architectures for Fortune 500 and public-sector clients, and trusted advisor to executive stakeholders on technology strategy. Known for operating effectively under ambiguity, rapidly prototyping novel systems, and translating cutting-edge technology into real-world use."
   },
   {
-    "objectID": "posts/building-agents-handoff-most-important-feature/index.html",
-    "href": "posts/building-agents-handoff-most-important-feature/index.html",
-    "title": "[Building Agents] I Guess Handoff is the Most Important Feature",
-    "section": "",
-    "text": "The point of an agent, at the thread level, is that it should have a tight, simple core loop for tool calling and returning a response to the user. At this level the tool call, or sequence of tool calls, is the unit of work.\nOnce you get above this level of abstraction, you’re looking at the thread itself as the unit of work, and here’s where you get into some design decisions within the agent harness. What should we do to keep our threads short and focused?\n\nCompaction of context, which I think Claude Code does by default, should be considered harmful as it’s very lossy; at that point you’re basically saying “continue the conversation, but not as high quality as it was before”;\nForking the conversation doesn’t seem like it helps; that’s just creating one or more progressive versions of the existing context. I guess the theory is that I could create multiple forks from a foundational context to implement multiple features but…this doesn’t feel right to me;\nA combination of multiple high-quality AGENTS.md instructions throughout the codebase, plus some sort of issue tracker like Beads or just Ralph Wiggum’s JSON tracker may allow you to spin up fresh loops every time you think of a new feature, but you are still losing some critical information about the dialogue that has driven implementation so far;\nSimilarly, maintaining a TODOs list seems like it would be a good practice, but since Opus 4.5 the Amp team points out that this is unnecessary; the model can track its own work within the thread.\n\nI think what we want is a really well-designed handoff feature, where an external LLM summarizes the conversation and then passes that summary into your new thread. This is what I think Amp does on thread:handoff and I’m figuring out how to implement it myself."
+    "objectID": "resume_old.html#selected-experience",
+    "href": "resume_old.html#selected-experience",
+    "title": "Weyland Joyner",
+    "section": "Selected Experience",
+    "text": "Selected Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame Founder · Consultant · Acting Head of Engineering · 2023-Present\n\nBrought in as a solo consultant to design and build a new AI-first flagship product for VR training used by U.S. military clients (Army, Air Force, Navy, SOCOM)\nArchitected a generative system enabling subject-matter experts (e.g., drill sergeants) to author immersive training experiences via natural language, producing structured specifications consumed by video, audio, and VR pipelines\nIntegrated modern LLM APIs into end-to-end content generation workflows, coordinating multi-modal outputs and downstream processing\nConducted a ground-up audit of legacy systems, decommissioned outdated tooling, and rebuilt core engineering workflows\nAt CEO request, spun up and led a distributed skunkworks team (including displaced Ukrainian engineers), effectively acting as head of engineering to execute organizational and technical transformation\nWorked directly with executive leadership outside the formal org chart to deliver new capabilities under tight timelines and sensitive client constraints\n\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach Senior Engineer / Technical Lead · 2018-2023\n\nLed design and delivery of cloud-native systems on AWS and GCP for Fortune 500 and public-sector clients\nTechnical lead for a 7-person team building streaming and data-processing systems for transportation and infrastructure use cases\nArchitected pipelines consolidating weather, incident, and operational data into BigQuery for real-time and analytical workloads\nBuilt internal tools and web applications supporting operational decision-making\nServed as senior technical interface to client leadership, participating in strategy discussions and advising on modernization efforts\nMaintained hands-on ownership of core codebases while leading architecture and delivery\n\n\n\n\nConversational AI & Full-Stack Engineering\nIBM Watson (via Langa) Consulting Engineer · 2015-2018\n\nDesigned and built full-stack Node.js applications leveraging Watson NLP APIs (chat, information extraction) for education use cases\nAdvised Watson Education leadership on adoption of Node.js and React in a historically Java-centric organization, mentoring internal engineers on modern JS practices\nLed UX and data-visualization design (React + D3.js) for nontechnical users, working directly with teachers and administrators to translate real-world workflows into AI-assisted tools\nOperated as a skunkworks team delivering multi-month proof-of-concept products presented to IBM leadership for productionization\n\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII)\nTechnical Advisor (Additional Responsibility)\n\nPersonally requested by Blackstone infrastructure leadership to assess portfolio company technology\nLed stakeholder meetings with private equity leadership and operating companies\nProduced architecture reviews, roadmaps, and written assessments to inform investment and modernization decisions\n\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine)\nCo-Founder / Operations Lead\n\nCo-founded and led an international aid organization during the early Russo-Ukrainian war\nBuilt and operated supply chains across 3–4 continents under wartime constraints\nLed a distributed team (~10 people) coordinating evacuations and humanitarian logistics from active conflict zones\nManaged security, logistics, and rapid decision-making in high-risk environments"
   },
   {
-    "objectID": "posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
-    "href": "posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
-    "title": "[Building Agents, 2] Treat Agent Threads like Unix Tools",
+    "objectID": "resume_old.html#education",
+    "href": "resume_old.html#education",
+    "title": "Weyland Joyner",
+    "section": "Education",
+    "text": "Education\nB.A., English & American Literature — Middlebury College\nDepartmental Humanities Prize (Thesis)\nFormer journalist"
+  },
+  {
+    "objectID": "resume_old.html#technical-breadth",
+    "href": "resume_old.html#technical-breadth",
+    "title": "Weyland Joyner",
+    "section": "Technical Breadth",
+    "text": "Technical Breadth\n\nLanguages: JavaScript / TypeScript, Python; working knowledge of functional programming (Haskell, Lisp)\nPlatforms: AWS, GCP\nFocus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture, client-facing engineering"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Weyland Joyner",
     "section": "",
-    "text": "In other words have them do one thing, well, and succinctly.\nTake a look at this post from Lewis Metcalf at Amp. The way he’s working is that a thread only has a few user messages, and context stays well under the 200k limit and even the “dumb mode” threshold somewhere beneath that, say around 150k or so.\nOK, but Unix tools are composable. This points up a really important feature I think any agent harness should have, which is something like Amp’s thread:handoff. We need to be able to summarize and ‘pipe’ a thread’s “output” to a new thread that will do something else with it."
+    "text": "Senior Software Engineer — Applied AI / Special Projects"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Weyland Joyner",
+    "section": "Experience",
+    "text": "Experience\n\nApplied AI & Special Projects\nMercer Street Labs / Moth+Flame · 2023–Present Founder · Consultant · Acting Head of Engineering\n\nDesigned and shipped AI authoring platform enabling non-technical SMEs to generate VR training content via natural language—adopted across Army, Air Force, Navy, SOCOM\nIntegrated modern LLM APIs into end-to-end multimodal content generation workflows (video, audio, VR specifications)\nLed distributed skunkworks team (including displaced Ukrainian engineers) at CEO request, effectively acting as head of engineering during organizational transformation\nAudited legacy systems, decommissioned outdated tooling, rebuilt core engineering workflows\nDelivered new capabilities under tight timelines working directly with executive leadership outside formal org chart\n\n\n\nCloud Architecture & Delivery Leadership\nCloudreach · 2018–2023 Senior Engineer / Technical Lead\n\nLed 7-person team delivering cloud-native systems on AWS/GCP for Fortune 500 and public-sector clients\nArchitected real-time data pipelines consolidating weather, incident, and operational data (BigQuery, streaming infrastructure) for transportation use cases\nSenior technical interface to C-suite; advised on modernization strategy while maintaining hands-on ownership of core systems\n\n\n\nEarly-Stage AI Applications\nIBM Watson Education (via Langa) · 2015–2018 Software Engineer\n\nBuilt production conversational AI applications using Watson NLP APIs (chat, information extraction) for K-12 education\nAdvised Watson leadership on Node.js/React adoption in Java-centric organization; mentored internal engineers on modern JavaScript practices\nLed UX and data visualization (React + D3.js) working directly with teachers and administrators\nDelivered multi-month proof-of-concepts as skunkworks team, presented to IBM executive leadership for productionization\n\n\n\nTechnology Strategy & Executive Advisory\nBlackstone (BXII) · 2019–2021 Technical Advisor\n\nAssessed portfolio company technology stacks and led architecture reviews for Blackstone infrastructure leadership\nProduced roadmaps and written assessments to inform investment and modernization decisions\n\n\n\nOperations & Crisis Leadership\nHumanitarian Aid Organization (Ukraine) · 2022 Co-Founder / Operations Lead\n\nCo-founded and led international aid organization during early Russo-Ukrainian war, coordinating evacuations and humanitarian logistics from active conflict zones\nBuilt and operated supply chains across 3–4 continents under wartime constraints"
+  },
+  {
+    "objectID": "resume.html#technical-breadth",
+    "href": "resume.html#technical-breadth",
+    "title": "Weyland Joyner",
+    "section": "Technical Breadth",
+    "text": "Technical Breadth\nLanguages: JavaScript/TypeScript, Python; functional programming (Haskell, Lisp) Platforms: AWS, GCP Focus Areas: Applied AI systems, generative workflows, distributed systems, cloud architecture"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Weyland Joyner",
+    "section": "Education",
+    "text": "Education\nB.A., English & American Literature — Middlebury College Departmental Humanities Prize (Thesis) · Former journalist"
+  },
+  {
+    "objectID": "posts/experimenting-with-beads/index.html",
+    "href": "posts/experimenting-with-beads/index.html",
+    "title": "More on Context - Steve Yegge’s Beads",
+    "section": "",
+    "text": "Steve Yegge has a great post about Beads, his agent-first issue tracker. He goes into reasons a plain markdown tracking system doesn’t work at scale, and his findings shed some light on how agents approach their work with limited context.\nI’ve also noticed that agents will try to finish a task no matter what—so if they’re in the 5th of 10 tasks of a process and realize they’re running out of context, they’ll kind of whiz through the last 5 tasks in a hurry. It’s like their velocity increases at the expense of thoroughness. I guess the idea is that’s better than leaving the task undone, but actually I think anybody who’s building with agents these days recognizes that it’s fine to leave a task undone (in an orderly way); I can just spin up another agent to pick it up. I’d much rather have a half-done project neatly handed back to me than a finished project that’s riddled with low-quality, dashed-off code.\nThere’s a lot of talk right now about multi-agent workflows and orchestration, etc. But I think there’s still a lot of work to be done just to get sequential work done by repeated iterations of passing an agent some spec or open issues. Once we’re in a place where I can confidently hand off a project in some state of completion to an agent, expect it to do some relatively determinate amount of work, and hand it back off to me with clear tracking of what’s been done, I think it’ll get a lot easier to reason about running multiple agents concurrently."
+  },
+  {
+    "objectID": "posts/duckdb-lost-decade/index.html",
+    "href": "posts/duckdb-lost-decade/index.html",
+    "title": "[DuckDB] The Lost Decade?",
+    "section": "",
+    "text": "This fascinating post confirms some hunches I started to have in the late 2010s when everybody was overengineering their ETL pipelines.\nWorth a read, the tl;dr at the beginning of the post more or less gets it. I haven’t used DuckDB in a professional project yet, but the team seems great, and you should read everything on their technical blog."
+  },
+  {
+    "objectID": "posts/haber-bosch/index.html",
+    "href": "posts/haber-bosch/index.html",
+    "title": "Carl Bosch’s Nobel Prize Speech",
+    "section": "",
+    "text": "The Alchemy of Air\n\n\nHow did you go about productizing a chemistry experiment in the early 20th century?\nI read The Alchemy of Air earlier this year and highly recommend it. It’s about the Haber-Bosch process for synthesizing ammonia. There’s a lot of really colorful history about the birth of the dye industry in Germany and the economics of industrial resources in Europe leading up to the world wars.\nAs a software engineer, I was really interested to hear about how Carl Bosch, the engineer at BASF assigned to productionizing Fritz Haber’s scientific findings, took what was basically a chemistry experiment and turned it into an industrial-scale process that propped up the German economy throughout both World Wars.\nBoth Bosch and Haber were interesting and…flawed people; there’s more context and detail on Bosch’s strivings in his Nobel Prize speech if you want to delve a bit beyond what the book gets into."
+  },
+  {
+    "objectID": "posts/a16z-forward-deployed-engineers/index.html",
+    "href": "posts/a16z-forward-deployed-engineers/index.html",
+    "title": "a16z on Forward-Deployed Engineers",
+    "section": "",
+    "text": "There’s been a good deal of buzz about FDEs lately. That’s a job that I’ve been doing under some alias since the mid-2010s.\nI spoke recently to someone who worked at Palantir in the early days (before Foundry) and he made an interesting point that the a16z post misses: Palantir’s early FDEs were building bespoke systems for clients before Palantir’s products and platforms had been created; in other words the products were built as a response to needs identified by the FDEs.\nThat’s been my own experience as a consultant - customer needs emerge from on-the-ground experience and you start to build a ‘playbook’ or set of solutions you find yourself implementing repeatedly. I actually felt this get disrupted a bit around, say, 2017 when suddenly everybody was being cloud-native and we had all these managed services providing supersets of the functionality we needed. That was good in a way; I got a lot of mileage out of BigQuery for instance, not to mention basic AWS hosting services (EC2, S3, EKS). But I think it may also have loosened everyone’s discipline - we could pull solutions off the shelf before we necessarily had the first-hand experience to know what we needed.\nI’m interested in how this translates to the AI agents era. Now or in the immediate future we can rapidly build bespoke solutions pretty much as fast as we can hammer out requirements and a system design."
   },
   {
     "objectID": "posts/building-agents-1-getting-started/index.html",
@@ -392,10 +329,24 @@
     "text": "Footnotes\n\n\nAnd Geoff Huntley’s work↩︎\npay $2 to have amp add↩︎\nI’ve taken to calling the primitives we enable via tool/function calls “ops” because it sort of feels like the right term to me↩︎"
   },
   {
-    "objectID": "posts/building-agents-3-handoff-most-important-feature/index.html",
-    "href": "posts/building-agents-3-handoff-most-important-feature/index.html",
-    "title": "[Building Agents, 3] I Guess Handoff is the Most Important Feature",
+    "objectID": "posts/kernighan-pike-unix-agents/index.html",
+    "href": "posts/kernighan-pike-unix-agents/index.html",
+    "title": "Kernighan & Pike & Unix & Agents",
     "section": "",
-    "text": "The point of an agent is that it should have a tight, simple core loop for tool calling and returning a response to the user. At this level the tool call, or sequence of tool calls, is the unit of work. Once you get above this level of abstraction, you’re looking at the thread itself as the unit of work, and here’s where you get into some design decisions within the agent harness. What should we do to keep our threads short and focused?\n\nCompaction of context, which I think Claude Code does by default, should be considered harmful as it’s very lossy; at that point you’re basically saying “continue the conversation, but not as high quality as it was before”;\nForking the conversation doesn’t seem like it helps; that’s just creating one or more progressive versions of the existing context. I guess the theory is that I could create multiple forks from a foundational context to implement multiple features but…this doesn’t feel right to me;\nA combination of multiple high-quality AGENTS.md instructions throughout the codebase, plus some sort of issue tracker like Beads or just Ralph Wiggum’s JSON tracker may allow you to spin up fresh loops every time you think of a new feature, but you are still losing some critical information about the dialogue that has driven implementation so far;\nSimilarly, maintaining a TODOs list seems like it would be a good practice, but since Opus 4.5 the Amp team points out that this is unnecessary; the model can track its own work within the thread.\n\nI think what we want is a really well-designed handoff feature, where an external LLM summarizes the conversation and then passes that summary into your new thread. This is what I think Amp does on thread:handoff and I’m figuring out how to implement it myself."
+    "text": "The Unix Programming Environment\n\n\n“Every Unix Command Becomes a Startup”\nSometime in the mid-2010s I found this book on the bottom shelf of a used bookstore in Oakland, CA. The Unix Programming Environment by Brian Kernighan and Rob Pike, published in 1978.\nWhen I got home I started working through it, running code samples on my 2014 MacBook, and what blew me away was that most of the samples ran as-is. In cases where they didn’t, it was generally semantics—a command or flag had been renamed.\nThis was when I started to understand the durability and resilience of the Unix programming model. Lately I’ve been thinking back to this book because the core loop you need for agent orchestration is really just a bash loop. So, I’ve been brushing up on my bash scripting.\nAlso, I’m back to using Vim (Neovim to be fair) as my primary editor. Most of the time I’m driving an agent CLI like Claude Code, so the only time I really want to be in an editor is to review generated code or make occasional edits. A minimal vim setup—not a reproduced IDE but just a text editor—is perfect for this. I don’t even need AI extensions, autocomplete etc because at that point I’m back on the command line telling Claude what to do.\nIn the Web 2.0 era there was this idea that every Unix command became a startup (see link above). I’m not quite sure what the slogan is for our new agentic era but I’m convinced that sticking close to Unix and driving things on the command line is a really good idea.\nFinally—this gets into something I’ll expand on in another post soon. A number of technologists I pay attention to, notably Armin Ronacher and Tim Dettmers, seem to be converging on the idea that agents should really be writing code to do things. Not just working as coding assistants and building user-facing software, though that is an exciting use case. Rather, these agents are very good at using tools like Bash and Python. Instead of building a bunch of overengineered infrastructure and protocols for calling external APIs and tools, trust that the agent can probably come up with a script to do just about anything digitally. I’ll come back to this in a later post."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Weyland Joyner",
+    "section": "",
+    "text": "[Building Agents, 3] I Guess Handoff is the Most Important Feature\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[Building Agents, 2] Treat Agent Threads like Unix Tools\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[Building Agents, 1] Getting Started\n\n\n\nagents\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 10, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nUnleashing the Agents on Github\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 8, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKernighan & Pike & Unix & Agents\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 8, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nMore on Context - Steve Yegge’s Beads\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nDigital Twin Universe(s)\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nThoughts on Context Engineering\n\n\n\nsoftware\n\nagents\n\n\n\n\n\n\n\n\n\nFeb 7, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nRalph Wiggum, Gas Town, etc\n\n\n\nsoftware\n\nai\n\n\n\n\n\n\n\n\n\nFeb 5, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nKleppmann on Local-First\n\n\n\nsoftware\n\ndistributed-systems\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nCarl Bosch’s Nobel Prize Speech\n\n\n\nbooks\n\nhistory\n\n\n\n\n\n\n\n\n\nFeb 4, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\na16z on Forward-Deployed Engineers\n\n\n\nsoftware\n\nconsulting\n\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\n[DuckDB] The Lost Decade?\n\n\n\nsoftware\n\ndata\n\n\n\n\n\n\n\n\n\nFeb 2, 2026\n\n\nWeyland Joyner\n\n\n\n\n\n\n\nOn Writing\n\n\n\nwriting\n\nmeta\n\n\n\nWhy I’m starting this blog\n\n\n\n\n\nJan 20, 2026\n\n\nWeyland Joyner\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Weyland Joyner",
+    "section": "",
+    "text": "Not Boring\nConstruction Physics\nSimon Willison’s Blog\nOwl Posting\nThe Century of Bio\nMatt Levine\nThe Generalist\nRhymes with Haystack\nCore Memory\nDecoding Bio"
   }
 ]
