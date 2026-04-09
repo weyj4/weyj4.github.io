@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/webcrawler/index.html",
       "/posts/functional-lite-python/index.html",
       "/posts/building-agents-3-handoff-most-important-feature/index.html",
       "/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
@@ -15,8 +16,7 @@
       "/posts/kleppmann-local-first/index.html",
       "/posts/haber-bosch/index.html",
       "/posts/a16z-forward-deployed-engineers/index.html",
-      "/posts/duckdb-lost-decade/index.html",
-      "/posts/on-writing/index.html"
+      "/posts/duckdb-lost-decade/index.html"
     ]
   }
 ]
