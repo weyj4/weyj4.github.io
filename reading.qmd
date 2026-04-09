@@ -4,10 +4,24 @@ format:
     toc: false
 ---
 
+## Apr 2026
+
+* *Build a Reasoning Model (from Scratch)* by Sebastian Raschka
+* *Reinforcement Learning* by Richard Sutton
+
+## Mar 2026
+
+* *Deep Learning for Biology* by Ravarani and Latysheva
+* *The Ultra Scale Playbook* from HuggingFace
+
+## Feb 2026
+
+* *Build a Large Language Model (from Scratch)* by Sebastian Raschka
+* *A Brief History of Intelligence* by Max Bennett
+
 ## Jan 2026
 
 * *From Dawn to Decadence* by Jacques Barzun
-* *The Coming of the Book: The Impact of Printing* by Lucien Febvre
 
 ## Dec 2025
 
