@@ -2,8 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/functional-lite-python-2/Untitled.html",
+      "/posts/functional-lite-python-2/index.html",
       "/posts/functional-lite-python/index.html",
       "/posts/webcrawler/index.html",
+      "/posts/deep-learning-for-biology-1/index.html",
+      "/posts/basic-reinforcement-learning/index.html",
       "/posts/building-agents-3-handoff-most-important-feature/index.html",
       "/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
       "/posts/building-agents-1-getting-started/index.html",
@@ -16,7 +20,8 @@
       "/posts/kleppmann-local-first/index.html",
       "/posts/haber-bosch/index.html",
       "/posts/a16z-forward-deployed-engineers/index.html",
-      "/posts/duckdb-lost-decade/index.html"
+      "/posts/duckdb-lost-decade/index.html",
+      "/posts/on-writing/index.html"
     ]
   }
 ]

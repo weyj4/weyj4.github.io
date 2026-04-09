@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Weyland Joyner">
-<meta name="dcterms.date" content="2026-02-10">
 
-<title>[Building Agents, 1] Getting Started – Weyland Joyner</title>
+<title>untitled – Weyland Joyner</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -130,54 +128,11 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">[Building Agents, 1] Getting Started</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">agents</div>
-                <div class="quarto-category">context-engineering</div>
-                <div class="quarto-category">TypeScript</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Weyland Joyner </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">February 10, 2026</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#bash-is-not-all-you-needwant" id="toc-bash-is-not-all-you-needwant" class="nav-link active" data-scroll-target="#bash-is-not-all-you-needwant">Bash Is Not All You Need/Want</a></li>
-  <li><a href="#be-efficient-with-the-context-window" id="toc-be-efficient-with-the-context-window" class="nav-link" data-scroll-target="#be-efficient-with-the-context-window">Be Efficient With The Context Window</a></li>
-  <li><a href="#figure-out-the-prompt" id="toc-figure-out-the-prompt" class="nav-link" data-scroll-target="#figure-out-the-prompt">Figure Out The Prompt</a></li>
-  <li><a href="#testingevals" id="toc-testingevals" class="nav-link" data-scroll-target="#testingevals">Testing/Evals</a></li>
-  <li><a href="#stuff-im-skipping" id="toc-stuff-im-skipping" class="nav-link" data-scroll-target="#stuff-im-skipping">Stuff I’m Skipping</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -186,47 +141,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I ended up porting <a href="https://ampcode.com/notes/how-to-build-an-agent">Thorsten Ball’s post on building a basic coding agent</a> to Typescript<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. At first I was using <a href="https://github.com/vadimdemedes/ink">Ink</a> for a React component-based terminal UI, but that got restrictive. Fortunately I found <a href="https://mariozechner.at/">Mario Zechner’s</a> <a href="https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent">Pi agent project</a>.</p>
-<p>Pi is really cool, you should check out the whole repo. But the coding agent includes a lot of stuff I don’t want like, RPC calls for if you want to embed it in your app; it also has some nice-to-haves like (BOM) for cross-platform support that I should probably add to my project<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for good measure but haven’t yet.</p>
-<p>The good news is he exports a separate <a href="https://github.com/badlogic/pi-mono/tree/main/packages/tui">tui</a> package that covers most of what I need. The programming style is more imperative than Ink’s React components, but there’s also greater control over e.g.&nbsp;inputs.</p>
-<p>At any rate, here’s what I’ve learned so far from implementing a full agent harness:</p>
-<section id="bash-is-not-all-you-needwant" class="level3">
-<h3 class="anchored" data-anchor-id="bash-is-not-all-you-needwant">Bash Is Not All You Need/Want</h3>
-<p>At first it seemed like it would be clever of me to create One Tool, a Bash Tool, to accomplish whatever I needed. This ends up being a bad design decision because bash execution is opaque to the LLM; it returns a response code and that’s all. You <em>want to implement task-specific tools for any “ops”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> you are enabling</em>. Hmm what does this sound like? Oh right it sounds like <a href="https://weylandjoyner.com/posts/kernighan-pike-unix-agents/">Unix</a>.</p>
-</section>
-<section id="be-efficient-with-the-context-window" class="level3">
-<h3 class="anchored" data-anchor-id="be-efficient-with-the-context-window">Be Efficient With The Context Window</h3>
-<p>Geoff Huntley says we should imagine the context window is “like a Commodore 64 with a very small amount of memory.” We should always keep this in mind; truncate outputs in case the tool tries to read huge file. Also implement <code>edit_file</code> separately from <code>write_file</code>; at first I was just doing an overwrite but that’s really wasteful.</p>
-</section>
-<section id="figure-out-the-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="figure-out-the-prompt">Figure Out The Prompt</h3>
-<p>I think there’s 2 areas that have to be pretty great for me to actually <em>want</em> to use this tool: the CLI UX (more below) and the quality of the prompt. I know that Amp feels better to me than Claude Code or Codex most of the time, and while some of that probably has to do with how the harness and context window are engineered, I think a lot of it probably comes down to what’s in the prompt. So far I’m kind of taking stabs in the dark.</p>
-</section>
-<section id="testingevals" class="level3">
-<h3 class="anchored" data-anchor-id="testingevals">Testing/Evals</h3>
-<p>I’m popping into the CLI and testing it myself on every change, and I don’t see that changing — as Simon <a href="https://simonwillison.net/2025/Dec/18/code-proven-to-work/">says</a> manual testing is a necessary part of the process. I’d still like to see about automating a CLI runner though. For this tool to be my daily driver the UX needs to be really smooth, otherwise I’ll defer to using Amp anyway.</p>
-</section>
-<section id="stuff-im-skipping" class="level3">
-<h3 class="anchored" data-anchor-id="stuff-im-skipping">Stuff I’m Skipping</h3>
-<p>I mentioned BOM/CRLF above, here’s some other stuff that would be fairly easy to add but I don’t need it at the moment:</p>
-<ul>
-<li>Fuzzy matching</li>
-<li>Diff generation</li>
-<li>Cost Monitoring: amp actually shows you token counts and associated charges, I should figure this out</li>
-</ul>
 
 
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>And <a href="https://ghuntley.com/agent/">Geoff Huntley’s work</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>pay $2 to have amp add<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>I’ve taken to calling the primitives we enable via tool/function calls “ops” because it sort of feels like the right term to me<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

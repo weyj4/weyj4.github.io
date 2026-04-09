@@ -2,7 +2,7 @@
 title: "[Building Agents, 1] Getting Started"
 author: "Weyland Joyner"
 date: "2026-02-10T15:00:00"
-categories: [agents, context-engineering, ai]
+categories: [agents, context-engineering, TypeScript]
 ---
 
 I ended up porting [Thorsten Ball's post on building a basic coding agent](https://ampcode.com/notes/how-to-build-an-agent) to Typescript[^1]. At first I was using [Ink](https://github.com/vadimdemedes/ink) for a React component-based terminal UI, but that got restrictive. Fortunately I found [Mario Zechner's](https://mariozechner.at/) [Pi agent project](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent).

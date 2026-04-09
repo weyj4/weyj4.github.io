@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Weyland Joyner">
-<meta name="dcterms.date" content="2026-02-10">
+<meta name="dcterms.date" content="2026-04-09">
 
-<title>[Building Agents, 1] Getting Started – Weyland Joyner</title>
+<title>Functional Programming in Python, Part II: Intervals – Weyland Joyner</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -133,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">[Building Agents, 1] Getting Started</h1>
+      <h1 class="title">Functional Programming in Python, Part II: Intervals</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">agents</div>
-                <div class="quarto-category">context-engineering</div>
-                <div class="quarto-category">TypeScript</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">programming</div>
+                <div class="quarto-category">functional-programming</div>
               </div>
                   </div>
   </div>
@@ -155,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 10, 2026</p>
+        <p class="date">April 9, 2026</p>
       </div>
     </div>
     
@@ -171,11 +206,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bash-is-not-all-you-needwant" id="toc-bash-is-not-all-you-needwant" class="nav-link active" data-scroll-target="#bash-is-not-all-you-needwant">Bash Is Not All You Need/Want</a></li>
-  <li><a href="#be-efficient-with-the-context-window" id="toc-be-efficient-with-the-context-window" class="nav-link" data-scroll-target="#be-efficient-with-the-context-window">Be Efficient With The Context Window</a></li>
-  <li><a href="#figure-out-the-prompt" id="toc-figure-out-the-prompt" class="nav-link" data-scroll-target="#figure-out-the-prompt">Figure Out The Prompt</a></li>
-  <li><a href="#testingevals" id="toc-testingevals" class="nav-link" data-scroll-target="#testingevals">Testing/Evals</a></li>
-  <li><a href="#stuff-im-skipping" id="toc-stuff-im-skipping" class="nav-link" data-scroll-target="#stuff-im-skipping">Stuff I’m Skipping</a></li>
+  <li><a href="#intervals" id="toc-intervals" class="nav-link active" data-scroll-target="#intervals">Intervals</a>
+  <ul class="collapse">
+  <li><a href="#can-attend-meetings" id="toc-can-attend-meetings" class="nav-link" data-scroll-target="#can-attend-meetings">Can Attend Meetings</a></li>
+  <li><a href="#insert-interval" id="toc-insert-interval" class="nav-link" data-scroll-target="#insert-interval">Insert Interval</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -186,47 +221,101 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I ended up porting <a href="https://ampcode.com/notes/how-to-build-an-agent">Thorsten Ball’s post on building a basic coding agent</a> to Typescript<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. At first I was using <a href="https://github.com/vadimdemedes/ink">Ink</a> for a React component-based terminal UI, but that got restrictive. Fortunately I found <a href="https://mariozechner.at/">Mario Zechner’s</a> <a href="https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent">Pi agent project</a>.</p>
-<p>Pi is really cool, you should check out the whole repo. But the coding agent includes a lot of stuff I don’t want like, RPC calls for if you want to embed it in your app; it also has some nice-to-haves like (BOM) for cross-platform support that I should probably add to my project<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for good measure but haven’t yet.</p>
-<p>The good news is he exports a separate <a href="https://github.com/badlogic/pi-mono/tree/main/packages/tui">tui</a> package that covers most of what I need. The programming style is more imperative than Ink’s React components, but there’s also greater control over e.g.&nbsp;inputs.</p>
-<p>At any rate, here’s what I’ve learned so far from implementing a full agent harness:</p>
-<section id="bash-is-not-all-you-needwant" class="level3">
-<h3 class="anchored" data-anchor-id="bash-is-not-all-you-needwant">Bash Is Not All You Need/Want</h3>
-<p>At first it seemed like it would be clever of me to create One Tool, a Bash Tool, to accomplish whatever I needed. This ends up being a bad design decision because bash execution is opaque to the LLM; it returns a response code and that’s all. You <em>want to implement task-specific tools for any “ops”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> you are enabling</em>. Hmm what does this sound like? Oh right it sounds like <a href="https://weylandjoyner.com/posts/kernighan-pike-unix-agents/">Unix</a>.</p>
+<p><a href="https://colab.research.google.com/github/weyj4/weyj4.github.io/blob/main/posts/functional-lite-python-2/index.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<section id="intervals" class="level2">
+<h2 class="anchored" data-anchor-id="intervals">Intervals</h2>
+<p>This is a continuation of my series on Python programming from a functional perspective. In the first post we looked at sliding window problems, here we’ll deal with intervals.</p>
+<section id="can-attend-meetings" class="level3">
+<h3 class="anchored" data-anchor-id="can-attend-meetings">Can Attend Meetings</h3>
+<div id="2xOkwbSdx-7X" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> can_attend(intervals: <span class="bu">list</span>[<span class="bu">int</span>, <span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    meetings <span class="op">=</span> <span class="bu">sorted</span>(intervals)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">all</span>(a[<span class="dv">1</span>] <span class="op">&lt;=</span> b[<span class="dv">0</span>] <span class="cf">for</span> a, b <span class="kw">in</span> <span class="bu">zip</span>(meetings, meetings[<span class="dv">1</span>:]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ts-ZhA94yBNL" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8c47877c-dd37-43db-8af3-706e5c0fa5cf" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>meetings <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">3</span>), (<span class="dv">4</span>, <span class="dv">6</span>), (<span class="dv">5</span>, <span class="dv">7</span>), (<span class="dv">7</span>, <span class="dv">10</span>), (<span class="dv">11</span>, <span class="dv">12</span>)]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>can_attend(meetings)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>False</code></pre>
+</div>
+</div>
+<section id="interlude-pythons-reduce" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-pythons-reduce">Interlude: Python’s <code>reduce()</code></h4>
+<div id="WXlwML2AyDmF" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span> ,<span class="dv">5</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Classics for reference</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>sum_ <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> acc, x: acc <span class="op">+</span> x, nums)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>product <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> acc, x: acc <span class="op">*</span> x, nums)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>maximum <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> acc, x: <span class="bu">max</span>(acc, x), nums)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> acc, x: <span class="bu">min</span>(acc, x), nums)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Flattening, actually useful</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>nested <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>flatten <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> acc, x: acc <span class="op">+</span> x, nested)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Counting occurrences</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>words  <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"c"</span>, <span class="st">"b"</span>, <span class="st">"a"</span>]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Merging intervals</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipeline of functions</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="be-efficient-with-the-context-window" class="level3">
-<h3 class="anchored" data-anchor-id="be-efficient-with-the-context-window">Be Efficient With The Context Window</h3>
-<p>Geoff Huntley says we should imagine the context window is “like a Commodore 64 with a very small amount of memory.” We should always keep this in mind; truncate outputs in case the tool tries to read huge file. Also implement <code>edit_file</code> separately from <code>write_file</code>; at first I was just doing an overwrite but that’s really wasteful.</p>
 </section>
-<section id="figure-out-the-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="figure-out-the-prompt">Figure Out The Prompt</h3>
-<p>I think there’s 2 areas that have to be pretty great for me to actually <em>want</em> to use this tool: the CLI UX (more below) and the quality of the prompt. I know that Amp feels better to me than Claude Code or Codex most of the time, and while some of that probably has to do with how the harness and context window are engineered, I think a lot of it probably comes down to what’s in the prompt. So far I’m kind of taking stabs in the dark.</p>
-</section>
-<section id="testingevals" class="level3">
-<h3 class="anchored" data-anchor-id="testingevals">Testing/Evals</h3>
-<p>I’m popping into the CLI and testing it myself on every change, and I don’t see that changing — as Simon <a href="https://simonwillison.net/2025/Dec/18/code-proven-to-work/">says</a> manual testing is a necessary part of the process. I’d still like to see about automating a CLI runner though. For this tool to be my daily driver the UX needs to be really smooth, otherwise I’ll defer to using Amp anyway.</p>
-</section>
-<section id="stuff-im-skipping" class="level3">
-<h3 class="anchored" data-anchor-id="stuff-im-skipping">Stuff I’m Skipping</h3>
-<p>I mentioned BOM/CRLF above, here’s some other stuff that would be fairly easy to add but I don’t need it at the moment:</p>
-<ul>
-<li>Fuzzy matching</li>
-<li>Diff generation</li>
-<li>Cost Monitoring: amp actually shows you token counts and associated charges, I should figure this out</li>
-</ul>
+<section id="insert-interval" class="level3">
+<h3 class="anchored" data-anchor-id="insert-interval">Insert Interval</h3>
+<div id="WVLhRyciyEvO" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> insert_interval(intervals: <span class="bu">list</span>[<span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]], interval: <span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">tuple</span>[<span class="bu">int</span>, <span class="bu">int</span>]]:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    meetings <span class="op">=</span> <span class="bu">sorted</span>(intervals)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    before <span class="op">=</span> [m <span class="cf">for</span> m <span class="kw">in</span> meetings <span class="cf">if</span> m[<span class="dv">1</span>] <span class="op">&lt;=</span> interval[<span class="dv">0</span>]]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    overlap <span class="op">=</span> [m <span class="cf">for</span> m <span class="kw">in</span> meetings <span class="cf">if</span> m[<span class="dv">0</span>] <span class="op">&lt;=</span> interval[<span class="dv">1</span>] <span class="kw">and</span> m[<span class="dv">1</span>] <span class="op">&gt;</span> interval[<span class="dv">0</span>]]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    after <span class="op">=</span> [m <span class="cf">for</span> m <span class="kw">in</span> meetings <span class="cf">if</span> m[<span class="dv">0</span>] <span class="op">&gt;</span> interval[<span class="dv">1</span>]]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    merged <span class="op">=</span> <span class="bu">reduce</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">lambda</span> acc, iv: [<span class="bu">min</span>(acc[<span class="dv">0</span>], iv[<span class="dv">0</span>]), <span class="bu">max</span>(acc[<span class="dv">1</span>], iv[<span class="dv">1</span>])],</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        overlap,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        interval</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> before <span class="op">+</span> [merged] <span class="op">+</span> after</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="CbucxftyyGIl" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7dcc3b8a-ca0a-4c1d-ec7a-c63ba363c9c8" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>intervals <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">3</span>],[<span class="dv">6</span>,<span class="dv">9</span>]]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>newInterval <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">5</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>insert_interval(intervals, newInterval)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>[[1, 5], [6, 9]]</code></pre>
+</div>
+</div>
+<section id="interlude-permutations" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-permutations">Interlude: <code>permutations</code></h4>
+<div id="qbfR5BcWyP_4" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> permutations(nums: <span class="bu">list</span>[<span class="bu">int</span>]):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> nums:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> []</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, x <span class="kw">in</span> <span class="bu">enumerate</span>(nums):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> rest <span class="kw">in</span> permutations(nums[:i] <span class="op">+</span> nums[i<span class="op">+</span><span class="dv">1</span>:]):</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">yield</span> [x] <span class="op">+</span> rest</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="lpRJsOiRyUHT" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fc122c11-9443-4c1a-b48a-83511666c872" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(permutations([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]</code></pre>
+</div>
+</div>
 
 
 </section>
+</section>
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>And <a href="https://ghuntley.com/agent/">Geoff Huntley’s work</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>pay $2 to have amp add<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>I’ve taken to calling the primitives we enable via tool/function calls “ops” because it sort of feels like the right term to me<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
