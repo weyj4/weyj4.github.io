@@ -9,8 +9,1043 @@
 <link>https://weyj4.github.io/</link>
 <atom:link href="https://weyj4.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Personal writing and thoughts</description>
-<generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 11 Feb 2026 01:00:00 GMT</lastBuildDate>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Thu, 09 Apr 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Functional Programming in Python, Part I: Sliding Windows</title>
+  <dc:creator>Weyland Joyner</dc:creator>
+  <link>https://weyj4.github.io/posts/functional-lite-python/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>—title: “Functional Programming in Python, Part I: Sliding Windows”author: “Weyland Joyner”date: “2026-04-09”categories: [software, programming, functional-programming]—</p>
+<section id="fixed-length-sliding-windows" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-length-sliding-windows">Fixed-Length Sliding Windows</h2>
+<section id="maximum-sum-of-subarrays" class="level3">
+<h3 class="anchored" data-anchor-id="maximum-sum-of-subarrays">Maximum Sum of Subarrays</h3>
+<p>Given an array of integers nums and an integer k, find the maximum sum of any contiguous subarray of size k.</p>
+<p>Ex.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">nums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span>
+<span id="cb1-2">k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span></code></pre></div></div>
+<p>First up we have a “naive” approach using listcomps and a helper function for readability:</p>
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8b3a83ea-dbf1-4f45-8443-ccbd5669aad1" data-execution_count="77">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> maximum_sum_of_subarrays(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>], k: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>:</span>
+<span id="cb2-2">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> windows(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>], k: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]]:</span>
+<span id="cb2-3">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> [nums[i:i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>k] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(nums) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)]</span>
+<span id="cb2-4"></span>
+<span id="cb2-5">    sums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(w) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> w <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> windows(nums, k)]</span>
+<span id="cb2-6">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(sums)</span>
+<span id="cb2-7"></span>
+<span id="cb2-8">nums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span>
+<span id="cb2-9">k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb2-10"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(maximum_sum_of_subarrays(nums, k))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9</code></pre>
+</div>
+</div>
+<p>One thing to note is that the number of subarrays of length k in a list <code>nums</code> of length n is always going to equal <code>len(nums) - k + 1</code>. Once you know that the solution above reads nicely but it’s suboptimal. We could express it even more concisely:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(w) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> w <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> (nums[i:i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>k] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(nums) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)))</span></code></pre></div></div>
+<p>But the problem is <code>sum(w)</code> rescans each window. So, it’s <code>O(n*k)</code>. But look how closely it mirrors the problem statement:</p>
+<pre><code>find the maximum sum of any contiguous subarray of size k
+max(sum(w) for w in windows(nums, k))</code></pre>
+<p>Alright, the solution to the compute complexity is using <em>prefix sums</em>.</p>
+<div id="cell-5" class="cell" data-execution_count="70">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> itertools <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> accumulate</span>
+<span id="cb6-2"></span>
+<span id="cb6-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> maximum_sum_of_subarrays_v2(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>], k: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>:</span>
+<span id="cb6-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Use prefix sums</span></span>
+<span id="cb6-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb6-6">    prefix <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(accumulate(nums))</span>
+<span id="cb6-7">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [2, 3, 8, 9, 12, 14]</span></span>
+<span id="cb6-8">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># accumulate is a scan (similar to Haskell's scanl)</span></span>
+<span id="cb6-9">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># that</span></span>
+<span id="cb6-10">    sums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [prefix[i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>k] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> prefix[i] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(nums) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)]</span>
+<span id="cb6-11">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(sums)</span></code></pre></div></div>
+</div>
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fed689b2-e58b-41cd-bff7-546e2d3a35ae" data-execution_count="71">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">nums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span>
+<span id="cb7-2">k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb7-3">maximum_sum_of_subarrays_v2(nums, k)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>9</code></pre>
+</div>
+</div>
+</section>
+<section id="max-sum-of-distinct-subarrays" class="level3">
+<h3 class="anchored" data-anchor-id="max-sum-of-distinct-subarrays">Max Sum of Distinct Subarrays</h3>
+<p>OK now let’s do one with a condition - the subarray cannot include any duplicate values.</p>
+<div id="cell-8" class="cell" data-execution_count="75">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> maximum_unique_sum_of_subarrays(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>], k: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>:</span>
+<span id="cb9-2">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> windows(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>], k: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]]:</span>
+<span id="cb9-3">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> (nums[i:i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>k] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(nums) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>))</span>
+<span id="cb9-4"></span>
+<span id="cb9-5">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> is_unique(window: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">bool</span>:</span>
+<span id="cb9-6">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>(window)) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(window)</span>
+<span id="cb9-7"></span>
+<span id="cb9-8">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(w) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> w <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> windows(nums, k) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> is_unique(w))</span></code></pre></div></div>
+</div>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="721f05bf-5301-4c88-c262-418499f91250" data-execution_count="76">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">nums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb10-2">k <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span></span>
+<span id="cb10-3">maximum_unique_sum_of_subarrays(nums, k)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<pre><code>20</code></pre>
+</div>
+</div>
+<p>Now let’s do this one:</p>
+<pre><code>Given an array of integers representing card values, write a function to calculate the maximum score you can achieve by picking exactly k cards.
+
+You must pick cards in order from either end. You can take some cards from the beginning, then switch to taking cards from the end, but you cannot skip cards or pick from the middle.</code></pre>
+</section>
+</section>
+<section id="variable-length-sliding-windows" class="level2">
+<h2 class="anchored" data-anchor-id="variable-length-sliding-windows">Variable-Length Sliding Windows</h2>
+<section id="longest-substring" class="level3">
+<h3 class="anchored" data-anchor-id="longest-substring">Longest Substring</h3>
+<div id="cell-13" class="cell" data-execution_count="83">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> longest_substring(s: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>:</span>
+<span id="cb13-2"></span>
+<span id="cb13-3">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> is_valid(state) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">bool</span>:</span>
+<span id="cb13-4">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(state.values()) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb13-5"></span>
+<span id="cb13-6">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> shrink_until_valid(s: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>, freq_dict: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>, start: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>):</span>
+<span id="cb13-7">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> is_valid(freq_dict):</span>
+<span id="cb13-8">            freq_dict[s[start]] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb13-9">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> freq_dict[s[start]] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>:</span>
+<span id="cb13-10">                <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">del</span> freq_dict[start]</span>
+<span id="cb13-11">            start <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb13-12">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> freq_dict, start</span>
+<span id="cb13-13"></span>
+<span id="cb13-14">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> window_length(s: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>):</span>
+<span id="cb13-15">        freq_dict, start <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {}, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb13-16">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> end, ch <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(s):</span>
+<span id="cb13-17">            freq_dict[ch] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> freq_dict.get(ch, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb13-18">            freq_dict, start <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> shrink_until_valid(s, freq_dict, start)</span>
+<span id="cb13-19">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">yield</span> end <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> start <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb13-20"></span>
+<span id="cb13-21">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(window_length(s), default<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span></code></pre></div></div>
+</div>
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="6072d824-e9b7-49df-bb6c-aa0ef695adcb" data-execution_count="84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"substring"</span></span>
+<span id="cb14-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(longest_substring(s))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>8</code></pre>
+</div>
+</div>
+</section>
+<section id="longest-repeating-character-substring" class="level3">
+<h3 class="anchored" data-anchor-id="longest-repeating-character-substring">Longest Repeating Character Substring</h3>
+<div id="cell-16" class="cell" data-execution_count="87">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> longest_repeating(s: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>:</span>
+<span id="cb16-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">pass</span></span></code></pre></div></div>
+</div>
+</section>
+</section>
+<section id="intervals" class="level2">
+<h2 class="anchored" data-anchor-id="intervals">Intervals</h2>
+<section id="can-attend-meetings" class="level3">
+<h3 class="anchored" data-anchor-id="can-attend-meetings">Can Attend Meetings</h3>
+<div id="cell-20" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> can_attend(intervals: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">bool</span>:</span>
+<span id="cb17-2">    meetings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sorted</span>(intervals)</span>
+<span id="cb17-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">all</span>(a[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> b[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> a, b <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">zip</span>(meetings, meetings[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>:]))</span></code></pre></div></div>
+</div>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f70d41e5-973a-453b-d5f2-f3dabaecb005" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">meetings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>), (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>), (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>), (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>), (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>)]</span>
+<span id="cb18-2">can_attend(meetings)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>False</code></pre>
+</div>
+</div>
+<section id="interlude-pythons-reduce" class="level4">
+<h4 class="anchored" data-anchor-id="interlude-pythons-reduce">Interlude: Python’s <code>reduce()</code></h4>
+<div id="cell-23" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> functools <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span></span>
+<span id="cb20-2"></span>
+<span id="cb20-3">nums <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span> ,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span>
+<span id="cb20-4"></span>
+<span id="cb20-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Classics for reference</span></span>
+<span id="cb20-6">sum_ <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, x: acc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> x, nums)</span>
+<span id="cb20-7">product <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, x: acc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x, nums)</span>
+<span id="cb20-8">maximum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, x: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(acc, x), nums)</span>
+<span id="cb20-9">minimum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, x: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">min</span>(acc, x), nums)</span>
+<span id="cb20-10"></span>
+<span id="cb20-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Flattening, actually useful</span></span>
+<span id="cb20-12">nested <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]]</span>
+<span id="cb20-13">flatten <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, x: acc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> x, nested)</span>
+<span id="cb20-14"></span>
+<span id="cb20-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Counting occurrences</span></span>
+<span id="cb20-16">words  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"a"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"b"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"a"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"c"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"b"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"a"</span>]</span>
+<span id="cb20-17"></span>
+<span id="cb20-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Merging intervals</span></span>
+<span id="cb20-19"></span>
+<span id="cb20-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Pipeline of functions</span></span></code></pre></div></div>
+</div>
+</section>
+</section>
+<section id="insert-interval" class="level3">
+<h3 class="anchored" data-anchor-id="insert-interval">Insert Interval</h3>
+<div id="cell-25" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> functools <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span></span>
+<span id="cb21-2"></span>
+<span id="cb21-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> insert_interval(intervals: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]], interval: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]]:</span>
+<span id="cb21-4">    meetings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sorted</span>(intervals)</span>
+<span id="cb21-5">    before <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [m <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> m <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> meetings <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> m[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> interval[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]]</span>
+<span id="cb21-6">    overlap <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [m <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> m <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> meetings <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> m[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> interval[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> m[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> interval[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]]</span>
+<span id="cb21-7">    after <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [m <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> m <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> meetings <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> m[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> interval[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]]</span>
+<span id="cb21-8"></span>
+<span id="cb21-9">    merged <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">reduce</span>(</span>
+<span id="cb21-10">        <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> acc, iv: [<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">min</span>(acc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], iv[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(acc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], iv[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])],</span>
+<span id="cb21-11">        overlap,</span>
+<span id="cb21-12">        interval</span>
+<span id="cb21-13">    )</span>
+<span id="cb21-14"></span>
+<span id="cb21-15">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> before <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> [merged] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> after</span></code></pre></div></div>
+</div>
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="405a4c76-874e-4eb4-e625-40e6734c8f32" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">intervals <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>],[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>]]</span>
+<span id="cb22-2">newInterval <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span>
+<span id="cb22-3">insert_interval(intervals, newInterval)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>[[1, 5], [6, 9]]</code></pre>
+</div>
+</div>
+<div id="cell-29" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> permutations(nums: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]):</span>
+<span id="cb24-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> nums:</span>
+<span id="cb24-3">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">yield</span> []</span>
+<span id="cb24-4">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span></span>
+<span id="cb24-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i, x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(nums):</span>
+<span id="cb24-6">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> rest <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> permutations(nums[:i] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> nums[i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>:]):</span>
+<span id="cb24-7">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">yield</span> [x] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> rest</span></code></pre></div></div>
+</div>
+<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3efdc333-de28-49cc-d3db-a742d19f63ea" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(permutations([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]))</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>software</category>
+  <category>programming</category>
+  <category>functional-programming</category>
+  <guid>https://weyj4.github.io/posts/functional-lite-python/</guid>
+  <pubDate>Thu, 09 Apr 2026 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>[Building Agents, 3] I Guess Handoff is the Most Important Feature</title>
   <dc:creator>Weyland Joyner</dc:creator>
@@ -37,7 +1072,7 @@
   <category>software</category>
   <category>ai</category>
   <guid>https://weyj4.github.io/posts/building-agents-3-handoff-most-important-feature/</guid>
-  <pubDate>Wed, 11 Feb 2026 01:00:00 GMT</pubDate>
+  <pubDate>Tue, 10 Feb 2026 22:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Building Agents, 2] Treat Agent Threads like Unix Tools</title>
@@ -60,7 +1095,7 @@
   <category>software</category>
   <category>ai</category>
   <guid>https://weyj4.github.io/posts/building-agents-2-treat-agent-threads-like-unix-tools/</guid>
-  <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 10 Feb 2026 21:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[Building Agents, 1] Getting Started</title>
@@ -117,7 +1152,7 @@
   <category>software</category>
   <category>ai</category>
   <guid>https://weyj4.github.io/posts/building-agents-1-getting-started/</guid>
-  <pubDate>Tue, 10 Feb 2026 23:00:00 GMT</pubDate>
+  <pubDate>Tue, 10 Feb 2026 20:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Unleashing the Agents on Github</title>
@@ -140,7 +1175,7 @@
   <category>software</category>
   <category>agents</category>
   <guid>https://weyj4.github.io/posts/problems-with-github-for-agents/</guid>
-  <pubDate>Sun, 08 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sun, 08 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Kernighan &amp; Pike &amp; Unix &amp; Agents</title>
@@ -172,7 +1207,7 @@
   <category>software</category>
   <category>agents</category>
   <guid>https://weyj4.github.io/posts/kernighan-pike-unix-agents/</guid>
-  <pubDate>Sun, 08 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sun, 08 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>More on Context - Steve Yegge’s Beads</title>
@@ -194,7 +1229,7 @@
   <category>software</category>
   <category>agents</category>
   <guid>https://weyj4.github.io/posts/experimenting-with-beads/</guid>
-  <pubDate>Sat, 07 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 07 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Digital Twin Universe(s)</title>
@@ -223,7 +1258,7 @@
   <category>software</category>
   <category>agents</category>
   <guid>https://weyj4.github.io/posts/digital-twin-universes/</guid>
-  <pubDate>Sat, 07 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 07 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Thoughts on Context Engineering</title>
@@ -251,7 +1286,7 @@
   <category>software</category>
   <category>agents</category>
   <guid>https://weyj4.github.io/posts/context-engineering/</guid>
-  <pubDate>Sat, 07 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Sat, 07 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Ralph Wiggum, Gas Town, etc</title>
@@ -277,7 +1312,7 @@
   <category>software</category>
   <category>ai</category>
   <guid>https://weyj4.github.io/posts/ralph-wiggum-gas-town/</guid>
-  <pubDate>Thu, 05 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Thu, 05 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Kleppmann on Local-First</title>
@@ -307,7 +1342,7 @@
   <category>software</category>
   <category>distributed-systems</category>
   <guid>https://weyj4.github.io/posts/kleppmann-local-first/</guid>
-  <pubDate>Wed, 04 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Wed, 04 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Carl Bosch’s Nobel Prize Speech</title>
@@ -336,7 +1371,7 @@
   <category>books</category>
   <category>history</category>
   <guid>https://weyj4.github.io/posts/haber-bosch/</guid>
-  <pubDate>Wed, 04 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Wed, 04 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>a16z on Forward-Deployed Engineers</title>
@@ -359,7 +1394,7 @@
   <category>software</category>
   <category>consulting</category>
   <guid>https://weyj4.github.io/posts/a16z-forward-deployed-engineers/</guid>
-  <pubDate>Tue, 03 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Tue, 03 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[DuckDB] The Lost Decade?</title>
@@ -380,7 +1415,7 @@
   <category>software</category>
   <category>data</category>
   <guid>https://weyj4.github.io/posts/duckdb-lost-decade/</guid>
-  <pubDate>Mon, 02 Feb 2026 08:00:00 GMT</pubDate>
+  <pubDate>Mon, 02 Feb 2026 05:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
@@ -390,7 +1425,7 @@
   <category>writing</category>
   <category>meta</category>
   <guid>https://weyj4.github.io/posts/on-writing/</guid>
-  <pubDate>Tue, 20 Jan 2026 08:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Jan 2026 05:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
