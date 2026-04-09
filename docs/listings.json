@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/webcrawler/index.html",
       "/posts/functional-lite-python/index.html",
+      "/posts/webcrawler/index.html",
       "/posts/building-agents-3-handoff-most-important-feature/index.html",
       "/posts/building-agents-2-treat-agent-threads-like-unix-tools/index.html",
       "/posts/building-agents-1-getting-started/index.html",
