@@ -1,0 +1,28 @@
+---
+title: "Functional Programming with LISP and Haskell: Sliding Windows"
+author: "Weyland Joyner"
+date: "2026-04-06"
+categories: [LISP, Racket, functional-programming]
+---
+
+Just for fun, here are the first two functions from my Functional Python series implemented in Racket.
+
+```
+(define (windows lst k)
+  (if (< (length lst) k)
+      '()
+      (cons (take lst k)
+            (windows (cdr lst) k))))
+
+(define (unique? lst)
+  (= (length lst) (length (remove-duplicates lst))))
+
+(define (max-sum-subarray lst k)
+  (apply max (map (lambda (w) (apply + w)) (windows lst k))))
+
+(define (max-sum-distinct lst k)
+  (let ([valid (filter unique? (windows list k))])
+    (if (null? valid)
+        0
+        (apply max (map (curry apply +) valid)))))
+```
